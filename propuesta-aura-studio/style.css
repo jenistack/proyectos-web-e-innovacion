@@ -1,0 +1,601 @@
+/* ==========================================================================
+   STYLE.CSS - PROPUESTA WEB PROFESIONAL (ECOSISTEMA ANTIGRAVITY)
+   Integrado con: brand-identity, product-catalog y web-proposal-template
+   ========================================================================== */
+
+/* 1. Variables de marca oficiales según skill brand-identity */
+:root {
+  --color-primario: #0F172A;      /* Slate 900 - Fondos principales y textos de alto contraste */
+  --color-acento: #3B82F6;        /* Blue 500 - Botones principales y llamadas a la acción */
+  --color-acento-hover: #2563EB;  /* Blue 600 */
+  --color-fondo: #F8FAFC;         /* Slate 50 - Fondo base limpio */
+  --color-fondo-alt: #FFFFFF;     /* White - Contenedores y tarjetas */
+  --color-texto: #334155;          /* Slate 700 - Texto de lectura */
+  --color-texto-muted: #64748B;    /* Slate 500 - Subtítulos y metadatos */
+  --color-borde: rgba(15, 23, 42, 0.08);
+  
+  --font-titulares: 'Outfit', sans-serif;
+  --font-cuerpo: 'Inter', sans-serif;
+  
+  --max-width: 1140px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--font-cuerpo);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-titulares);
+  color: var(--color-primario);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* Contenedor universal */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   2. Snippets CSS obligatorios según skill web-proposal-template
+   ========================================================================== */
+
+/* Glassmorphism (Efecto Cristal) */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+}
+
+/* Tarjeta Corporativa con sombras prémium */
+.corporate-card {
+  background-color: var(--color-fondo-alt);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-borde);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 8px 10px -6px rgba(15, 23, 42, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 32px;
+}
+
+.corporate-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.08);
+}
+
+/* Botones de Conversión (CTA) */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--color-acento);
+  color: #ffffff;
+  padding: 14px 28px;
+  font-family: var(--font-titulares);
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+}
+
+.cta-button:hover {
+  background-color: var(--color-acento-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.45);
+}
+
+.cta-button-secondary {
+  background: transparent;
+  color: var(--color-primario);
+  border: 1px solid var(--color-borde);
+  box-shadow: none;
+}
+
+.cta-button-secondary:hover {
+  background: rgba(15, 23, 42, 0.04);
+  color: var(--color-primario);
+  box-shadow: none;
+}
+
+/* Animación Fade In Up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+/* ==========================================================================
+   3. Estilos de Barra Superior / Navegación
+   ========================================================================== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(248, 250, 252, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-borde);
+  padding: 16px 0;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+.brand-name {
+  font-family: var(--font-titulares);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-primario);
+  letter-spacing: -0.02em;
+}
+
+.nav-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--color-acento);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+.nav-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-acento);
+}
+
+/* ==========================================================================
+   4. Secciones de la Propuesta (Web Proposal Template)
+   ========================================================================== */
+
+/* 1. HERO */
+.hero-section {
+  padding: 80px 0 60px;
+  text-align: center;
+  position: relative;
+}
+
+.hero-badge {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-acento);
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  max-width: 860px;
+  margin: 0 auto 24px;
+  line-height: 1.15;
+}
+
+.hero-subtitle {
+  font-size: clamp(17px, 2vw, 20px);
+  color: var(--color-texto-muted);
+  max-width: 680px;
+  margin: 0 auto 36px;
+  font-weight: 400;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.client-banner {
+  margin-top: 48px;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--color-borde);
+  border-radius: 999px;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.03);
+  font-size: 14px;
+}
+
+.client-banner strong {
+  color: var(--color-primario);
+}
+
+/* 2. PROBLEMA */
+.section {
+  padding: 80px 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 50px;
+}
+
+.section-tag {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-acento);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(28px, 3.5vw, 40px);
+  margin-bottom: 16px;
+}
+
+.section-desc {
+  color: var(--color-texto-muted);
+  font-size: 17px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.problem-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.problem-title {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.problem-text {
+  color: var(--color-texto-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* 3. SOLUCIÓN */
+.solution-box {
+  background: linear-gradient(135deg, var(--color-primario) 0%, #1E293B 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 60px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.solution-box h2, .solution-box h3 {
+  color: #FFFFFF;
+}
+
+.solution-box .section-desc {
+  color: #94A3B8;
+}
+
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.solution-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  transition: background 0.3s;
+}
+
+.solution-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.solution-check {
+  color: var(--color-acento);
+  font-size: 22px;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.solution-item p {
+  color: #94A3B8;
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+/* 4. METODOLOGÍA */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  position: relative;
+}
+
+.step-card {
+  position: relative;
+  padding: 30px;
+  border-radius: var(--radius-md);
+  background: var(--color-fondo-alt);
+  border: 1px solid var(--color-borde);
+}
+
+.step-number {
+  font-family: var(--font-titulares);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-acento);
+  opacity: 0.3;
+  margin-bottom: 12px;
+}
+
+.step-duration {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-texto-muted);
+  background: rgba(15, 23, 42, 0.04);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+
+/* 5. POR QUÉ NOSOTROS */
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.stat-badge {
+  font-size: 36px;
+  font-weight: 800;
+  font-family: var(--font-titulares);
+  color: var(--color-acento);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+/* 6. INVERSIÓN (Valores exactos de product-catalog) */
+.pricing-table-wrapper {
+  margin-top: 40px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-borde);
+  background: #FFFFFF;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.pricing-table th {
+  background-color: #F1F5F9;
+  color: var(--color-primario);
+  font-family: var(--font-titulares);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.pricing-table td {
+  padding: 24px;
+  border-bottom: 1px solid var(--color-borde);
+  vertical-align: top;
+}
+
+.pricing-table tr:last-child td {
+  border-bottom: none;
+}
+
+.service-badge {
+  font-family: monospace;
+  font-size: 12px;
+  background: rgba(15, 23, 42, 0.05);
+  color: var(--color-primario);
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.service-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-primario);
+  margin-bottom: 6px;
+}
+
+.service-desc {
+  font-size: 14px;
+  color: var(--color-texto-muted);
+  line-height: 1.5;
+}
+
+.service-price {
+  font-family: var(--font-titulares);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primario);
+  white-space: nowrap;
+}
+
+.pricing-summary {
+  background: #F8FAFC;
+  border-top: 2px solid var(--color-borde);
+  padding: 28px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.total-label {
+  font-size: 15px;
+  color: var(--color-texto-muted);
+}
+
+.total-amount {
+  font-family: var(--font-titulares);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-primario);
+}
+
+.recurring-tag {
+  font-size: 14px;
+  color: var(--color-acento);
+  font-weight: 600;
+}
+
+/* 7. CTA FINAL */
+.cta-final-section {
+  padding: 100px 0;
+  background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+  text-align: center;
+}
+
+.cta-card {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  background: #FFFFFF;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.08);
+}
+
+.cta-card h2 {
+  font-size: clamp(32px, 4vw, 44px);
+  margin-bottom: 20px;
+}
+
+.cta-card p {
+  font-size: 18px;
+  color: var(--color-texto-muted);
+  max-width: 600px;
+  margin: 0 auto 36px;
+}
+
+/* Modal Interactivo de Confirmación */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-content {
+  background: #FFFFFF;
+  max-width: 500px;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--color-borde);
+  padding: 40px 0;
+  text-align: center;
+  color: var(--color-texto-muted);
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pricing-table th, .pricing-table td {
+    padding: 16px;
+  }
+  .solution-box {
+    padding: 40px 24px;
+  }
+  .cta-card {
+    padding: 40px 20px;
+  }
+}
