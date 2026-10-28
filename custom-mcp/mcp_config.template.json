@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "custom-python": {
+      "command": "python",
+      "args": [
+        "c:/Users/elisa/Antigravity/custom-mcp/server.py"
+      ]
+    }
+  }
+}
+
