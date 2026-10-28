@@ -4,11 +4,11 @@
       "command": "C:\\Users\\elisa\\miniconda3\\Scripts\\notebooklm-mcp.exe",
       "args": []
     },
-    "custom-python": {
-      "command": "python",
-      "args": [
-        "c:/Users/elisa/Antigravity/custom-mcp/server.py"
-      ]
+    "stitch": {
+      "url": "https://stitch.googleapis.com/mcp",
+      "headers": {
+        "X-Goog-Api-Key": "AQ.Ab8RN6LR9fUOHw_aHWL6eDYoYAbBXYK-tZk_kPZGO6i6lOU86A"
+      }
     }
   }
 }
