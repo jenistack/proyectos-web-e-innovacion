@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "notebooklm": {
+      "command": "C:\\Users\\elisa\\miniconda3\\Scripts\\notebooklm-mcp.exe",
+      "args": []
+    },
+    "stitch": {
+      "url": "https://stitch.googleapis.com/mcp",
+      "headers": {
+        "X-Goog-Api-Key": "AQ.Ab8RN6LR9fUOHw_aHWL6eDYoYAbBXYK-tZk_kPZGO6i6lOU86A"
+      }
+    }
+  }
+}
