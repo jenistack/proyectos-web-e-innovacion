@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "notebooklm": {
+      "command": "C:\\Users\\elisa\\miniconda3\\Scripts\\notebooklm-mcp.exe",
+      "args": []
+    }
+  }
+}
