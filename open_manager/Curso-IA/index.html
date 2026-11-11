@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comunidad de Inteligencia Artificial | Inscríbete Hoy</title>
+  <meta name="description" content="Únete a la comunidad líder de Inteligencia Artificial. Domina herramientas, agentes autónomos y automatizaciones prácticas para transformar tu carrera y negocio.">
+  
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0F172A;
+      --primary-light: #1E293B;
+      --accent: #3B82F6;
+      --accent-hover: #2563EB;
+      --accent-soft: rgba(59, 130, 246, 0.1);
+      --bg: #F8FAFC;
+      --surface: #FFFFFF;
+      --text: #334155;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --border: #E2E8F0;
+      --border-focus: #3B82F6;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 4px 14px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 12px 30px rgba(15, 23, 42, 0.12);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      color: var(--primary);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Container Utility */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 96px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 56px auto;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-header p {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+    }
+
+    /* Header / Navbar */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .brand-logo svg {
+      width: 32px;
+      height: 32px;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.975rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: 1px solid transparent;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.45);
+    }
+
+    .btn-secondary {
+      background: #FFFFFF;
+      color: var(--primary);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-large {
+      padding: 16px 36px;
+      font-size: 1.05rem;
+      border-radius: 10px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--primary);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 100px 0 80px 0;
+      background: radial-gradient(circle at 50% 20%, rgba(59, 130, 246, 0.08) 0%, rgba(248, 250, 252, 0) 70%);
+      position: relative;
+    }
+
+    .hero-content {
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-content h1 span {
+      background: linear-gradient(135deg, var(--accent) 0%, #1D4ED8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      line-height: 1.65;
+    }
+
+    .hero-cta {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+
+    .hero-social-proof {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .proof-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .proof-item svg {
+      width: 20px;
+      height: 20px;
+      color: var(--accent);
+    }
+
+    .proof-item strong {
+      color: var(--primary);
+    }
+
+    /* Audience Section (Para quién es) */
+    .audience-section {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent);
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+
+    .card-icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.975rem;
+      line-height: 1.6;
+    }
+
+    /* Not for you filter box */
+    .filter-box {
+      background: #FFF1F2;
+      border: 1px solid #FECDD3;
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .filter-box svg {
+      width: 28px;
+      height: 28px;
+      color: #E11D48;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .filter-box h4 {
+      color: #9F1239;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .filter-box p {
+      color: #881337;
+      font-size: 0.925rem;
+      line-height: 1.5;
+    }
+
+    /* What's Included Section */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+
+    .feature-icon-wrapper {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-soft);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .feature-icon-wrapper svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    /* Learning Roadmap Section (Qué aprenderán) */
+    .curriculum-section {
+      background: var(--primary);
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .curriculum-section .section-header h2 {
+      color: #FFFFFF;
+    }
+
+    .curriculum-section .section-header p {
+      color: var(--text-light);
+    }
+
+    .curriculum-section .badge {
+      background: rgba(59, 130, 246, 0.2);
+      border-color: rgba(59, 130, 246, 0.4);
+      color: #93C5FD;
+    }
+
+    .roadmap-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .roadmap-item {
+      background: var(--primary-light);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .roadmap-item:hover {
+      transform: translateX(6px);
+      border-color: var(--accent);
+    }
+
+    .module-step {
+      background: var(--accent);
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 800;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .module-content h3 {
+      color: #FFFFFF;
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .module-content p {
+      color: #CBD5E1;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+
+    .module-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .module-tag {
+      font-size: 0.775rem;
+      background: rgba(255, 255, 255, 0.08);
+      color: #94A3B8;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      font-weight: 500;
+    }
+
+    /* Why Join Section (Por qué entrar) */
+    .why-section {
+      background: #FFFFFF;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .why-content h2 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .why-content p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+    }
+
+    .reasons-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .reason-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .reason-check {
+      width: 28px;
+      height: 28px;
+      background: var(--accent-soft);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .reason-check svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .reason-text h4 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .reason-text p {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    /* Visual comparison card */
+    .comparison-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .comparison-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      text-align: center;
+      color: var(--primary);
+    }
+
+    .comparison-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+
+    .comparison-row:last-child {
+      border-bottom: none;
+    }
+
+    .comparison-row .bad {
+      color: #94A3B8;
+      text-decoration: line-through;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .comparison-row .good {
+      color: var(--primary);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .comparison-row .good svg {
+      color: #10B981;
+    }
+
+    /* Testimonials */
+    .testimonials-section {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stars {
+      color: #F59E0B;
+      display: flex;
+      gap: 4px;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-card p {
+      font-size: 0.975rem;
+      color: var(--text);
+      font-style: italic;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .author-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .author-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .author-meta h5 {
+      font-size: 0.975rem;
+      color: var(--primary);
+    }
+
+    .author-meta span {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+    }
+
+    /* Registration Form Section */
+    .register-section {
+      padding: 96px 0;
+      background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, rgba(248, 250, 252, 1) 100%);
+    }
+
+    .register-wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+
+    .register-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .register-header h2 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .register-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--primary);
+      background-color: #FFFFFF;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+
+    .form-control:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    .form-control::placeholder {
+      color: var(--text-light);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .form-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 26px;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .form-check input[type="checkbox"] {
+      margin-top: 3px;
+      accent-color: var(--accent);
+      width: 16px;
+      height: 16px;
+    }
+
+    .form-check a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      font-size: 1.05rem;
+    }
+
+    .form-security-note {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .form-security-note svg {
+      width: 14px;
+      height: 14px;
+      color: #10B981;
+    }
+
+    /* Success message banner */
+    .success-alert {
+      display: none;
+      background: #ECFDF5;
+      border: 1px solid #A7F3D0;
+      color: #065F46;
+      border-radius: var(--radius-md);
+      padding: 24px;
+      text-align: center;
+      margin-top: 20px;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .success-alert svg {
+      width: 48px;
+      height: 48px;
+      color: #10B981;
+      margin: 0 auto 12px auto;
+    }
+
+    .success-alert h3 {
+      color: #065F46;
+      margin-bottom: 8px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 16px;
+      background: var(--bg);
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+    }
+
+    .faq-question {
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--primary);
+      user-select: none;
+    }
+
+    .faq-question svg {
+      width: 20px;
+      height: 20px;
+      color: var(--accent);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .faq-item.active .faq-question svg {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 24px 22px 24px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--primary);
+      color: #94A3B8;
+      padding: 64px 0 32px 0;
+      border-top: 1px solid var(--primary-light);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--primary-light);
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .footer-brand svg {
+      width: 28px;
+      height: 28px;
+      color: var(--accent);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: #FFFFFF;
+    }
+
+    .footer-bottom {
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* Responsive Queries */
+    @media (max-width: 992px) {
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-content h1 {
+        font-size: 2.75rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 64px 0;
+      }
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      .hero-content p {
+        font-size: 1.05rem;
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .register-wrapper {
+        padding: 28px 20px;
+      }
+      .roadmap-item {
+        flex-direction: column;
+        gap: 14px;
+      }
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .footer-links {
+        flex-direction: column;
+        gap: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo" aria-label="Inicio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          <span>Nexus IA</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#para-quien">¿Para quién es?</a></li>
+          <li><a href="#que-incluye">Qué incluye</a></li>
+          <li><a href="#ruta-aprendizaje">Qué aprenderás</a></li>
+          <li><a href="#por-que-unirte">Por qué unirte</a></li>
+          <li><a href="#faq">Preguntas</a></li>
+          <li><a href="#inscripcion" class="btn btn-primary">Inscribirme</a></li>
+        </ul>
+
+        <a href="#inscripcion" class="btn btn-primary mobile-menu-btn" style="display: none;">Inscribirme</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <div class="badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          Comunidad Exclusiva de IA & Automatización
+        </div>
+
+        <h1>
+          Domina la <span>Inteligencia Artificial</span> aplicada a proyectos reales
+        </h1>
+
+        <p>
+          Únete al ecosistema de profesionales, desarrolladores y líderes que están transformando sus flujos de trabajo con IA generativa, agentes autónomos y modelos avanzados. Sin ruido, con enfoque 100% práctico y colaborativo.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#inscripcion" class="btn btn-primary btn-large">
+            Asegurar mi lugar
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#que-incluye" class="btn btn-secondary btn-large">
+            Ver qué incluye
+          </a>
+        </div>
+
+        <div class="hero-social-proof">
+          <div class="proof-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span><strong>+1,250</strong> miembros activos</span>
+          </div>
+
+          <div class="proof-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            <span><strong>98.4%</strong> de satisfacción</span>
+          </div>
+
+          <div class="proof-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>Sesiones en vivo <strong>semanales</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿Para quién es? Section -->
+  <section id="para-quien" class="audience-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Audiencia Objetivo</div>
+        <h2>¿Para quién es esta comunidad?</h2>
+        <p>
+          Diseñado para personas orientadas a la acción que quieren ir más allá de los prompts básicos y construir soluciones tangibles con impacto directo.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3>Profesionales y Líderes</h3>
+          <p>
+            Automatiza tareas repetitivas, optimiza la toma de decisiones basada en datos y lidera la adopción de IA dentro de tu organización o equipo de trabajo.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <h3>Desarrolladores e Ingenieros</h3>
+          <p>
+            Integra APIs de LLMs en tus aplicaciones, aprende a implementar arquitecturas RAG avanzadas, agentes autónomos y protocolos modernos como MCP.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <line x1="19" y1="8" x2="19" y2="14"></line>
+              <line x1="22" y1="11" x2="16" y2="11"></line>
+            </svg>
+          </div>
+          <h3>Consultores y Emprendedores</h3>
+          <p>
+            Crea ofertas de alto valor incorporando automatizaciones de IA para clientes, monetiza nuevos servicios técnicos y acelera tus entregables hasta 5x.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <h3>Curiosos Tecnológicos Proactivos</h3>
+          <p>
+            Si quieres mantenerte al día con el avance frenético de la IA sin perder tiempo en tutoriales obsoletos ni clickbaits de redes sociales.
+          </p>
+        </div>
+      </div>
+
+      <!-- Para quién NO es -->
+      <div class="filter-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="15" y1="9" x2="9" y2="15"></line>
+          <line x1="9" y1="9" x2="15" y2="15"></line>
+        </svg>
+        <div>
+          <h4>¿Para quién NO es esta comunidad?</h4>
+          <p>
+            No es para personas que buscan fórmulas mágicas de "hazte rico en 24 horas con IA", ni para quienes solo acumulan teoría sin intención de construir y experimentar. Exigimos curiosidad, compromiso y ganas reales de colaborar.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿Qué incluye? Section -->
+  <section id="que-incluye">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Ecosistema Completo</div>
+        <h2>¿Qué incluye tu membresía?</h2>
+        <p>
+          Todo lo necesario para pasar de consumidor pasivo de tecnología a creador capacitado y con respaldo continuo.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="23 7 16 12 23 17 23 7"></polygon>
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+            </svg>
+          </div>
+          <h3>Workshops Semanales en Vivo</h3>
+          <p>
+            Demostraciones técnicas en directo resolviendo problemas reales: desde cómo montar un agente funcional hasta cómo optimizar costes de inferencia.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+          <h3>Repositorio de Código y Plantillas</h3>
+          <p>
+            Acceso inmediato a boilerplates listos para producción, pipelines de automatización (Make, n8n, Python) y prompts testeados por la comunidad.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <h3>Canales Temáticos Exclusivos</h3>
+          <p>
+            Comunidad privada organizada por áreas: Desarrollo, Marketing, Negocios, Automatización y Feedback de Proyectos para no perder el foco.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </div>
+          <h3>Mesa de Ayuda y Feedback Técnico</h3>
+          <p>
+            ¿Bloqueado con una integración o un error de API? Recibe soporte de mentores y compañeros con experiencia en cuestión de minutos.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="7"></circle>
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+            </svg>
+          </div>
+          <h3>Sesiones con Expertos Invitados</h3>
+          <p>
+            Encuentros mensuales con fundadores de startups de IA, investigadores y directores tecnológicos compartiendo lecciones internas del sector.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          <h3>Bolsa de Empleo y Oportunidades</h3>
+          <p>
+            Canal directo para compartir ofertas laborales, proyectos freelance y alianzas entre miembros con habilidades complementarias.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿Qué aprenderás? Section -->
+  <section id="ruta-aprendizaje" class="curriculum-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Ruta Práctica</div>
+        <h2>¿Qué aprenderás paso a paso?</h2>
+        <p>
+          Un itinerario estructurado para adquirir habilidades competitivas y aplicables desde la primera semana.
+        </p>
+      </div>
+
+      <div class="roadmap-list">
+        <!-- Modulo 1 -->
+        <div class="roadmap-item">
+          <div class="module-step">01</div>
+          <div class="module-content">
+            <h3>Arquitectura de LLMs e Ingeniería de Contexto</h3>
+            <p>
+              Comprende cómo operan realmente los modelos de lenguaje: tokenización, ventanas de contexto, system prompts avanzados y técnicas modernas como Few-Shot y Chain-of-Thought para minimizar alucinaciones.
+            </p>
+            <div class="module-tags">
+              <span class="module-tag">Prompt Engineering</span>
+              <span class="module-tag">Context Windows</span>
+              <span class="module-tag">Evaluación de Salidas</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modulo 2 -->
+        <div class="roadmap-item">
+          <div class="module-step">02</div>
+          <div class="module-content">
+            <h3>RAG (Retrieval-Augmented Generation) y Bases Vectoriales</h3>
+            <p>
+              Aprende a conectar la IA con tus propios documentos, bases de datos y manuales empresariales usando embeddings, bases de datos vectoriales y pipelines de búsqueda semántica híbrida.
+            </p>
+            <div class="module-tags">
+              <span class="module-tag">Vector Databases</span>
+              <span class="module-tag">Embeddings</span>
+              <span class="module-tag">Chunking Strategies</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modulo 3 -->
+        <div class="roadmap-item">
+          <div class="module-step">03</div>
+          <div class="module-content">
+            <h3>Agentes Autónomos y Protocolos de Comunicación (MCP)</h3>
+            <p>
+              Construye agentes capaces de tomar decisiones, invocar herramientas externas, ejecutar código y coordinarse en arquitecturas multi-agente para flujos de trabajo de alta complejidad.
+            </p>
+            <div class="module-tags">
+              <span class="module-tag">Tool Calling</span>
+              <span class="module-tag">MCP Tools</span>
+              <span class="module-tag">Sistemas Multi-Agente</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modulo 4 -->
+        <div class="roadmap-item">
+          <div class="module-step">04</div>
+          <div class="module-content">
+            <h3>Automatización Empresarial de Procesos de Negocio</h3>
+            <p>
+              Integración de inteligencia artificial en herramientas diarias: CRM, hojas de cálculo, correo, Slack y flujos sin código (n8n/Make) para ahorrar horas de trabajo operativo cada día.
+            </p>
+            <div class="module-tags">
+              <span class="module-tag">n8n / Make</span>
+              <span class="module-tag">Webhooks</span>
+              <span class="module-tag">Procesamiento Documental</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modulo 5 -->
+        <div class="roadmap-item">
+          <div class="module-step">05</div>
+          <div class="module-content">
+            <h3>Monetización, Despliegue y Soluciones para Clientes</h3>
+            <p>
+              Descubre cómo empaquetar, tarifar y vender tus capacidades de IA como consultoría o micro-SaaS, calculando costos de consumo y garantizando cumplimiento y privacidad.
+            </p>
+            <div class="module-tags">
+              <span class="module-tag">Cotización de Proyectos</span>
+              <span class="module-tag">Cost Estimation</span>
+              <span class="module-tag">Seguridad y Privacidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿Por qué deberías entrar? Section -->
+  <section id="por-que-unirte" class="why-section">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-content">
+          <div class="badge">Ventaja Estratégica</div>
+          <h2>¿Por qué deberías entrar hoy?</h2>
+          <p>
+            La curva de aceleración de la inteligencia artificial no espera a nadie. Aprender por tu cuenta significa perder cientos de horas filtrando información irrelevante y probando herramientas que quedan desfasadas en semanas.
+          </p>
+
+          <ul class="reasons-list">
+            <li class="reason-item">
+              <div class="reason-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="reason-text">
+                <h4>Filtro de Ruido Garantizado</h4>
+                <p>Curamos las novedades reales que impactan tu trabajo y descartamos el "hype" publicitario sin utilidad.</p>
+              </div>
+            </li>
+
+            <li class="reason-item">
+              <div class="reason-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="reason-text">
+                <h4>Ahorro Radical de Tiempo</h4>
+                <p>En lugar de pasar 3 semanas resolviendo un bug de integración, pregunta en el canal y soluciónalo en minutos.</p>
+              </div>
+            </li>
+
+            <li class="reason-item">
+              <div class="reason-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="reason-text">
+                <h4>Networking de Alto Nivel</h4>
+                <p>Rodéate de personas que comparten tu ambición técnica y profesional, creando oportunidades de negocio reales.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="comparison-card">
+            <div class="comparison-title">Aprender Solo vs. En Nuestra Comunidad</div>
+            
+            <div class="comparison-row">
+              <span class="bad">❌ Tutoriales fragmentados de YouTube</span>
+              <span class="good"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Ruta clara y proyectos reales</span>
+            </div>
+
+            <div class="comparison-row">
+              <span class="bad">❌ Prompts genéricos de baja efectividad</span>
+              <span class="good"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Agentes y código listos para clonar</span>
+            </div>
+
+            <div class="comparison-row">
+              <span class="bad">❌ Estancarse solo ante errores de API</span>
+              <span class="good"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Resolución y apoyo colaborativo</span>
+            </div>
+
+            <div class="comparison-row">
+              <span class="bad">❌ Ansiedad por el avance tecnológico</span>
+              <span class="good"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Dominio estructurado y constante</span>
+            </div>
+
+            <div class="comparison-row">
+              <span class="bad">❌ Cero retroalimentación de tu trabajo</span>
+              <span class="good"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Feedback técnico de mentores</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Resultados Reales</div>
+        <h2>Lo que dicen nuestros miembros</h2>
+        <p>Profesionales que ya integraron la inteligencia artificial en su día a día.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            "Implementamos un pipeline de soporte al cliente con agentes en menos de 10 días gracias a las plantillas y el feedback de la comunidad. El retorno ha sido inmediato."
+          </p>
+          <div class="author-info">
+            <div class="author-avatar">MR</div>
+            <div class="author-meta">
+              <h5>Mateo R.</h5>
+              <span>CTO en Startup Fintech</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            "Lo mejor es la curaduría. Cada semana salen 50 modelos nuevos, pero aquí te enseñan exactamente cuáles tienen impacto comercial real y cómo aplicarlos sin rodeos."
+          </p>
+          <div class="author-info">
+            <div class="author-avatar">CL</div>
+            <div class="author-meta">
+              <h5>Carolina L.</h5>
+              <span>Consultora de Operaciones & BI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            "Pasé de copiar prompts en el navegador a programar mis propios sistemas RAG y agentes multi-herramienta. El nivel técnico es altísimo pero muy bien explicado."
+          </p>
+          <div class="author-info">
+            <div class="author-avatar">SG</div>
+            <div class="author-meta">
+              <h5>Sebastián G.</h5>
+              <span>Senior Software Engineer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Form Section -->
+  <section id="inscripcion" class="register-section">
+    <div class="container">
+      <div class="register-wrapper">
+        <div class="register-header">
+          <div class="badge">Inscripción Abierta</div>
+          <h2>Asegura tu plaza en la comunidad</h2>
+          <p>Completa el formulario para acceder al canal oficial, recursos y las próximas sesiones en vivo.</p>
+        </div>
+
+        <form id="registrationForm" onsubmit="handleRegistration(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">Nombre completo *</label>
+              <input type="text" id="firstName" class="form-control" placeholder="Ej. Alejandro Pérez" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Correo electrónico corporativo o personal *</label>
+              <input type="email" id="email" class="form-control" placeholder="nombre@correo.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="profileRole">¿Cuál es tu rol o perfil actual? *</label>
+              <select id="profileRole" class="form-control" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="dev">Desarrollador / Ingeniero de Software</option>
+                <option value="business">Líder de Negocio / Gerente / Manager</option>
+                <option value="consultant">Consultor / Freelancer</option>
+                <option value="creator">Creador / Marketing / Producto</option>
+                <option value="other">Otro perfil profesional</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="experienceLevel">Nivel de experiencia con IA *</label>
+              <select id="experienceLevel" class="form-control" required>
+                <option value="" disabled selected>Selecciona tu nivel</option>
+                <option value="beginner">Principiante (uso chat básico)</option>
+                <option value="intermediate">Intermedio (uso APIs o automatizaciones simples)</option>
+                <option value="advanced">Avanzado (construyo aplicaciones y pipelines)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="primaryGoal">¿Cuál es tu objetivo prioritario al entrar?</label>
+            <input type="text" id="primaryGoal" class="form-control" placeholder="Ej. Automatizar tareas en mi empresa, crear un agente, etc.">
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" id="terms" required>
+            <label for="terms">
+              Acepto los términos de convivencia de la comunidad y la política de privacidad. Respetaré la confidencialidad de los proyectos compartidos.
+            </label>
+          </div>
+
+          <button type="submit" id="submitBtn" class="btn btn-primary submit-btn">
+            Completar mi inscripción ahora
+          </button>
+
+          <div class="form-security-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            Tus datos están 100% seguros. No enviamos spam ni compartimos información.
+          </div>
+        </form>
+
+        <!-- Mensaje de éxito tras registrarse -->
+        <div id="successAlert" class="success-alert">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          <h3>¡Inscripción recibida con éxito!</h3>
+          <p id="successMessage">
+            Hemos enviado un correo de bienvenida y el enlace de acceso directo a tu bandeja de entrada. Revisa tu buzón (y la carpeta de promociones por si acaso).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Preguntas Frecuentes</div>
+        <h2>Resolvemos tus dudas</h2>
+        <p>Todo lo que necesitas saber antes de dar el paso.</p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>¿Es indispensable saber programar para participar?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="faq-answer">
+            No. Tenemos dos rutas complementarias: una orientada a automatización sin código o bajo código (herramientas como Make, n8n, asistentes y flujos visuales) y otra avanzada para ingenieros que programan con Python y TypeScript. Todos encuentran valor aplicable a su nivel.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>¿Qué pasa si no puedo asistir a las sesiones en vivo?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="faq-answer">
+            Todas las sesiones quedan grabadas en alta definición y se suben a la biblioteca privada en menos de 24 horas, acompañadas del código, enlaces y notas resumidas.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>¿Cuánto tiempo a la semana se recomienda dedicarle?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="faq-answer">
+            Con entre 2 y 4 horas a la semana puedes seguir la sesión técnica y participar en las conversaciones clave. El formato está diseñado para profesionales activos con agendas exigentes.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>¿Cómo se coordina el soporte y las dudas técnicas?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="faq-answer">
+            Disponemos de canales dedicados para resolución de dudas con sistema de hilos por proyecto, además de sesiones de oficina abierta ("Open Office Hours") cada dos semanas.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>¿Recibiré acceso inmediato tras enviar el formulario?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="faq-answer">
+            Sí. Tras completar la inscripción recibirás un correo de confirmación automático con las instrucciones y el link seguro de acceso al espacio de la comunidad.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          <span>Nexus IA</span>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="#para-quien">Para quién es</a></li>
+          <li><a href="#que-incluye">Qué incluye</a></li>
+          <li><a href="#ruta-aprendizaje">Plan de estudio</a></li>
+          <li><a href="#por-que-unirte">Por qué entrar</a></li>
+          <li><a href="#faq">Preguntas</a></li>
+          <li><a href="#inscripcion">Inscripción</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Nexus IA Community. Todos los derechos reservados.</p>
+        <p>Diseñado con enfoque profesional, práctico y de alto rendimiento.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for interactions -->
+  <script>
+    // FAQ Accordion functionality
+    document.querySelectorAll('.faq-question').forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        const isActive = item.classList.contains('active');
+
+        // Close all items
+        document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+
+        // Toggle clicked item
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // Handle Registration Form Submission
+    function handleRegistration(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById('submitBtn');
+      const form = document.getElementById('registrationForm');
+      const successAlert = document.getElementById('successAlert');
+      const name = document.getElementById('firstName').value.trim();
+      const email = document.getElementById('email').value.trim();
+
+      // Button loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Procesando tu inscripción...';
+
+      setTimeout(() => {
+        form.style.display = 'none';
+        successAlert.style.display = 'block';
+        
+        document.getElementById('successMessage').textContent = 
+          `¡Enhorabuena, ${name}! Hemos registrado tu acceso con el correo ${email}. En breve recibirás tu invitación privada y las instrucciones para acceder al canal de la comunidad.`;
+
+        // Smooth scroll to success message
+        successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
