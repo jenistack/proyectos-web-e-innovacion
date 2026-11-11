@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ComandaYa | Elimina las Filas y Vende Más en tu Restaurante</title>
+  <meta name="description" content="La app web de pedidos QR y para llevar diseñada para pequeños restaurantes y taquerías. Cero filas, comandas automáticas a cocina y 0% comisiones.">
+  
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Favicon Emoji -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌮</text></svg>">
+
+  <!-- Estilos Dedicados de la Landing -->
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+
+  <!-- ==================== BARRA SUPERIOR ==================== -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <span class="top-pill">🚀 Especial para Restaurantes Locales</span>
+      <span>Menos filas en caja, más mesas atendidas y <strong>cero comisiones</strong> abusivas.</span>
+      <a href="#contacto" class="top-link">Probar 14 días gratis &rarr;</a>
+    </div>
+  </div>
+
+  <!-- ==================== HEADER / NAVBAR ==================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <span class="logo-emoji">⚡</span>
+        <span class="logo-text">Comanda<span class="highlight">Ya</span></span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#problema" class="nav-item">El Problema de las Filas</a>
+        <a href="#solucion" class="nav-item">Cómo Funciona</a>
+        <a href="#beneficios" class="nav-item">Beneficios</a>
+        <a href="#calculadora" class="nav-item">Calculadora</a>
+        <a href="#demo" class="nav-item">Demo en Vivo</a>
+        <a href="#precios" class="nav-item">Precios</a>
+        <a href="#faq" class="nav-item">Preguntas</a>
+      </nav>
+
+      <div class="nav-buttons">
+        <a href="#demo" class="btn btn-secondary btn-sm">Ver Demos</a>
+        <a href="#contacto" class="btn btn-primary btn-sm">Prueba Gratis</a>
+      </div>
+
+      <!-- Botón Menú Móvil -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menú Desplegable Móvil -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="#problema" class="drawer-link">El Problema</a>
+    <a href="#solucion" class="drawer-link">Cómo Funciona</a>
+    <a href="#beneficios" class="drawer-link">Beneficios</a>
+    <a href="#calculadora" class="drawer-link">Calculadora de Ganancias</a>
+    <a href="#demo" class="drawer-link">Demo Interactiva</a>
+    <a href="#precios" class="drawer-link">Precios</a>
+    <a href="#faq" class="drawer-link">Preguntas Frecuentes</a>
+    <div class="drawer-actions">
+      <a href="#contacto" class="btn btn-primary w-full">Comenzar 14 Días Gratis</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <div class="tag-badge">
+            <span class="pulse-indicator"></span>
+            <span>App de pedidos para taquerías, cafeterías y locales pequeños</span>
+          </div>
+
+          <h1 class="hero-headline">
+            Elimina las filas en tu restaurante. <span class="text-gradient">Vende el doble</span> sin contratar más meseros.
+          </h1>
+
+          <p class="hero-copy">
+            Tus comensales escanean un código QR en la mesa o piden desde su casa antes de llegar. El pedido entra directo a la comanda de cocina. <strong>Cero esperas, cero errores y 100% de la ganancia en tu bolsillo.</strong>
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contacto" class="btn btn-primary btn-lg">
+              <span>Probar Gratis por 14 Días</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="#demo" class="btn btn-outline btn-lg">
+              <span class="play-icon">▶</span>
+              <span>Probar Demo en Vivo</span>
+            </a>
+          </div>
+
+          <!-- Puntos Clave de Confianza -->
+          <div class="hero-features-list">
+            <div class="feat-pill">
+              <span class="feat-icon">⚡</span>
+              <span>Sin que el cliente descargue nada</span>
+            </div>
+            <div class="feat-pill">
+              <span class="feat-icon">🚫</span>
+              <span>0% comisiones por pedido</span>
+            </div>
+            <div class="feat-pill">
+              <span class="feat-icon">🖨️</span>
+              <span>Comandas directas a cocina</span>
+            </div>
+          </div>
+
+          <div class="hero-social-proof">
+            <div class="avatar-stack">
+              <span>🌮</span>
+              <span>🍕</span>
+              <span>☕</span>
+              <span>🍔</span>
+            </div>
+            <p>
+              Más de <strong>150 pequeños restaurantes</strong> ya multiplicaron su rotación de mesas al mediodía.
+            </p>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Mockup Interactivo del Teléfono & Comanda -->
+        <div class="hero-right">
+          <div class="mockup-container">
+            <div class="mockup-glow"></div>
+
+            <!-- Teléfono del Cliente -->
+            <div class="phone-card">
+              <div class="phone-screen">
+                <div class="phone-bar">
+                  <span class="time">14:20</span>
+                  <div class="speaker"></div>
+                  <span class="battery">100%</span>
+                </div>
+
+                <div class="phone-app-header">
+                  <div class="app-title">
+                    <span class="app-logo">🌮</span>
+                    <div>
+                      <strong>Taquería El Trompo</strong>
+                      <small>Mesa 5 • Pedido Inmediato</small>
+                    </div>
+                  </div>
+                  <span class="badge-status-open">Abierto</span>
+                </div>
+
+                <div class="phone-app-body">
+                  <div class="dish-item">
+                    <div class="dish-text">
+                      <h5>Tacos al Pastor (x3)</h5>
+                      <p>Con piña, cebolla, cilantro y salsa verde</p>
+                      <span class="dish-cost">$65.00</span>
+                    </div>
+                    <span class="dish-qty-tag">2x</span>
+                  </div>
+
+                  <div class="dish-item">
+                    <div class="dish-text">
+                      <h5>Gringa con Queso Asador</h5>
+                      <p>Tortilla de harina grande bien dorada</p>
+                      <span class="dish-cost">$55.00</span>
+                    </div>
+                    <span class="dish-qty-tag">1x</span>
+                  </div>
+
+                  <div class="dish-item">
+                    <div class="dish-text">
+                      <h5>Agua de Horchata 1L</h5>
+                      <p>Receta tradicional con canela</p>
+                      <span class="dish-cost">$35.00</span>
+                    </div>
+                    <span class="dish-qty-tag">2x</span>
+                  </div>
+                </div>
+
+                <div class="phone-app-footer">
+                  <div class="footer-total">
+                    <span>Total de la mesa:</span>
+                    <strong>$255.00</strong>
+                  </div>
+                  <div class="phone-action-btn">
+                    <span>⚡ Enviar Orden a Cocina</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta Flotante 1: Notificación de Cocina -->
+            <div class="floating-ticket-box">
+              <div class="ticket-head">
+                <span>🖨️ COMANDA COCINA</span>
+                <span class="ticket-status-live">EN VIVO</span>
+              </div>
+              <div class="ticket-detail">
+                <strong>#TK-108 • MESA 5</strong>
+                <p>2x Tacos Pastor • 1x Gringa • 2x Horchata</p>
+                <small class="ticket-timer">⏱️ Entró hace 15 segundos</small>
+              </div>
+            </div>
+
+            <!-- Tarjeta Flotante 2: Métrica de Ahorro -->
+            <div class="floating-metric-box">
+              <span class="metric-value">+35%</span>
+              <span class="metric-desc">Mesas rotando más rápido</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EL PROBLEMA DE LAS FILAS ==================== -->
+    <section class="section problem-section" id="problema">
+      <div class="container">
+        <div class="section-title-wrap text-center">
+          <span class="pill-danger">El Cuello de Botella Diario</span>
+          <h2 class="title-main">Tu comida es excelente. Tus filas son las que te hacen perder dinero.</h2>
+          <p class="title-sub">
+            En la hora pico, cada minuto que un cliente pasa de pie esperando o sentado con la mano levantada es una oportunidad perdida para tu negocio.
+          </p>
+        </div>
+
+        <div class="problem-cards-grid">
+          <!-- Tarjeta 1 -->
+          <div class="card-problem">
+            <div class="icon-bubble red-bubble">🚪</div>
+            <h3>Clientes que dan media vuelta</h3>
+            <p>
+              La gente tiene 40 minutos para comer en su descanso laboral. Si entran a tu local y ven una fila de 6 personas en caja, se van de inmediato al negocio de enfrente.
+            </p>
+            <div class="card-pain-stat">Pierdes entre $500 y $1,500 MXN al día en ventas no realizadas.</div>
+          </div>
+
+          <!-- Tarjeta 2 -->
+          <div class="card-problem">
+            <div class="icon-bubble red-bubble">🤯</div>
+            <h3>Caja y meseros colapsados</h3>
+            <p>
+              El cajero cobra con terminal, entrega cambio, toma comandas a las prisas y grita a cocina al mismo tiempo. Es la receta perfecta para olvidar pedidos y generar clientes enojados.
+            </p>
+            <div class="card-pain-stat">Estrés diario para tu equipo y platos devueltos.</div>
+          </div>
+
+          <!-- Tarjeta 3 -->
+          <div class="card-problem">
+            <div class="icon-bubble red-bubble">⏳</div>
+            <h3>Mesas estancadas hasta 25 minutos</h3>
+            <p>
+              El comensal tarda 7 minutos en recibir la carta, 6 minutos en que le tomen la orden y otros 10 minutos esperando la cuenta. Esas mesas vacías facturan $0 mientras otros clientes esperan.
+            </p>
+            <div class="card-pain-stat">Menos mesas por turno = Menos dinero en caja.</div>
+          </div>
+
+          <!-- Tarjeta 4 -->
+          <div class="card-problem">
+            <div class="icon-bubble red-bubble">💸</div>
+            <h3>Comisiones del 30% que te asfixian</h3>
+            <p>
+              Para intentar evitar filas en mostrador recurres a apps de entrega rápida. ¿El resultado? Les regalas el 30% de tu margen bruto. Trabajas 14 horas al día para enriquecer a una plataforma.
+            </p>
+            <div class="card-pain-stat">Dejas hasta un tercio de tus ganancias en intermediarios.</div>
+          </div>
+        </div>
+
+        <!-- Tabla Comparativa Visual (Antes vs Después) -->
+        <div class="comparison-card">
+          <div class="comp-header">
+            <h3>¿Cómo cambia tu restaurante en un solo fin de semana?</h3>
+          </div>
+          <div class="comp-body">
+            <div class="comp-side before-side">
+              <div class="side-badge bad-badge">❌ El Método Tradicional (Filas y Caos)</div>
+              <ul class="comp-list">
+                <li>Clientes molestos esperando de pie a ser atendidos.</li>
+                <li>Meseros corriendo sin dar abasto y olvidando bebidas.</li>
+                <li>Comandas con letra ilegible que confunden al taquero.</li>
+                <li>Pérdida de clientes que querían pedir para llevar.</li>
+                <li>Caja lenta cobrando plato por plato.</li>
+              </ul>
+            </div>
+
+            <div class="comp-center-divider">
+              <span class="vs-circle">VS</span>
+            </div>
+
+            <div class="comp-side after-side">
+              <div class="side-badge good-badge">✅ Con ComandaYa en tu Restaurante</div>
+              <ul class="comp-list">
+                <li><strong>Cero filas:</strong> Escanean el QR en mesa o piden antes de salir de su oficina.</li>
+                <li><strong>Comandas directas:</strong> La orden se imprime o aparece en pantalla de cocina.</li>
+                <li><strong>Cero confusiones:</strong> El cliente especifica salsas, guarniciones y extras.</li>
+                <li><strong>Mesas liberadas 15 min antes:</strong> Más comensales sentados y felices.</li>
+                <li><strong>Tú te quedas todo:</strong> Cero comisiones por venta.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== LA SOLUCIÓN ==================== -->
+    <section class="section solution-section" id="solucion">
+      <div class="container">
+        <div class="section-title-wrap text-center">
+          <span class="pill-accent">La Solución Sencilla</span>
+          <h2 class="title-main">Un sistema de pedidos fluido en 3 simples pasos</h2>
+          <p class="title-sub">
+            Sin instalaciones complejas, sin tabletas carísimas y sin forzar a tu cliente a descargar nada en su teléfono.
+          </p>
+        </div>
+
+        <div class="steps-container">
+          <!-- Paso 1 -->
+          <div class="step-box">
+            <div class="step-num">Paso 01</div>
+            <div class="step-icon-area">
+              <div class="qr-visual">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="7" height="7"/>
+                  <rect x="14" y="3" width="7" height="7"/>
+                  <rect x="3" y="14" width="7" height="7"/>
+                  <rect x="14" y="14" width="7" height="7"/>
+                </svg>
+                <span>Escaneo instantáneo</span>
+              </div>
+            </div>
+            <h4>El cliente escanea el QR en mesa</h4>
+            <p>
+              También puede abrir tu enlace directo desde tu Instagram, Google Maps o WhatsApp. Se abre en 1 segundo en el navegador de cualquier teléfono.
+            </p>
+          </div>
+
+          <!-- Paso 2 -->
+          <div class="step-box">
+            <div class="step-num">Paso 02</div>
+            <div class="step-icon-area">
+              <div class="order-pills-visual">
+                <div class="v-pill">🌮 3x Pastor con todo</div>
+                <div class="v-pill opt">+ Queso extra (+$15)</div>
+                <div class="v-pill opt">+ Horchata 1L (+$35)</div>
+              </div>
+            </div>
+            <h4>Elige, personaliza y confirma</h4>
+            <p>
+              Tu menú con fotos irresistibles. La app sugiere complementos automáticamente (bebidas, guacamole, postres), elevando el ticket promedio de forma natural.
+            </p>
+          </div>
+
+          <!-- Paso 3 -->
+          <div class="step-box">
+            <div class="step-num">Paso 03</div>
+            <div class="step-icon-area">
+              <div class="ticket-visual">
+                <div class="ticket-paper">
+                  <strong>#TK-042 • COCINA</strong>
+                  <span>MESA 04 - 14:15 PM</span>
+                  <div class="dashed-line"></div>
+                  <small>3x Tacos Pastor • 1x Horchata</small>
+                </div>
+              </div>
+            </div>
+            <h4>Llega directo a cocina o caja</h4>
+            <p>
+              En la pantalla de cocina (KDS) o impresa en tu ticketera térmica al instante. Tu cocinero prepara exactamente lo que pidieron sin intermediarios.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3 Modos de Operación -->
+        <div class="operation-modes">
+          <div class="modes-intro">
+            <h3>3 Maneras de sacarle jugo en tu operación diaria:</h3>
+          </div>
+          <div class="modes-row">
+            <div class="mode-card">
+              <div class="mode-icon-lg">📍</div>
+              <h4>1. QR en Mesas</h4>
+              <p>El comensal se sienta y pide sin esperar a que un mesero se desocupe. Si quiere otra ronda de refrescos, la pide en 2 clics.</p>
+            </div>
+            <div class="mode-card">
+              <div class="mode-icon-lg">🏃</div>
+              <h4>2. "Pide y Recoge" (Take Away)</h4>
+              <p>Los vecinos y oficinistas piden con anticipación desde su oficina. Pasan por tu local, recogen su bolsa lista y tú no tuviste filas en caja.</p>
+            </div>
+            <div class="mode-card">
+              <div class="mode-icon-lg">🛵</div>
+              <h4>3. Domicilios por WhatsApp</h4>
+              <p>Recibe pedidos completos y pagados a domicilio directamente en tu WhatsApp, ahorrándote las comisiones de terceros.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BENEFICIOS PARA EL NEGOCIO ==================== -->
+    <section class="section benefits-section" id="beneficios">
+      <div class="container">
+        <div class="section-title-wrap text-center">
+          <span class="pill-green">Impacto Directo en tu Bolsillo</span>
+          <h2 class="title-main">Beneficios que se notan en tu cuenta bancaria desde el día 1</h2>
+          <p class="title-sub">
+            Diseñado pensando en la rentabilidad y el ritmo de trabajo de un negocio gastronómico real.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-tile">
+            <div class="benefit-badge">01</div>
+            <h3>+20% a +25% en Ticket Promedio</h3>
+            <p>
+              Un cajero con prisa nunca ofrece papas, queso fundido ni postre. La app siempre sugiere complementos con fotos apetitosas que los clientes compran por impulso.
+            </p>
+          </div>
+
+          <div class="benefit-tile">
+            <div class="benefit-badge">02</div>
+            <h3>Rotación de Mesas 35% más Rápida</h3>
+            <p>
+              Al eliminar la espera de la carta y el cobro lento, cada mesa se desocupa entre 15 y 20 minutos antes. En horas pico puedes atender a dos tandas de clientes donde antes atendías solo a una.
+            </p>
+          </div>
+
+          <div class="benefit-tile">
+            <div class="benefit-badge">03</div>
+            <h3>0% Comisiones por Pedido</h3>
+            <p>
+              No pagas el 25% ni el 30% a aplicaciones extranjeras. Mantienes una tarifa fija mensual accesible y todo lo que facturas es 100% ganancia neta para tu negocio.
+            </p>
+          </div>
+
+          <div class="benefit-tile">
+            <div class="benefit-badge">04</div>
+            <h3>Atiende más con tu Mismo Equipo</h3>
+            <p>
+              No necesitas contratar cajeros extra para las 2 horas pico. Tu personal actual trabajará con menos presión, enfocándose en despachar rápido y con buen trato.
+            </p>
+          </div>
+
+          <div class="benefit-tile">
+            <div class="benefit-badge">05</div>
+            <h3>Cero Comandas Confusas y Desperdicio</h3>
+            <p>
+              Se acabaron los platos devueltos porque "el cliente dijo sin cebolla y el mesero entendió con todo". El cliente mismo selecciona sus preferencias y sale impreso exacto.
+            </p>
+          </div>
+
+          <div class="benefit-tile">
+            <div class="benefit-badge">06</div>
+            <h3>Base de Datos Propia de tus Clientes</h3>
+            <p>
+              Las apps de delivery nunca te dan los datos de tus clientes. Con ComandaYa registras sus números para avisarles de promociones los martes o días de baja venta.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CALCULADORA INTERACTIVA DE AHORRO ==================== -->
+    <section class="section calc-section" id="calculadora">
+      <div class="container">
+        <div class="calc-box">
+          <div class="calc-header text-center">
+            <span class="pill-light">Calculadora de Impacto</span>
+            <h2>¿Cuánto dinero extra puedes generar al mes?</h2>
+            <p>Mueve los controles según el tamaño de tu restaurante y descubre tus números reales.</p>
+          </div>
+
+          <div class="calc-grid">
+            <!-- Sliders -->
+            <div class="calc-inputs">
+              <div class="slider-block">
+                <div class="slider-head">
+                  <label for="calcOrders">Pedidos promedio por día:</label>
+                  <span class="slider-val" id="valOrders">60 pedidos</span>
+                </div>
+                <input type="range" id="calcOrders" min="20" max="300" value="60" step="5" class="custom-range">
+                <div class="range-marks">
+                  <span>20 pedidos</span>
+                  <span>150 pedidos</span>
+                  <span>300 pedidos</span>
+                </div>
+              </div>
+
+              <div class="slider-block">
+                <div class="slider-head">
+                  <label for="calcTicket">Ticket promedio por orden ($ MXN):</label>
+                  <span class="slider-val" id="valTicket">$140 MXN</span>
+                </div>
+                <input type="range" id="calcTicket" min="60" max="500" value="140" step="10" class="custom-range">
+                <div class="range-marks">
+                  <span>$60</span>
+                  <span>$250</span>
+                  <span>$500</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Resultados -->
+            <div class="calc-card-result">
+              <span class="res-sub">Facturación adicional estimada / mes:</span>
+              <div class="res-big" id="resExtraIncome">+$35,280 MXN</div>
+              <p class="res-explanation">Calculado con un 15% más de rotación de mesas y +18% en venta de complementos sugeridos.</p>
+
+              <div class="res-stats-row">
+                <div class="res-stat-item">
+                  <small>Comisiones ahorradas vs apps (30%):</small>
+                  <strong id="resCommissionSaved">$75,600 MXN / mes</strong>
+                </div>
+                <div class="res-stat-item">
+                  <small>Tiempo de espera ahorrado a tus clientes:</small>
+                  <strong id="resWaitSaved">~60 horas al mes</strong>
+                </div>
+              </div>
+
+              <a href="#contacto" class="btn btn-primary w-full text-center">
+                Quiero estos resultados en mi restaurante &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DEMO INTERACTIVA EN VIVO ==================== -->
+    <section class="section demo-section" id="demo">
+      <div class="container">
+        <div class="section-title-wrap text-center">
+          <span class="pill-accent">Experiencia en Tiempo Real</span>
+          <h2 class="title-main">Pruébalo con tus propias manos</h2>
+          <p class="title-sub">
+            Simula un pedido como comensal en la pantalla de la izquierda y observa cómo aparece al instante en la comanda de cocina.
+          </p>
+        </div>
+
+        <div class="interactive-stage">
+          <!-- Lado Cliente (Simulador Móvil) -->
+          <div class="stage-col stage-customer">
+            <div class="stage-bar">
+              <span class="dot-live"></span>
+              <strong>📱 Vista del Cliente (En su móvil)</strong>
+            </div>
+
+            <div class="stage-inner">
+              <div class="demo-menu-items">
+                <div class="demo-dish-card" onclick="addDemoItem('3x Tacos Pastor', 75)">
+                  <div>
+                    <strong>🌮 Orden Tacos Pastor (x3)</strong>
+                    <small>Cebolla, cilantro y piña</small>
+                    <span class="price">$75.00</span>
+                  </div>
+                  <button class="btn-demo-add">+ Agregar</button>
+                </div>
+
+                <div class="demo-dish-card" onclick="addDemoItem('Gringa con Queso', 60)">
+                  <div>
+                    <strong>🧀 Gringa Especial</strong>
+                    <small>Doble queso en tortilla de harina</small>
+                    <span class="price">$60.00</span>
+                  </div>
+                  <button class="btn-demo-add">+ Agregar</button>
+                </div>
+
+                <div class="demo-dish-card" onclick="addDemoItem('Agua de Horchata 1L', 35)">
+                  <div>
+                    <strong>🥤 Horchata Fría 1L</strong>
+                    <small>Artesanal con canela</small>
+                    <span class="price">$35.00</span>
+                  </div>
+                  <button class="btn-demo-add">+ Agregar</button>
+                </div>
+              </div>
+
+              <div class="demo-cart-summary">
+                <div>
+                  <span id="demoCount">0 productos</span> • <strong id="demoTotal">$0.00</strong>
+                </div>
+                <button class="btn btn-primary btn-sm" id="btnSendDemo" onclick="triggerSendOrder()">
+                  ⚡ Enviar Comanda
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lado Cocina (Pantalla o Impresora KDS) -->
+          <div class="stage-col stage-kitchen">
+            <div class="stage-bar stage-bar-kitchen">
+              <span class="dot-green"></span>
+              <strong>🖨️ Pantalla o Impresora de Cocina (KDS)</strong>
+            </div>
+
+            <div class="kitchen-content" id="kitchenContent">
+              <div class="kitchen-placeholder" id="kitchenPlaceholder">
+                <div class="placeholder-emoji">👆</div>
+                <p>Agrega tacos o bebidas en el teléfono de la izquierda y presiona <strong>"Enviar Comanda"</strong> para ver el despacho en tiempo real.</p>
+              </div>
+
+              <div class="kitchen-ticket" id="kitchenTicket" style="display: none;">
+                <div class="ticket-header">
+                  <span>*** NUEVA COMANDA ENTRADA ***</span>
+                  <small id="ticketClock">14:35:10</small>
+                </div>
+                <div class="ticket-meta">
+                  <div>FOLIO: <strong>#TK-802</strong></div>
+                  <div>MESA: <strong>MESA 04 (QR)</strong></div>
+                </div>
+                <div class="ticket-line-sep">--------------------------------</div>
+                <div class="ticket-products" id="ticketProductList">
+                  <!-- Inyectado por JS -->
+                </div>
+                <div class="ticket-line-sep">--------------------------------</div>
+                <div class="ticket-total-wrap">
+                  <span>TOTAL:</span>
+                  <strong id="ticketSum">$0.00</strong>
+                </div>
+                <div class="ticket-banner-ready">👨‍🍳 RECIBIDO EN COCINA - PREPARAR AHORA</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botones para ver las webs completas del sistema -->
+        <div class="direct-apps-links text-center">
+          <p>¿Quieres explorar las aplicaciones completas en vivo?</p>
+          <div class="direct-links-group">
+            <a href="taqueria.html" target="_blank" class="btn btn-outline btn-sm">
+              📲 Menú Móvil del Cliente (taqueria.html) &rarr;
+            </a>
+            <a href="index.html" target="_blank" class="btn btn-outline btn-sm">
+              💻 Panel KDS de Cocina (index.html) &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TESTIMONIOS REALES ==================== -->
+    <section class="section testimonials-section">
+      <div class="container">
+        <div class="section-title-wrap text-center">
+          <span class="pill-green">Casos de Éxito</span>
+          <h2 class="title-main">Lo que dicen los dueños de locales como el tuyo</h2>
+          <p class="title-sub">
+            Menos estrés, mejor servicio y números más saludables todos los meses.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">
+              "Los viernes en la noche se nos formaba una fila que bloqueaba la entrada y muchos clientes se iban aburridos. Pusimos códigos QR en las 10 mesas: ahora la gente se sienta, pide al segundo y las mesas rotan en la mitad de tiempo."
+            </p>
+            <div class="testi-author">
+              <span class="author-emoji">🌮</span>
+              <div>
+                <strong>Carlos Mendoza</strong>
+                <small>Taquería Los Compadres (Puebla)</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">
+              "Estaba cansada de regalarle el 30% de cada pedido a Uber y Rappi. Con ComandaYa compartimos el link en WhatsApp para los pedidos para recoger del vecindario. En un solo mes nos ahorramos más de $16,000 MXN en comisiones."
+            </p>
+            <div class="testi-author">
+              <span class="author-emoji">🍔</span>
+              <div>
+                <strong>Mariana Garza</strong>
+                <small>Smash Burgers & Fries (Monterrey)</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">
+              "Lo mejor es que la comida ya no sale con errores. Mis meseros a veces no entendían qué salsa quería la gente o anotaban 'sin cebolla' al revés. Con el ticket impreso claro no se pierde comida ni tiempo."
+            </p>
+            <div class="testi-author">
+              <span class="author-emoji">☕</span>
+              <div>
+                <strong>Jorge Valenzuela</strong>
+                <small>Chilaquiles & Café La Esquina (CDMX)</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PRECIOS TRANSPARENTES ==================== -->
+    <section class="section pricing-section" id="precios">
+      <div class="container">
+        <div class="section-title-wrap text-center">
+          <span class="pill-light">Planes Claros</span>
+          <h2 class="title-main text-white">Precios transparentes sin comisiones ocultas</h2>
+          <p class="title-sub text-muted-light">
+            Prueba gratis 14 días. Sin contratos de permanencia. Cancela cuando quieras.
+          </p>
+        </div>
+
+        <div class="pricing-cards-wrap">
+          <!-- Plan Emprendedor -->
+          <div class="plan-card">
+            <h3 class="plan-title">Plan Local</h3>
+            <p class="plan-subtitle">Ideal para taquerías, cafeterías y negocios que buscan agilizar pedidos y eliminar filas.</p>
+            
+            <div class="plan-cost">
+              <span class="curr">$</span>
+              <span class="price-val">490</span>
+              <span class="freq">MXN / mes</span>
+            </div>
+            <span class="approx-usd">(Aprox. $25 USD al mes)</span>
+
+            <ul class="plan-perks">
+              <li><span class="check-icon">✓</span> Menú QR ilimitado para mesas</li>
+              <li><span class="check-icon">✓</span> Pedidos para recoger (Take Away)</li>
+              <li><span class="check-icon">✓</span> Conexión directa a WhatsApp</li>
+              <li><span class="check-icon">✓</span> <strong>0% comisiones</strong> por orden</li>
+              <li><span class="check-icon">✓</span> Menú cargado en menos de 24h</li>
+              <li><span class="check-icon">✓</span> Soporte directo por WhatsApp</li>
+            </ul>
+
+            <a href="#contacto" class="btn btn-outline w-full">Empezar 14 Días Gratis</a>
+          </div>
+
+          <!-- Plan Pro Restaurante (Destacado) -->
+          <div class="plan-card plan-featured">
+            <div class="ribbon-popular">MÁS POPULAR</div>
+            <h3 class="plan-title">Plan Restaurante Pro</h3>
+            <p class="plan-subtitle">Para restaurantes con alta afluencia que requieren comandas automáticas a cocina.</p>
+            
+            <div class="plan-cost">
+              <span class="curr">$</span>
+              <span class="price-val">890</span>
+              <span class="freq">MXN / mes</span>
+            </div>
+            <span class="approx-usd">(Aprox. $45 USD al mes)</span>
+
+            <ul class="plan-perks">
+              <li><span class="check-icon">✓</span> <strong>Todo lo del Plan Local, más:</strong></li>
+              <li><span class="check-icon">✓</span> Impresión automática de tickets térmicos</li>
+              <li><span class="check-icon">✓</span> Pantalla táctil de cocina (KDS) en tiempo real</li>
+              <li><span class="check-icon">✓</span> Sugerencias automáticas de extras (Upselling)</li>
+              <li><span class="check-icon">✓</span> Cobro con tarjeta / transferencia integrado</li>
+              <li><span class="check-icon">✓</span> Base de datos exportable de clientes</li>
+              <li><span class="check-icon">✓</span> Soporte prioritario los 7 días de la semana</li>
+            </ul>
+
+            <a href="#contacto" class="btn btn-primary w-full">Probar Gratis 14 Días</a>
+          </div>
+        </div>
+
+        <div class="guarantee-box text-center">
+          <p>🛡️ <strong>Garantía de Satisfacción:</strong> Si en tus primeros 14 días no ves menos estrés y más fluidez en tus horas pico, no pagas absolutamente nada.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PREGUNTAS FRECUENTES (FAQ) ==================== -->
+    <section class="section faq-section" id="faq">
+      <div class="container max-w-750">
+        <div class="section-title-wrap text-center">
+          <span class="pill-accent">Resolvemos tus Dudas</span>
+          <h2 class="title-main">Preguntas Frecuentes</h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-row">
+            <button class="faq-btn" onclick="toggleFaq(this)">
+              <span>¿El cliente necesita descargar alguna aplicación?</span>
+              <span class="faq-chevron">+</span>
+            </button>
+            <div class="faq-body">
+              <p>
+                <strong>No, ninguna.</strong> Es una aplicación web moderna e instantánea. Tu cliente solo abre la cámara de su teléfono, enfoca el código QR de la mesa y el menú aparece al segundo sin registros molestos.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-row">
+            <button class="faq-btn" onclick="toggleFaq(this)">
+              <span>¿Cómo se imprime la comanda en cocina?</span>
+              <span class="faq-icon-arrow">+</span>
+            </button>
+            <div class="faq-body">
+              <p>
+                Funciona con cualquier impresora térmica estándar de 80mm o 58mm (conectada por cable USB, Bluetooth o WiFi). También puedes usar una tableta o celular en la barra o cocina para ver la comanda digital en tiempo real con alertas sonoras.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-row">
+            <button class="faq-btn" onclick="toggleFaq(this)">
+              <span>¿Cobran comisiones por cada orden que venda?</span>
+              <span class="faq-icon-arrow">+</span>
+            </button>
+            <div class="faq-body">
+              <p>
+                <strong>Cero comisiones (0%).</strong> A diferencia de plataformas de terceros que te cobran entre el 25% y 35% por cada taco o comida, nosotros solo cobramos la mensualidad fija de tu plan. Todo el dinero que generas es 100% tuyo.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-row">
+            <button class="faq-btn" onclick="toggleFaq(this)">
+              <span>¿Qué pasa si un cliente prefiere pagar en efectivo en caja?</span>
+              <span class="faq-icon-arrow">+</span>
+            </button>
+            <div class="faq-body">
+              <p>
+                El sistema se adapta a tu forma de trabajar. El cliente puede elegir pagar en efectivo en el mostrador, o pagar con tarjeta desde el teléfono. Además, tu cajero puede usar el panel para ingresar pedidos manuales en 2 segundos.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-row">
+            <button class="faq-btn" onclick="toggleFaq(this)">
+              <span>¿Cuánto tardan en dejarme el menú listo?</span>
+              <span class="faq-icon-arrow">+</span>
+            </button>
+            <div class="faq-body">
+              <p>
+                Solo nos envías tu menú en foto o PDF por WhatsApp. Nuestro equipo lo digitaliza con fotos y descripciones apetitosas en <strong>menos de 24 a 48 horas</strong> para que comiences a recibir pedidos de inmediato.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FORMULARIO & LLAMADA A LA ACCIÓN ==================== -->
+    <section class="section cta-section" id="contacto">
+      <div class="container">
+        <div class="cta-wrapper">
+          <div class="cta-info">
+            <span class="pill-light">Comienza Hoy Mismo</span>
+            <h2>Deja de perder clientes por culpa de las filas</h2>
+            <p>
+              Agenda una demostración de 10 minutos o prueba el sistema gratis por 14 días en tu propio local. Te dejamos tu menú montado y listo sin costo inicial.
+            </p>
+
+            <div class="cta-highlights">
+              <div class="hl-item">
+                <span class="hl-icon">💬</span>
+                <span>WhatsApp directo: <strong>+52 55 1234 5678</strong></span>
+              </div>
+              <div class="hl-item">
+                <span class="hl-icon">⚡</span>
+                <span>Te respondemos en menos de 15 minutos</span>
+              </div>
+              <div class="hl-item">
+                <span class="hl-icon">🔒</span>
+                <span>Sin tarjeta de crédito requerida</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulario de Conversión -->
+          <div class="cta-form-box">
+            <form class="booking-form" id="leadForm" onsubmit="submitLeadForm(event)">
+              <h3>Solicitar Prueba Gratuita (14 Días)</h3>
+              <p class="form-desc">Te preparamos una demo con los platillos de tu menú</p>
+
+              <div class="input-field">
+                <label for="leadRestaurant">Nombre de tu restaurante / negocio *</label>
+                <input type="text" id="leadRestaurant" required placeholder="Ej. Taquería El Pastor, Café Don Pedro...">
+              </div>
+
+              <div class="input-field">
+                <label for="leadName">Tu nombre *</label>
+                <input type="text" id="leadName" required placeholder="Ej. Carlos Martínez">
+              </div>
+
+              <div class="input-field">
+                <label for="leadPhone">Tu número de WhatsApp *</label>
+                <input type="tel" id="leadPhone" required placeholder="Ej. +52 55 1234 5678">
+              </div>
+
+              <div class="input-field">
+                <label for="leadType">Tipo de comida / local</label>
+                <select id="leadType" required>
+                  <option value="" disabled selected>Selecciona tu tipo de negocio</option>
+                  <option value="taqueria">Taquería / Antojitos Mexicanos</option>
+                  <option value="cafeteria">Cafetería / Desayunos</option>
+                  <option value="hamburguesas">Hamburguesas / Pizzería</option>
+                  <option value="fonda">Fonda / Comida Corrida</option>
+                  <option value="otro">Otro local gastronómico</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-full btn-lg" id="btnSubmitLead">
+                <span>Quiero mi Menú QR sin Costo &rarr;</span>
+              </button>
+
+              <small class="privacy-note">
+                🔒 Respetamos tu privacidad. Cero llamadas molestas, solo te enviaremos el enlace a tu WhatsApp para que veas tu menú de prueba.
+              </small>
+            </form>
+
+            <div class="success-message" id="leadSuccess" style="display: none;">
+              <div class="success-check">🎉</div>
+              <h3>¡Solicitud Recibida con Éxito!</h3>
+              <p>Te hemos escrito a tu WhatsApp para coordinar la carga de tu menú y darte acceso inmediato a tu prueba de 14 días.</p>
+              <button class="btn btn-secondary btn-sm" onclick="resetLeadForm()">Enviar otro mensaje</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Botón Flotante de WhatsApp para Conversión Inmediata -->
+  <a href="https://wa.me/525512345678?text=Hola,%20tengo%20un%20restaurante%20y%20me%20gustar%C3%ADa%20eliminar%20las%20filas%20con%20ComandaYa" target="_blank" rel="noopener noreferrer" class="whatsapp-sticky" aria-label="Escríbenos por WhatsApp">
+    <span class="wa-label">¿Dudas? Chatea en vivo</span>
+    <div class="wa-btn-circle">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 18.08c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.04 8.04 0 0 1-1.24-4.3c0-4.44 3.61-8.06 8.05-8.06 2.15 0 4.18.84 5.7 2.36a7.99 7.99 0 0 1 2.35 5.69c-.02 4.45-3.63 8.07-8.07 8.07zm4.41-6.04c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.2-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42-.14-.01-.3-.01-.47-.01s-.44.06-.67.31c-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.16 1.78 2.71 4.3 3.8 2.53 1.09 2.53.73 2.99.69.45-.04 1.44-.59 1.64-1.16.21-.57.21-1.06.15-1.16-.06-.1-.22-.16-.46-.28z"/>
+      </svg>
+    </div>
+  </a>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-main">
+        <a href="#" class="brand-logo footer-logo">
+          <span class="logo-emoji">⚡</span>
+          <span class="logo-text">Comanda<span class="highlight">Ya</span></span>
+        </a>
+        <p class="footer-tagline">
+          La solución integral que elimina las filas, acelera la cocina y protege tus márgenes de ganancia. Diseñado para pequeños restaurantes y negocios gastronómicos locales.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <div class="f-col">
+          <h5>Producto</h5>
+          <a href="#solucion">Pedidos por QR</a>
+          <a href="#solucion">Comandas en Cocina</a>
+          <a href="#solucion">Pide y Recoge</a>
+          <a href="#precios">Precios</a>
+        </div>
+        <div class="f-col">
+          <h5>Negocio</h5>
+          <a href="#problema">El Problema de las Filas</a>
+          <a href="#beneficios">Beneficios</a>
+          <a href="#calculadora">Calculadora de Ganancias</a>
+          <a href="#faq">Preguntas Frecuentes</a>
+        </div>
+        <div class="f-col">
+          <h5>Contacto</h5>
+          <a href="https://wa.me/525512345678" target="_blank">WhatsApp de Asesoría</a>
+          <a href="mailto:hola@comandaya.com">hola@comandaya.com</a>
+          <span>Atención: Lun a Sáb 9:00 - 21:00</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <span>© 2026 ComandaYa. Todos los derechos reservados.</span>
+        <div class="f-legal">
+          <a href="#">Privacidad</a>
+          <a href="#">Términos del Servicio</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Interactivo de la Landing -->
+  <script src="js/landing.js"></script>
+</body>
+</html>

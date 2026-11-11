@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Digital & Pedidos | Taquería El Trompo Dorado</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap">
+  <style>
+    :root {
+      --primary: #F97316;
+      --primary-dark: #EA580C;
+      --bg: #FFFBF5;
+      --surface: #FFFFFF;
+      --text: #1E293B;
+      --text-muted: #64748B;
+      --border: #F1F5F9;
+      --border-dark: #E2E8F0;
+      --radius: 14px;
+      --shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 90px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
+      color: #FFFFFF;
+      padding: 30px 20px 24px;
+      text-align: center;
+      position: relative;
+    }
+
+    .badge-app {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    header h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.85rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    header p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .nav-switch-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      background: #FFFFFF;
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .order-config-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      box-shadow: var(--shadow);
+      margin-top: -24px;
+      border: 1px solid var(--border-dark);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .config-field {
+      flex: 1;
+      min-width: 140px;
+    }
+
+    .config-field label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .config-field input, .config-field select {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid var(--border-dark);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 28px 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .menu-item-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-dark);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .menu-item-card:hover {
+      border-color: var(--primary);
+    }
+
+    .item-info {
+      flex: 1;
+    }
+
+    .item-name {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .item-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin: 2px 0 4px;
+    }
+
+    .item-price {
+      font-weight: 700;
+      color: var(--primary-dark);
+      font-size: 0.95rem;
+    }
+
+    .btn-add {
+      background: var(--bg);
+      border: 1px solid var(--primary);
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 8px 14px;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-add:hover {
+      background: var(--primary);
+      color: #FFFFFF;
+    }
+
+    /* Barra Inferior del Carrito */
+    .cart-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-dark);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
+      z-index: 50;
+    }
+
+    .cart-summary {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-count {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .cart-total {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .btn-checkout {
+      background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+      color: #FFFFFF;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.35);
+      transition: transform 0.15s ease;
+    }
+
+    .btn-checkout:disabled {
+      background: #CBD5E1;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .btn-checkout:hover:not(:disabled) {
+      transform: translateY(-1px);
+    }
+
+    /* Estado de Pedido Enviado */
+    .status-tracker-card {
+      background: #FFFFFF;
+      border-radius: var(--radius);
+      padding: 24px;
+      border: 1px solid var(--border-dark);
+      box-shadow: var(--shadow);
+      text-align: center;
+      margin-top: 20px;
+      display: none;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 12px;
+    }
+
+    .status-pendiente { background: #FEF3C7; color: #B45309; }
+    .status-preparando { background: #DBEAFE; color: #1D4ED8; }
+    .status-listo { background: #D1FAE5; color: #047857; }
+    .status-entregado { background: #F1F5F9; color: #475569; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge-app">Aplicación Web de Clientes</div>
+    <h1>🌮 Taquería El Trompo Dorado</h1>
+    <p>¡El auténtico sabor al pastor directo a tu mesa o a casa!</p>
+    <a href="index.html" target="_blank" class="nav-switch-link">
+      🖥️ Abrir Panel Interno de la Taquería &rarr;
+    </a>
+  </header>
+
+  <div class="container">
+    <!-- Configuración del Pedido -->
+    <div class="order-config-card" id="configCard">
+      <div class="config-field">
+        <label for="clientName">Tu Nombre</label>
+        <input type="text" id="clientName" placeholder="Ej: Mariana, Don Carlos" value="Carlos Ruiz">
+      </div>
+      <div class="config-field">
+        <label for="orderChannel">Modalidad</label>
+        <select id="orderChannel">
+          <option value="mesa">🍽️ Mesa en el local</option>
+          <option value="llevar">🥡 Para Llevar</option>
+          <option value="delivery">🛵 Pedido a Domicilio</option>
+        </select>
+      </div>
+      <div class="config-field" id="tableField">
+        <label for="tableNumber">No. Mesa</label>
+        <input type="text" id="tableNumber" value="Mesa 5">
+      </div>
+    </div>
+
+    <!-- Tracker de Pedido en Vivo -->
+    <div class="status-tracker-card" id="orderTracker">
+      <h2>🎉 ¡Pedido Enviado a la Cocina!</h2>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">
+        Folio de Pedido: <strong id="trackerFolio" style="color: var(--primary);">#TK-000</strong>
+      </p>
+
+      <div style="margin: 20px 0;">
+        <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Estado en Tiempo Real:</div>
+        <div class="status-badge status-pendiente" id="trackerBadge">🟡 Recibido (Pendiente)</div>
+      </div>
+
+      <p style="font-size: 0.85rem; color: #64748B;">
+        (Observa cómo cambia este estado cuando el taquero o mesero lo mueva en el <strong>Panel Interno</strong>)
+      </p>
+
+      <button id="btnNewOrderAgain" style="margin-top: 16px; background: transparent; border: 1px solid var(--border-dark); padding: 8px 16px; border-radius: 9999px; cursor: pointer;">
+        Hacer otro pedido
+      </button>
+    </div>
+
+    <!-- Menú -->
+    <div id="menuSection">
+      <div class="section-title">🌮 Tacos al Pastor y Especialidades</div>
+      <div class="menu-grid">
+        <div class="menu-item-card">
+          <div class="item-info">
+            <div class="item-name">Tacos al Pastor (Orden de 3)</div>
+            <div class="item-desc">Con piña fresca, cilantro, cebolla picada y salsas de la casa.</div>
+            <div class="item-price">$66 MXN</div>
+          </div>
+          <button class="btn-add" onclick="addToCart('Tacos al Pastor (x3)', 66, 'Con piña, cilantro y cebolla')">+ Agregar</button>
+        </div>
+
+        <div class="menu-item-card">
+          <div class="item-info">
+            <div class="item-name">Gringa de Pastor con Queso</div>
+            <div class="item-desc">Doble tortilla de harina dorada con queso gouda fundido y pastor.</div>
+            <div class="item-price">$45 MXN</div>
+          </div>
+          <button class="btn-add" onclick="addToCart('Gringa de Pastor', 45, 'Queso fundido')">+ Agregar</button>
+        </div>
+
+        <div class="menu-item-card">
+          <div class="item-info">
+            <div class="item-name">Taco de Suadero Bien Suave</div>
+            <div class="item-desc">Carne confitada en manteca tradicional, suave y jugosa.</div>
+            <div class="item-price">$24 MXN</div>
+          </div>
+          <button class="btn-add" onclick="addToCart('Taco de Suadero', 24, 'Cilantro y cebolla')">+ Agregar</button>
+        </div>
+
+        <div class="menu-item-card">
+          <div class="item-info">
+            <div class="item-name">Costra de Bistec</div>
+            <div class="item-desc">Queso dorado a la plancha crujiente enrollado con bistec de res.</div>
+            <div class="item-price">$54 MXN</div>
+          </div>
+          <button class="btn-add" onclick="addToCart('Costra de Bistec', 54, 'Queso crujiente')">+ Agregar</button>
+        </div>
+      </div>
+
+      <div class="section-title">🥤 Aguas Frescas & Bebidas</div>
+      <div class="menu-grid">
+        <div class="menu-item-card">
+          <div class="item-info">
+            <div class="item-name">Agua de Horchata Artesanal (1 Litro)</div>
+            <div class="item-desc">Elaborada con arroz, canela y leche, bien fría.</div>
+            <div class="item-price">$35 MXN</div>
+          </div>
+          <button class="btn-add" onclick="addToCart('Agua de Horchata 1L', 35, 'Fría')">+ Agregar</button>
+        </div>
+
+        <div class="menu-item-card">
+          <div class="item-info">
+            <div class="item-name">Coca-Cola 600ml</div>
+            <div class="item-desc">Fría en botella de vidrio o plástico.</div>
+            <div class="item-price">$28 MXN</div>
+          </div>
+          <button class="btn-add" onclick="addToCart('Coca-Cola 600ml', 28, 'Fría')">+ Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra de Pedido Flotante -->
+  <div class="cart-bar" id="cartBar">
+    <div class="cart-summary">
+      <span class="cart-count" id="cartCount">0 platillos seleccionados</span>
+      <span class="cart-total" id="cartTotal">$0</span>
+    </div>
+    <button class="btn-checkout" id="btnCheckout" disabled onclick="sendOrderToKitchen()">
+      Enviar Pedido 🚀
+    </button>
+  </div>
+
+  <script>
+    const syncChannel = 'BroadcastChannel' in window ? new BroadcastChannel('taqueria_orders_sync') : null;
+    let cart = [];
+    let currentTrackingId = null;
+
+    function addToCart(name, price, options) {
+      const existing = cart.find(i => i.name === name);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ name, price, quantity: 1, options });
+      }
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const totalItems = cart.reduce((acc, i) => acc + i.quantity, 0);
+      const totalPrice = cart.reduce((acc, i) => acc + (i.price * i.quantity), 0);
+
+      document.getElementById('cartCount').textContent = `${totalItems} platillo(s) en la orden`;
+      document.getElementById('cartTotal').textContent = `$${totalPrice} MXN`;
+      document.getElementById('btnCheckout').disabled = totalItems === 0;
+    }
+
+    function sendOrderToKitchen() {
+      if (cart.length === 0) return;
+
+      const customer = document.getElementById('clientName').value.trim() || 'Cliente en Línea';
+      const orderType = document.getElementById('orderChannel').value;
+      const tableNumber = document.getElementById('tableNumber').value.trim() || 'Mesa';
+      const total = cart.reduce((acc, i) => acc + (i.price * i.quantity), 0);
+
+      // Cargar pedidos actuales
+      let orders = [];
+      try {
+        const saved = localStorage.getItem('taqueria_orders');
+        if (saved) orders = JSON.parse(saved);
+      } catch (e) {
+        console.warn(e);
+      }
+
+      const newId = `TK-${Math.floor(100 + Math.random() * 899)}`;
+      currentTrackingId = newId;
+
+      const newOrder = {
+        id: newId,
+        customer: `${customer} (${tableNumber})`,
+        orderType: orderType,
+        tableNumber: orderType === 'mesa' ? tableNumber.replace(/\D/g, '') || '1' : null,
+        channel: orderType === 'mesa' ? 'Salón' : (orderType === 'llevar' ? 'Para Llevar' : 'App Digital'),
+        createdAt: new Date().toISOString(),
+        status: 'pendiente',
+        items: JSON.parse(JSON.stringify(cart)),
+        notes: "Pedido enviado por el cliente desde la app web.",
+        total: total,
+        paymentStatus: orderType === 'delivery' ? 'pagado' : 'pendiente_pago',
+        paymentMethod: 'Efectivo / Por cobrar'
+      };
+
+      orders.unshift(newOrder);
+      localStorage.setItem('taqueria_orders', JSON.stringify(orders));
+
+      // Notificar al panel interno vía BroadcastChannel
+      if (syncChannel) {
+        syncChannel.postMessage({ type: 'ORDERS_UPDATED', timestamp: Date.now() });
+      }
+
+      // Mostrar tracker en la app de cliente
+      cart = [];
+      updateCartUI();
+      showTracker(newId);
+    }
+
+    function showTracker(orderId) {
+      document.getElementById('menuSection').style.display = 'none';
+      document.getElementById('cartBar').style.display = 'none';
+      document.getElementById('configCard').style.display = 'none';
+      document.getElementById('orderTracker').style.display = 'block';
+      document.getElementById('trackerFolio').textContent = `#${orderId}`;
+      updateTrackerStatus(orderId);
+    }
+
+    function updateTrackerStatus(orderId) {
+      try {
+        const saved = localStorage.getItem('taqueria_orders');
+        if (!saved) return;
+        const orders = JSON.parse(saved);
+        const order = orders.find(o => o.id === orderId);
+        if (!order) return;
+
+        const badge = document.getElementById('trackerBadge');
+        badge.className = 'status-badge status-' + order.status;
+
+        const statusTexts = {
+          'pendiente': '🟡 Recibido por la Taquería (Pendiente)',
+          'preparando': '🔵 ¡El Taquero está preparando tus tacos!',
+          'listo': '🟢 ¡Tus tacos están listos para servirse!',
+          'entregado': '⚪ Entregado. ¡Buen provecho!'
+        };
+
+        badge.textContent = statusTexts[order.status] || order.status;
+      } catch (e) {
+        console.warn(e);
+      }
+    }
+
+    // Escuchar cambios hechos por el personal en el panel interno
+    if (syncChannel) {
+      syncChannel.onmessage = (e) => {
+        if (currentTrackingId) {
+          updateTrackerStatus(currentTrackingId);
+        }
+      };
+    }
+
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'taqueria_orders' && currentTrackingId) {
+        updateTrackerStatus(currentTrackingId);
+      }
+    });
+
+    document.getElementById('btnNewOrderAgain').addEventListener('click', () => {
+      currentTrackingId = null;
+      document.getElementById('menuSection').style.display = 'block';
+      document.getElementById('cartBar').style.display = 'flex';
+      document.getElementById('configCard').style.display = 'flex';
+      document.getElementById('orderTracker').style.display = 'none';
+    });
+  </script>
+</body>
+</html>

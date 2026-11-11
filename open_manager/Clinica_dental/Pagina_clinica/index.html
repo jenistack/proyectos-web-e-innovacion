@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumina Dental Studio | Odontología Avanzada & Estética Dental Premium</title>
+  <meta name="description" content="Clínica dental de alta gama especializada en estética dental, ortodoncia invisible e implantes sin dolor. Diagnóstico digital 3D y atención médica exclusiva.">
+  
+  <!-- Google Fonts: Outfit (Headings) e Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="topbar">
+    <div class="container topbar-content">
+      <div class="topbar-item">
+        <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <span>Paseo de la Castellana 120, Salamanca, Madrid</span>
+      </div>
+      <div class="topbar-item phone-highlight">
+        <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        <span>Atención directa: <strong>+34 910 882 340</strong></span>
+      </div>
+      <div class="topbar-item badge-pill">
+        <span class="pulse-dot"></span>
+        <span>Primera consulta y escaneo 3D incluidos</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Navigation Header -->
+  <header class="header" id="navbar">
+    <div class="container header-container">
+      <a href="#hero" class="logo">
+        <div class="logo-mark">
+          <svg viewBox="0 0 32 32" fill="none" class="logo-icon">
+            <path d="M16 3C11.5 3 8 7 8 12C8 17.5 10.5 21 12.5 25.5C13.2 27 14.5 29 16 29C17.5 29 18.8 27 19.5 25.5C21.5 21 24 17.5 24 12C24 7 20.5 3 16 3Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+            <path d="M12 12C12 9.5 13.5 8 16 8C18.5 8 20 9.5 20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="16" cy="18" r="1.8" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-brand">LUMINA</span>
+          <span class="logo-sub">DENTAL STUDIO</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#beneficios" class="nav-link">Beneficios</a>
+        <a href="#especialidades" class="nav-link">Especialidades</a>
+        <a href="#metodo" class="nav-link">El Método Lumina</a>
+        <a href="#doctora" class="nav-link">Equipo Médico</a>
+        <a href="#testimonios" class="nav-link">Pacientes</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-primary open-modal-btn" aria-label="Pedir cita previa">
+          <span>Pedir Cita</span>
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-glow"></div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge animate-fade-in">
+            <svg class="badge-star" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <span>Clínica Odontológica de Referencia en Madrid</span>
+          </div>
+
+          <h1 class="hero-title animate-fade-in">
+            La excelencia médica <br>
+            que tu <span class="text-gradient">sonrisa merece</span>.
+          </h1>
+
+          <p class="hero-description animate-fade-in">
+            Odontología de alta precisión en un espacio libre de estrés. Combinamos escaneo digital 3D sin moldes, especialistas colegiados de primer nivel y protocolos indoloros en suites clínicas privadas.
+          </p>
+
+          <div class="hero-cta-group animate-fade-in">
+            <button class="btn btn-primary btn-lg open-modal-btn">
+              <span>Pedir Cita Online</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <a href="https://wa.me/34910882340?text=Hola,%20deseo%20solicitar%20información%20para%20una%20primera%20cita%20en%20Lumina%20Dental" target="_blank" rel="noopener" class="btn btn-outline btn-lg">
+              <svg class="btn-icon-brand" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.27-2.42 5.82a8.17 8.17 0 0 1-5.82 2.42c-1.48 0-2.93-.39-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.196 8.196 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.42 1.44.54.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3z"/>
+              </svg>
+              <span>Consultar por WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Micro Social Proof Badges -->
+          <div class="hero-trust-row animate-fade-in">
+            <div class="trust-badge">
+              <div class="stars-row">
+                ★★★★★
+              </div>
+              <span class="trust-text"><strong>4.9 / 5</strong> en Google (850+ opiniones)</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-badge">
+              <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span class="trust-text">Garantía clínica certificada</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="visual-card-wrap">
+            <div class="visual-backdrop"></div>
+            <div class="visual-main-card">
+              <div class="visual-header">
+                <div class="clinic-status">
+                  <span class="pulse-indicator"></span>
+                  <span>Clínica abierta · Consulta prioritaria</span>
+                </div>
+                <div class="medical-id">Colegiados Ilustres</div>
+              </div>
+
+              <!-- Interactive Simulated 3D Scan Preview Card -->
+              <div class="scan-preview-box">
+                <div class="scan-header">
+                  <div class="scan-tag">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    <span>Simulación 3D en Directo</span>
+                  </div>
+                  <span class="scan-status-ready">Precisión 99.8%</span>
+                </div>
+                <div class="scan-render-graphic">
+                  <div class="scan-beam"></div>
+                  <svg class="tooth-mesh" viewBox="0 0 200 120" fill="none">
+                    <path d="M30 60 C30 25, 60 15, 100 15 C140 15, 170 25, 170 60 C170 85, 150 105, 140 105 C130 105, 125 90, 100 90 C75 90, 70 105, 60 105 C50 105, 30 85, 30 60 Z" stroke="rgba(14, 165, 233, 0.7)" stroke-width="2" stroke-dasharray="4 4" fill="rgba(14, 165, 233, 0.05)"/>
+                    <path d="M55 55 C55 35, 75 28, 100 28 C125 28, 145 35, 145 55 C145 80, 130 88, 100 88 C70 88, 55 80, 55 55 Z" stroke="rgba(255, 255, 255, 0.8)" stroke-width="2"/>
+                    <circle cx="100" cy="55" r="4" fill="#0EA5E9"/>
+                    <circle cx="70" cy="50" r="3" fill="#38BDF8"/>
+                    <circle cx="130" cy="50" r="3" fill="#38BDF8"/>
+                  </svg>
+                  <div class="scan-meta">
+                    <span>Sin pastas ni nauseas</span>
+                    <span>100% Digital HD</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Booking Floating Widget Inside Card -->
+              <div class="hero-mini-cta">
+                <div class="doctor-badge-mini">
+                  <div class="doc-avatar">EV</div>
+                  <div>
+                    <div class="doc-name">Dra. Elena Valdés</div>
+                    <div class="doc-title">Directora Médica Colegiada</div>
+                  </div>
+                </div>
+                <button class="btn btn-accent btn-sm open-modal-btn">Reservar cita</button>
+              </div>
+            </div>
+
+            <!-- Floating Benefit Pill 1 -->
+            <div class="floating-pill pill-top-right glass-panel">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <div>
+                <strong>Tratamiento sin dolor</strong>
+                <span>Sedación consciente</span>
+              </div>
+            </div>
+
+            <!-- Floating Benefit Pill 2 -->
+            <div class="floating-pill pill-bottom-left glass-panel">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <div>
+                <strong>Financiación al 0%</strong>
+                <span>Hasta 36 meses</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Strip Section -->
+    <section class="trust-strip">
+      <div class="container trust-strip-grid">
+        <div class="trust-item">
+          <div class="trust-item-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div>
+            <h3>Presupuesto Cerrado</h3>
+            <p>Claridad y transparencia total sin sorpresas de última hora.</p>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-item-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <div>
+            <h3>Garantía por Escrito</h3>
+            <p>Materiales biomédicos de gama superior con trazabilidad oficial.</p>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-item-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <div>
+            <h3>Atención en Suites</h3>
+            <p>Gabinetes individuales privados con cromoterapia y aislamiento acústico.</p>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-item-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h3>Puntualidad Absoluta</h3>
+            <p>Respetamos tu tiempo: agenda sin demoras ni salas de espera llenas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Benefits Section -->
+    <section class="section benefits" id="beneficios">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">¿Por qué Lumina?</div>
+          <h2 class="section-title">El estándar premium en salud y estética bucodental</h2>
+          <p class="section-subtitle">
+            Hemos redefinido la experiencia odontológica para que acudir al dentista sea un momento de cuidado personal relajante, seguro y con resultados insuperables.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card corporate-card">
+            <div class="benefit-icon-wrapper icon-blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="benefit-card-title">Protocolo Odontológico Sin Dolor</h3>
+            <p class="benefit-card-desc">
+              Técnicas anestésicas computarizadas y opción de sedación consciente supervisada por anestesista para personas con odontofobia o procedimientos complejos.
+            </p>
+            <ul class="benefit-checklist">
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Anestesia localizada sin pinchazos molestos</li>
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Experiencia libre de estrés y ansiedad</li>
+            </ul>
+          </div>
+
+          <div class="benefit-card corporate-card">
+            <div class="benefit-icon-wrapper icon-cyan">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3 class="benefit-card-title">Escáner Digital Intraoral 3D</h3>
+            <p class="benefit-card-desc">
+              Olvídate de las pastas y moldes incómodos. Diseñamos digitalmente tu nueva sonrisa en cuestión de minutos con resolución micrométrica y visualización previa.
+            </p>
+            <ul class="benefit-checklist">
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Visualiza tu resultado antes de empezar</li>
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Ajuste milimétrico y natural</li>
+            </ul>
+          </div>
+
+          <div class="benefit-card corporate-card">
+            <div class="benefit-icon-wrapper icon-teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+            </div>
+            <h3 class="benefit-card-title">Cuadro Médico Exclusivo</h3>
+            <p class="benefit-card-desc">
+              Serás atendido siempre por el mismo doctor especialista colegiado de tu tratamiento, sin rotaciones de personal ni diagnósticos impersonales.
+            </p>
+            <ul class="benefit-checklist">
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Más de 15 años de ejercicio clínico</li>
+              <li><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Trato honesto, cercano y personalizado</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services / Specialties Section -->
+    <section class="section specialties-section" id="especialidades">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">Tratamientos de Élite</div>
+          <h2 class="section-title">Especialidades con rigor científico y arte</h2>
+          <p class="section-subtitle">
+            Cada tratamiento combina la última evidencia clínica con un criterio estético armónico adaptado a las facciones de tu rostro.
+          </p>
+        </div>
+
+        <div class="specialties-grid">
+          <div class="specialty-card">
+            <div class="specialty-badge">Top Solicidado</div>
+            <div class="specialty-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <h3 class="specialty-title">Diseño de Sonrisa & Carillas</h3>
+            <p class="specialty-desc">
+              Carillas de cerámica ultrafinas y microcarillas sin tallado agresivo para corregir forma, color y alineación con un aspecto 100% natural.
+            </p>
+            <div class="specialty-features">
+              <span>Porcelana Feldespática</span>
+              <span>Disilicato de Litio</span>
+              <span>Mock-up en directo</span>
+            </div>
+            <button class="btn-link open-modal-btn">Consultar valoración →</button>
+          </div>
+
+          <div class="specialty-card">
+            <div class="specialty-badge">Invisible & Cómodo</div>
+            <div class="specialty-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+            </div>
+            <h3 class="specialty-title">Ortodoncia Invisible Avanzada</h3>
+            <p class="specialty-desc">
+              Alineadores transparentes de última generación. Planificación virtual que te permite saber cuántas semanas durará tu tratamiento antes de iniciar.
+            </p>
+            <div class="specialty-features">
+              <span>Removible para comer</span>
+              <span>Sin llagas ni alambres</span>
+              <span>Revisiones optimizadas</span>
+            </div>
+            <button class="btn-link open-modal-btn">Consultar valoración →</button>
+          </div>
+
+          <div class="specialty-card">
+            <div class="specialty-badge">Cirugía Guiada 3D</div>
+            <div class="specialty-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <h3 class="specialty-title">Implantología Inmediata</h3>
+            <p class="specialty-desc">
+              Recupera la funcionalidad y estética en el mismo día mediante cirugía mínimamente invasiva por ordenador y titanio de grado médico quirúrgico.
+            </p>
+            <div class="specialty-features">
+              <span>Dientes fijos en 24h</span>
+              <span>Postoperatorio suave</span>
+              <span>Garantía de oseointegración</span>
+            </div>
+            <button class="btn-link open-modal-btn">Consultar valoración →</button>
+          </div>
+
+          <div class="specialty-card">
+            <div class="specialty-badge">Luminosidad Inmediata</div>
+            <div class="specialty-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            </div>
+            <h3 class="specialty-title">Blanqueamiento Dental Philips Zoom</h3>
+            <p class="specialty-desc">
+              Tecnología de fotoactivación LED que aclara hasta 8 tonos en una sola sesión clínica de 60 minutos, protegiendo totalmente el esmalte dental.
+            </p>
+            <div class="specialty-features">
+              <span>Fórmula antisedibilidad</span>
+              <span>1 sesión en clínica</span>
+              <span>Mantenimiento en casa</span>
+            </div>
+            <button class="btn-link open-modal-btn">Consultar valoración →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Method Section (Paso a Paso) -->
+    <section class="section method-section" id="metodo">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">El Viaje del Paciente</div>
+          <h2 class="section-title">Tu experiencia en 4 pasos sencillos</h2>
+          <p class="section-subtitle">
+            Desde el primer contacto hasta el resultado final, cuidamos cada detalle para garantizar tu confort absoluto.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h3 class="step-title">Bienvenida & Escaneo 3D</h3>
+            <p class="step-desc">
+              Te recibimos en un entorno privado. Realizamos una exploración completa y un escaneo intraoral 3D sin coste ni molestias.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h3 class="step-title">Diagnóstico Claro</h3>
+            <p class="step-desc">
+              El doctor te muestra en pantalla el estado de tu boca y te explica con claridad las alternativas de tratamiento y su presupuesto cerrado.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h3 class="step-title">Tratamiento Seguro</h3>
+            <p class="step-desc">
+              Procedimientos indoloros en suites clínicas equipadas con tecnología de vanguardia y aislamiento relajante para tu bienestar.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">04</div>
+            <h3 class="step-title">Seguimiento Continuo</h3>
+            <p class="step-desc">
+              Acompañamiento post-tratamiento con revisiones periódicas y línea directa con tu equipo médico para cualquier consulta.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Doctor / Leadership Section -->
+    <section class="section doctor-section" id="doctora">
+      <div class="container">
+        <div class="doctor-container corporate-card">
+          <div class="doctor-image-col">
+            <div class="doctor-image-frame">
+              <!-- Elegant Stylized Doctor Silhouette / Presentation Card -->
+              <div class="doctor-portrait-box">
+                <div class="doctor-crest">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="5"/><path d="M3 21v-2a7 7 0 0 1 14 0v2"/><path d="M19 11v6"/><path d="M22 14h-6"/></svg>
+                </div>
+                <div class="doctor-avatar-circle">
+                  <span>EV</span>
+                </div>
+                <div class="doctor-verified-badge">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  <span>Colegiada Activa Ilustre</span>
+                </div>
+              </div>
+              <div class="doctor-experience-tag">
+                <strong>+15 años</strong>
+                <span>Transformando sonrisas</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="doctor-info-col">
+            <div class="section-tag">Dirección Médica</div>
+            <h2 class="doctor-name-heading">Dra. Elena Valdés Montes</h2>
+            <p class="doctor-role-title">Máster en Cirugía Bucal e Implantología Avanzada · Especialista en Estética Facial y Dental</p>
+
+            <blockquote class="doctor-quote">
+              "Mi objetivo no es solo lograr una boca perfecta a nivel funcional, sino devolverle a cada paciente la seguridad y alegría de sonreír con total libertad, sin miedo al sillón dental."
+            </blockquote>
+
+            <div class="doctor-credentials-grid">
+              <div class="credential-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <div>
+                  <strong>Formación Internacional</strong>
+                  <span>Boston University & UCM</span>
+                </div>
+              </div>
+              <div class="credential-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                <div>
+                  <strong>Nº Colegiado Oficial</strong>
+                  <span>C.O.E.M. nº 28004123</span>
+                </div>
+              </div>
+              <div class="credential-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div>
+                  <strong>Miembro Activo</strong>
+                  <span>SEPES & SECIB</span>
+                </div>
+              </div>
+              <div class="credential-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                <div>
+                  <strong>Compromiso Ético</strong>
+                  <span>Diagnósticos 100% conservadores</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="doctor-action">
+              <button class="btn btn-primary open-modal-btn">
+                <span>Solicitar cita con la Dra. Valdés</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section" id="testimonios">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag">Opiniones Verificadas</div>
+          <h2 class="section-title">Lo que dicen quienes ya confían en nosotros</h2>
+          <p class="section-subtitle">
+            Pacientes que han superado sus temores y disfrutan hoy de una sonrisa saludable y luminosa.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card corporate-card">
+            <div class="stars-gold">★★★★★</div>
+            <p class="testimonial-text">
+              "Tenía pánico absoluto al dentista desde la infancia. En Lumina el trato fue tan humano y delicado que ni me enteré del procedimiento. Las carillas han quedado tan naturales que nadie nota que las llevo."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar author-carmen">CM</div>
+              <div class="author-meta">
+                <strong>Carmen M. R.</strong>
+                <span>Diseño de Sonrisa · Madrid</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card corporate-card">
+            <div class="stars-gold">★★★★★</div>
+            <p class="testimonial-text">
+              "Excelente tecnología. Me hicieron el escaneado 3D en 5 minutos y me mostraron exactamente cómo se moverían mis dientes con los alineadores invisibles. La puntualidad y la pulcritud de la clínica es de 10."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar author-javier">JG</div>
+              <div class="author-meta">
+                <strong>Javier G. S.</strong>
+                <span>Ortodoncia Invisible · Pozuelo</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card corporate-card">
+            <div class="stars-gold">★★★★★</div>
+            <p class="testimonial-text">
+              "Me coloqué dos implantes con la Dra. Elena y la experiencia superó todas mis expectativas: cero dolor en la cirugía y una recuperación rapidísima. El presupuesto fue cerrado y sin costes ocultos."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar author-lucia">LA</div>
+              <div class="author-meta">
+                <strong>Dra. Lucía Alarcón</strong>
+                <span>Implantología Guiada · Chamberí</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Big CTA Banner Section -->
+    <section class="cta-banner-section">
+      <div class="container">
+        <div class="cta-banner corporate-card">
+          <div class="cta-banner-content">
+            <div class="cta-badge">Primera Consulta de Diagnóstico Gratuita</div>
+            <h2 class="cta-title">Descubre cómo podemos transformar tu sonrisa sin dolor ni esperas</h2>
+            <p class="cta-desc">
+              Incluye valoración médica exhaustiva con la dirección médica, radiografía panorámica digital y simulación en 3D sin ningún compromiso.
+            </p>
+            <div class="cta-buttons">
+              <button class="btn btn-primary btn-lg open-modal-btn">
+                <span>Reservar Cita Ahora</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <a href="tel:+34910882340" class="btn btn-outline btn-lg phone-btn">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span>Llamar al 910 882 340</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer" id="contacto">
+    <div class="container footer-grid">
+      <div class="footer-col-brand">
+        <a href="#hero" class="logo logo-footer">
+          <div class="logo-mark">
+            <svg viewBox="0 0 32 32" fill="none" class="logo-icon">
+              <path d="M16 3C11.5 3 8 7 8 12C8 17.5 10.5 21 12.5 25.5C13.2 27 14.5 29 16 29C17.5 29 18.8 27 19.5 25.5C21.5 21 24 17.5 24 12C24 7 20.5 3 16 3Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+              <path d="M12 12C12 9.5 13.5 8 16 8C18.5 8 20 9.5 20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="16" cy="18" r="1.8" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-brand">LUMINA</span>
+            <span class="logo-sub">DENTAL STUDIO</span>
+          </div>
+        </a>
+        <p class="footer-tagline">
+          Centro médico odontológico de alta especialización. Compromiso absoluto con la salud, la belleza y la tranquilidad del paciente.
+        </p>
+        <div class="medical-registration-note">
+          Registro Sanitario de la CAM: CS-14298/2021
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Contacto & Citas</h4>
+        <ul class="footer-list">
+          <li><strong>Dirección:</strong> Paseo de la Castellana 120, 2ºA, 28046 Madrid</li>
+          <li><strong>Teléfono Central:</strong> <a href="tel:+34910882340">+34 910 882 340</a></li>
+          <li><strong>Urgencias Médicas:</strong> <a href="tel:+34600123456">+34 600 123 456</a></li>
+          <li><strong>Email:</strong> <a href="mailto:citas@luminadental.es">citas@luminadental.es</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Horario de Atención</h4>
+        <ul class="footer-list">
+          <li><strong>Lunes a Viernes:</strong> 09:00 - 20:30 (Ininterrumpido)</li>
+          <li><strong>Sábados:</strong> 10:00 - 14:00 (Cita previa)</li>
+          <li><strong>Domingos & Festivos:</strong> Servicio de urgencias bajo llamada previa</li>
+          <li class="parking-note">Parking concertado a 50 metros para pacientes.</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Especialidades</h4>
+        <ul class="footer-list">
+          <li><a href="#especialidades">Estética & Carillas de Porcelana</a></li>
+          <li><a href="#especialidades">Ortodoncia Invisible Digital</a></li>
+          <li><a href="#especialidades">Implantología Quirúrgica Guiada</a></li>
+          <li><a href="#especialidades">Blanqueamiento Clínico Láser</a></li>
+          <li><a href="#especialidades">Periodoncia & Mantenimiento</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p>© 2026 Lumina Dental Studio S.L. Todos los derechos reservados.</p>
+        <div class="legal-links">
+          <a href="#">Aviso Legal</a>
+          <span>·</span>
+          <a href="#">Política de Privacidad Médica</a>
+          <span>·</span>
+          <a href="#">Política de Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Appointment Booking Modal (Pedir Cita) -->
+  <div class="modal-overlay" id="appointmentModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Cerrar ventana">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <!-- Modal Form State -->
+      <div class="modal-body" id="modalFormContainer">
+        <div class="modal-header">
+          <div class="modal-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>Reserva Prioritaria</span>
+          </div>
+          <h3 id="modalTitle" class="modal-title">Pide tu Cita en Lumina Dental</h3>
+          <p class="modal-subtitle">
+            Tu primera visita incluye revisión clínica, radiografía digital y escaneo intraoral 3D sin coste ni compromiso.
+          </p>
+        </div>
+
+        <form id="appointmentForm" class="appointment-form" novalidate>
+          <div class="form-group">
+            <label for="patientName" class="form-label">Nombre y Apellidos *</label>
+            <input type="text" id="patientName" name="patientName" class="form-input" placeholder="Ej. Ana Gómez Martín" required>
+            <span class="form-error" id="nameError">Por favor, introduce tu nombre completo.</span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="patientPhone" class="form-label">Teléfono Móvil *</label>
+              <input type="tel" id="patientPhone" name="patientPhone" class="form-input" placeholder="Ej. 612 345 678" required>
+              <span class="form-error" id="phoneError">Indica un número de teléfono válido.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="patientEmail" class="form-label">Correo Electrónico *</label>
+              <input type="email" id="patientEmail" name="patientEmail" class="form-input" placeholder="ana@ejemplo.com" required>
+              <span class="form-error" id="emailError">Introduce un correo electrónico correcto.</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="treatmentType" class="form-label">Motivo de Consulta / Especialidad *</label>
+              <select id="treatmentType" name="treatmentType" class="form-select" required>
+                <option value="" disabled selected>Selecciona un motivo</option>
+                <option value="primera-revision">Primera Revisión & Diagnóstico 3D</option>
+                <option value="diseno-sonrisa">Estética Dental & Carillas</option>
+                <option value="ortodoncia">Ortodoncia Invisible (Invisalign / Spark)</option>
+                <option value="implantes">Implantología & Cirugía Guiada</option>
+                <option value="blanqueamiento">Blanqueamiento Dental Philips Zoom</option>
+                <option value="urgencia">Urgencia Odontológica o Dolor</option>
+                <option value="otro">Otro tratamiento</option>
+              </select>
+              <span class="form-error" id="treatmentError">Selecciona un motivo de consulta.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="preferredTime" class="form-label">Franja Horaria Preferida</label>
+              <select id="preferredTime" name="preferredTime" class="form-select">
+                <option value="manana">Mañanas (09:00 - 14:00)</option>
+                <option value="tarde">Tardes (15:00 - 20:30)</option>
+                <option value="indiferente">Indiferente / Primera hora disponible</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="privacyConsent" name="privacyConsent" required>
+              <span class="checkbox-custom"></span>
+              <span class="checkbox-text">
+                He leído y acepto la <a href="#" target="_blank">política de privacidad médica</a> y el tratamiento confidencial de mis datos.
+              </span>
+            </label>
+            <span class="form-error" id="privacyError">Debes aceptar la política de privacidad para continuar.</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="submitAppointmentBtn">
+            <span>Confirmar Solicitud de Cita</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+
+        <div class="modal-alternative">
+          <span>¿Prefieres atención inmediata?</span>
+          <a href="https://wa.me/34910882340?text=Hola,%20quisiera%20pedir%20cita%20inmediata" target="_blank" rel="noopener" class="whatsapp-direct-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.27-2.42 5.82a8.17 8.17 0 0 1-5.82 2.42c-1.48 0-2.93-.39-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a8.196 8.196 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.42 1.44.54.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3z"/></svg>
+            <span>Chatear por WhatsApp al 910 882 340</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Success Screen State -->
+      <div class="modal-success-screen" id="modalSuccessScreen">
+        <div class="success-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 class="success-title">¡Solicitud Recibida con Éxito!</h3>
+        <p class="success-desc">
+          Gracias, <strong id="successPatientName"></strong>. Nuestro equipo de recepción médica se pondrá en contacto contigo en menos de <strong>2 horas laborables</strong> para confirmar el día y la hora definitiva de tu visita.
+        </p>
+        <div class="success-summary-box">
+          <div><strong>Tratamiento solicitado:</strong> <span id="successTreatment"></span></div>
+          <div><strong>Franja preferida:</strong> <span id="successTime"></span></div>
+        </div>
+        <button class="btn btn-primary btn-block" id="successCloseBtn">Entendido, volver a la página</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

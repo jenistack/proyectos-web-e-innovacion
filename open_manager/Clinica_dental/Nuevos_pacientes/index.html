@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica Dental Nova | Odontología Avanzada y Sin Dolor</title>
+  <meta name="description" content="Recupera la tranquilidad y tu sonrisa. Tratamientos dentales sin dolor, tecnología 3D y presupuestos 100% transparentes. Pide tu primera cita de valoración hoy.">
+  
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0F172A',     /* Slate 900 */
+            secondary: '#3B82F6',   /* Blue 500 */
+            accentHover: '#2563EB', /* Blue 600 */
+            bgLight: '#F8FAFC',     /* Slate 50 */
+            textMuted: '#334155',   /* Slate 700 */
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #334155;
+      background-color: #F8FAFC;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Outfit', sans-serif;
+    }
+    .gradient-hero {
+      background: radial-gradient(1200px circle at top center, rgba(59, 130, 246, 0.08), transparent 70%);
+    }
+    .card-shadow {
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.06);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-blue-500 selection:text-white">
+
+  <!-- ================= TOP BAR ================= -->
+  <div class="bg-primary text-slate-300 text-xs sm:text-sm py-2 px-4 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          Calle Mayor 45, Planta 1ª (Frente a Plaza Central)
+        </span>
+        <span class="hidden md:inline-block text-slate-600">|</span>
+        <span class="hidden md:flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Lun a Vie: 09:00 - 20:30 | Urgencias en el día
+        </span>
+      </div>
+      <div class="flex items-center gap-3 font-medium">
+        <span>¿Urgencia dental?</span>
+        <a href="tel:+34912345678" class="text-white hover:text-secondary transition-colors underline font-bold">Llamar: 912 345 678</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= HEADER / NAV ================= -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white font-heading font-extrabold text-xl shadow-md group-hover:bg-secondary transition-colors">
+          <svg class="w-6 h-6 text-blue-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-heading font-bold text-xl tracking-tight text-primary">Dental<span class="text-secondary">Nova</span></span>
+          <span class="text-[10px] uppercase tracking-widest font-semibold text-slate-600">Odontología Integral</span>
+        </div>
+      </a>
+
+      <!-- Quick Nav Links -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="#problema" class="hover:text-primary transition-colors">¿Por qué retrasarlo?</a>
+        <a href="#solucion" class="hover:text-primary transition-colors">Nuestra Solución</a>
+        <a href="#ventajas" class="hover:text-primary transition-colors">Por qué elegirnos</a>
+        <a href="#opiniones" class="hover:text-primary transition-colors">Testimonios</a>
+        <a href="#faq" class="hover:text-primary transition-colors">Preguntas</a>
+      </nav>
+
+      <!-- Primary Action -->
+      <div class="flex items-center gap-3">
+        <a href="#pedir-cita" class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-secondary text-white font-medium text-sm hover:bg-accentHover transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0">
+          Pedir cita de valoración
+          <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 gradient-hero overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Persuasive Hook -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs sm:text-sm font-semibold">
+            <span class="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse"></span>
+            Primera visita diagnóstica y escáner 3D sin compromiso
+          </div>
+
+          <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary leading-[1.1] tracking-tight">
+            Vuelve a sonreír y comer sin dolor. <br class="hidden sm:inline">
+            <span class="text-secondary">Sin miedo y sin sorpresas en el precio.</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            Eliminamos los pinchazos traumáticos, las esperas infinitas y la incertidumbre. Disfruta de una odontología moderna y 100% indolora con tu especialista de siempre.
+          </p>
+
+          <!-- Direct CTAs -->
+          <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="#pedir-cita" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-secondary hover:bg-accentHover text-white text-base font-bold shadow-lg shadow-blue-500/25 hover:shadow-blue-500/35 hover:-translate-y-0.5 transition-all text-center">
+              Quiero mi revisión sin compromiso
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            </a>
+            
+            <a href="https://wa.me/34912345678?text=Hola,%20me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20para%20una%20primera%20cita" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 rounded-xl bg-white hover:bg-slate-50 text-primary border border-slate-300 text-base font-semibold shadow-sm hover:shadow transition-all text-center">
+              <svg class="w-5 h-5 mr-2 text-emerald-500" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              Escríbenos por WhatsApp
+            </a>
+          </div>
+
+          <!-- Trust Signals -->
+          <div class="pt-6 border-t border-slate-200/80 grid grid-cols-3 gap-4 text-center sm:text-left">
+            <div>
+              <div class="text-xl sm:text-2xl font-extrabold text-primary font-heading">+4.200</div>
+              <div class="text-xs text-slate-600 font-medium">Pacientes atendidos</div>
+            </div>
+            <div>
+              <div class="text-xl sm:text-2xl font-extrabold text-primary font-heading">4.9 / 5 ★</div>
+              <div class="text-xs text-slate-600 font-medium">Valoración en Google</div>
+            </div>
+            <div>
+              <div class="text-xl sm:text-2xl font-extrabold text-primary font-heading">0€</div>
+              <div class="text-xs text-slate-600 font-medium">Coste 1ª consulta 3D</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Fast-booking Card in Hero -->
+        <div class="lg:col-span-5">
+          <div class="bg-white rounded-2xl p-6 sm:p-8 card-shadow border border-slate-200 relative">
+            <div class="absolute -top-3.5 right-6 bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
+              Citas disponibles hoy
+            </div>
+
+            <div class="mb-5">
+              <h3 class="text-xl font-bold text-primary font-heading">Pide tu cita en 60 segundos</h3>
+              <p class="text-xs text-slate-600 mt-1">Te contactamos de inmediato para confirmar tu horario preferido.</p>
+            </div>
+
+            <form id="hero-booking-form" class="space-y-4" onsubmit="event.preventDefault(); submitAppointment(this);">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nombre y Apellidos</label>
+                <input type="text" required placeholder="Ej. Carlos Martínez" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition">
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Teléfono móvil</label>
+                <input type="tel" required placeholder="Ej. 612 345 678" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition">
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">¿Qué necesitas solucionar?</label>
+                <select class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent bg-white transition">
+                  <option value="revision">Revisión general / Limpieza</option>
+                  <option value="dolor">Tengo dolor o molestia urgente</option>
+                  <option value="implantes">Implantes o reponer piezas perdidas</option>
+                  <option value="ortodoncia">Ortodoncia invisible (alinear dientes)</option>
+                  <option value="estetica">Estética / Blanqueamiento / Carillas</option>
+                  <option value="segunda-opinion">Segunda opinión médica</option>
+                </select>
+              </div>
+
+              <div class="pt-2">
+                <button type="submit" class="w-full py-3.5 px-4 rounded-xl bg-secondary hover:bg-accentHover text-white font-bold text-sm tracking-wide shadow-md hover:shadow-lg transition flex items-center justify-center gap-2">
+                  <span>Solicitar Cita Gratuita</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+              </div>
+
+              <p class="text-[11px] text-center text-slate-600 leading-normal">
+                🔒 Tus datos están seguros. Sin spam ni llamadas molestas. Te llamaremos solo para confirmar tu fecha.
+              </p>
+            </form>
+
+            <div id="booking-success-hero" class="hidden text-center py-6 space-y-3">
+              <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <h4 class="font-bold text-primary font-heading text-lg">¡Solicitud recibida!</h4>
+              <p class="text-xs text-slate-600">Nuestro equipo te llamará en menos de 15 minutos en horario laboral para confirmar tu hora.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 1: EL PROBLEMA ================= -->
+  <section id="problema" class="py-20 bg-white border-y border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-red-500 bg-red-50 px-3 py-1 rounded-full border border-red-200">
+          La cruda realidad
+        </span>
+        <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-primary">
+          ¿Por qué llevas semanas (o meses) posponiendo ir al dentista?
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg">
+          No eres tú. La odontología tradicional ha cometido demasiados errores durante años, alejando a las personas con miedo, opacidad y prisas.
+        </p>
+      </div>
+
+      <!-- Problem Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Pain 1 -->
+        <div class="bg-bgLight rounded-2xl p-7 border border-slate-200 hover:border-red-200 hover:shadow-md transition group">
+          <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-primary mb-2">1. El pavor al dolor y los pinchazos</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Recuerdos de intervenciones dolorosas, pinchazos molestos y la angustia de sentirte desatendido en el sillón. Prefieres aguantar la molestia antes que volver a pasar por eso.
+          </p>
+        </div>
+
+        <!-- Pain 2 -->
+        <div class="bg-bgLight rounded-2xl p-7 border border-slate-200 hover:border-red-200 hover:shadow-md transition group">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-primary mb-2">2. Presupuestos "inflados" sin explicación</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Vas por una simple molestia o limpieza y sales con un presupuesto de 3.000€ lleno de términos médicos incomprensibles y tratamientos que sospechas que no necesitas.
+          </p>
+        </div>
+
+        <!-- Pain 3 -->
+        <div class="bg-bgLight rounded-2xl p-7 border border-slate-200 hover:border-red-200 hover:shadow-md transition group">
+          <div class="w-12 h-12 rounded-xl bg-slate-200 text-slate-700 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-primary mb-2">3. Trato de franquicia impersonal</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            En cada consulta te atiende un dentista distinto que ni se ha leído tu ficha. Sientes que eres un número más en una cadena de montaje y no un paciente con nombre y apellidos.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Consequence Callout -->
+      <div class="mt-12 bg-slate-900 text-white rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="space-y-1 text-center md:text-left">
+          <h4 class="font-heading text-xl font-bold">El tiempo juega en tu contra</h4>
+          <p class="text-sm text-slate-300 max-w-xl">
+            Una pequeña caries o encía inflamada hoy se convierte en una endodoncia o pérdida de diente mañana. Cuanto antes lo mires, más sencillo y económico es resolverlo.
+          </p>
+        </div>
+        <a href="#pedir-cita" class="shrink-0 px-6 py-3 rounded-lg bg-secondary text-white font-semibold hover:bg-accentHover transition text-sm">
+          Frenar el problema a tiempo →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION 2: LA SOLUCIÓN ================= -->
+  <section id="solucion" class="py-20 bg-bgLight">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-secondary bg-blue-100/70 px-3 py-1 rounded-full border border-blue-200">
+          La Nueva Experiencia Dental
+        </span>
+        <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-primary">
+          Así es ir al dentista cuando la clínica está pensada para cuidarte
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg">
+          En Dental Nova hemos rediseñado cada detalle de tu visita para eliminar la ansiedad y darte la máxima seguridad desde el primer minuto.
+        </p>
+      </div>
+
+      <!-- Solution Pillars -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Pillar 1 -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 card-shadow flex gap-5 items-start">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 text-secondary flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          </div>
+          <div class="space-y-2">
+            <h3 class="font-heading text-xl font-bold text-primary">Odontología 100% Sin Dolor</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Utilizamos anestesia electrónica computarizada indolora y técnicas de mínima invasión. Si sufres de odontofobia, disponemos de sedación consciente para que tu tratamiento pase en un abrir y cerrar de ojos.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 card-shadow flex gap-5 items-start">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 text-secondary flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <div class="space-y-2">
+            <h3 class="font-heading text-xl font-bold text-primary">Presupuesto Cerrado y Transparente</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Ves en pantalla con cámara intraoral el estado real de tu boca. Te explicamos exactamente qué necesitas y qué puede esperar. El precio que firmas el primer día es el precio final: cero sorpresas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 card-shadow flex gap-5 items-start">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 text-secondary flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+          </div>
+          <div class="space-y-2">
+            <h3 class="font-heading text-xl font-bold text-primary">Tecnología 3D sin pastas molestas</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Olvídate de las masas de silicona y arcilla que provocan náuseas. Escaneamos tu boca en 3 minutos con tecnología láser en 3D para diseñar tus férulas, carillas o implantes a la micra exacta.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 card-shadow flex gap-5 items-start">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 text-secondary flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <div class="space-y-2">
+            <h3 class="font-heading text-xl font-bold text-primary">Tu Doctor Asignado, Siempre</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              No somos una franquicia. Te atiende siempre el mismo doctor especialista de principio a fin de tu tratamiento. Conocemos tu historial, tus miedos y tus objetivos de salud dental.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION 3: COMPARATIVA DIRECTA ================= -->
+  <section id="ventajas" class="py-16 bg-white border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <h2 class="font-heading text-2xl sm:text-3xl font-bold text-primary">¿En qué se nota la diferencia?</h2>
+        <p class="text-slate-600 text-sm mt-2">La comparativa que ninguna franquicia quiere que veas.</p>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-slate-200 card-shadow">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-slate-100 text-primary border-b border-slate-200">
+              <th class="p-4 font-bold text-slate-700">Aspecto</th>
+              <th class="p-4 font-bold text-slate-600">Otras clínicas / Franquicias</th>
+              <th class="p-4 font-bold text-secondary bg-blue-50/70 border-l border-blue-200">Dental Nova</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="p-4 font-semibold text-primary">Sensación de dolor</td>
+              <td class="p-4 text-slate-600">Pinchazos tradicionales y molestos</td>
+              <td class="p-4 text-emerald-600 font-semibold bg-blue-50/30 border-l border-blue-200">✓ Anestesia computarizada indolora</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-primary">El profesional</td>
+              <td class="p-4 text-slate-600">Rotación constante; uno distinto cada mes</td>
+              <td class="p-4 text-emerald-600 font-semibold bg-blue-50/30 border-l border-blue-200">✓ Mismo odontólogo de cabecera</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-primary">Presupuesto</td>
+              <td class="p-4 text-slate-600">Extras inesperados y letras pequeñas</td>
+              <td class="p-4 text-emerald-600 font-semibold bg-blue-50/30 border-l border-blue-200">✓ Presupuesto cerrado garantizado</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-primary">Impresiones / Moldes</td>
+              <td class="p-4 text-slate-600">Pastas de silicona con arcadas y náuseas</td>
+              <td class="p-4 text-emerald-600 font-semibold bg-blue-50/30 border-l border-blue-200">✓ Escáner digital 3D sin contacto</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-primary">Tiempos de espera</td>
+              <td class="p-4 text-slate-600">30 a 60 min de retraso en sala</td>
+              <td class="p-4 text-emerald-600 font-semibold bg-blue-50/30 border-l border-blue-200">✓ Puntualidad estricta y sin prisas</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 4: PASO A PASO ================= -->
+  <section class="py-20 bg-bgLight">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-secondary">Proceso Sencillo</span>
+        <h2 class="font-heading text-3xl font-extrabold text-primary">Cómo es tu primera cita</h2>
+        <p class="text-slate-600 text-sm sm:text-base">Sin presiones ni compromisos. Queremos que conozcas la verdad sobre tu salud dental.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+        
+        <!-- Step 1 -->
+        <div class="bg-white p-7 rounded-2xl border border-slate-200 card-shadow relative z-10 text-center sm:text-left">
+          <div class="w-10 h-10 rounded-full bg-primary text-white font-bold flex items-center justify-center font-heading text-lg mb-4 mx-auto sm:mx-0">1</div>
+          <h3 class="font-heading font-bold text-lg text-primary mb-2">Escuchamos tu caso</h3>
+          <p class="text-sm text-slate-600">Nos cuentas qué te preocupa, tus malas experiencias previas o si tienes dolor. Nos adaptamos a tu ritmo sin juzgarte.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-white p-7 rounded-2xl border border-slate-200 card-shadow relative z-10 text-center sm:text-left">
+          <div class="w-10 h-10 rounded-full bg-secondary text-white font-bold flex items-center justify-center font-heading text-lg mb-4 mx-auto sm:mx-0">2</div>
+          <h3 class="font-heading font-bold text-lg text-primary mb-2">Escaneo 3D y Diagnóstico</h3>
+          <p class="text-sm text-slate-600">Hacemos una radiografía digital panorámica y un escaneado 3D de tu boca para que tú mismo veas el diagnóstico en pantalla gigante.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-white p-7 rounded-2xl border border-slate-200 card-shadow relative z-10 text-center sm:text-left">
+          <div class="w-10 h-10 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center font-heading text-lg mb-4 mx-auto sm:mx-0">3</div>
+          <h3 class="font-heading font-bold text-lg text-primary mb-2">Plan claro y tú decides</h3>
+          <p class="text-sm text-slate-600">Te entregamos un presupuesto cerrado con alternativas de pago hasta en 24 meses sin intereses. Te vas a casa a pensarlo libremente.</p>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="#pedir-cita" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-primary text-white font-semibold text-sm hover:bg-slate-800 transition">
+          Reservar mi diagnóstico 3D gratuito
+          <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION 5: TESTIMONIOS ================= -->
+  <section id="opiniones" class="py-20 bg-white border-y border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <div class="flex items-center justify-center gap-1 text-amber-400">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <h2 class="font-heading text-3xl font-extrabold text-primary">Lo que dicen pacientes que tenían pánico</h2>
+        <p class="text-slate-600 text-sm sm:text-base">Historias reales de personas que recuperaron su calidad de vida y su sonrisa.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Testimonial 1 -->
+        <div class="bg-bgLight p-7 rounded-2xl border border-slate-200 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center gap-1 text-amber-400 text-sm">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              <span class="text-xs text-slate-600 ml-2 font-medium">Paciente Verificado</span>
+            </div>
+            <p class="text-sm text-slate-600 italic leading-relaxed">
+              "Llevaba 7 años sin pisar un dentista por una fobia tremenda tras una mala experiencia. En Nova me trataron con una empatía increíble. Me colocaron dos implantes y no sentí absolutamente NADA de dolor. Ojalá haber venido antes."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue-100 text-secondary font-bold flex items-center justify-center text-sm font-heading">MG</div>
+            <div>
+              <div class="font-bold text-sm text-primary">Manuel Gómez (48 años)</div>
+              <div class="text-xs text-slate-600">Tratamiento de Implantología</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-bgLight p-7 rounded-2xl border border-slate-200 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center gap-1 text-amber-400 text-sm">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              <span class="text-xs text-slate-600 ml-2 font-medium">Paciente Verificado</span>
+            </div>
+            <p class="text-sm text-slate-600 italic leading-relaxed">
+              "Lo que más valoro es la honestidad. En otra clínica me dijeron que tenía 4 caries y presupuesto de 800€. Vine aquí a pedir una segunda opinión: solo era sensibilidad y me lo resolvieron por una fracción del precio. Clínica 100% ética."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue-100 text-secondary font-bold flex items-center justify-center text-sm font-heading">SR</div>
+            <div>
+              <div class="font-bold text-sm text-primary">Sara Rodríguez (34 años)</div>
+              <div class="text-xs text-slate-600">Odontología Conservadora</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-bgLight p-7 rounded-2xl border border-slate-200 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center gap-1 text-amber-400 text-sm">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              <span class="text-xs text-slate-600 ml-2 font-medium">Paciente Verificado</span>
+            </div>
+            <p class="text-sm text-slate-600 italic leading-relaxed">
+              "Tenía los dientes desalineados y me daba vergüenza sonreír en fotos. Me hicieron el escaneado en 3D en 5 minutos y me enseñaron cómo quedaría mi sonrisa antes de empezar con los alineadores invisibles. El resultado es impecable."
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue-100 text-secondary font-bold flex items-center justify-center text-sm font-heading">AP</div>
+            <div>
+              <div class="font-bold text-sm text-primary">Alberto Pérez (29 años)</div>
+              <div class="text-xs text-slate-600">Ortodoncia Invisible</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION 6: FAQ ================= -->
+  <section id="faq" class="py-16 bg-bgLight">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center mb-12 space-y-2">
+        <h2 class="font-heading text-2xl sm:text-3xl font-bold text-primary">Resolvemos tus dudas antes de venir</h2>
+        <p class="text-slate-600 text-sm">Transparencia total desde antes de poner un pie en la clínica.</p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <details class="bg-white rounded-xl p-5 border border-slate-200 group cursor-pointer" open>
+          <summary class="font-heading font-bold text-base text-primary list-none flex justify-between items-center">
+            ¿La primera cita de valoración de verdad no tiene coste ni compromiso?
+            <span class="text-secondary font-bold text-lg group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+            Exacto. Incluye revisión visual con cámara intraoral, radiografía digital y diagnóstico completo de un especialista. Si decides no hacerte el tratamiento con nosotros, te llevas tu diagnóstico sin pagar un solo euro.
+          </p>
+        </details>
+
+        <details class="bg-white rounded-xl p-5 border border-slate-200 group cursor-pointer">
+          <summary class="font-heading font-bold text-base text-primary list-none flex justify-between items-center">
+            Tengo un pánico atroz al dolor, ¿qué hacéis diferente?
+            <span class="text-secondary font-bold text-lg group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+            Aplicamos gel anestésico previo para que no sientas el pinchazo y utilizamos anestesia digitalizada con flujo milimétrico controlado por ordenador. Para casos de ansiedad severa, contamos con sedación consciente guiada por anestesista para que estés en un estado de relajación total.
+          </p>
+        </details>
+
+        <details class="bg-white rounded-xl p-5 border border-slate-200 group cursor-pointer">
+          <summary class="font-heading font-bold text-base text-primary list-none flex justify-between items-center">
+            ¿Ofrecéis opciones de pago o financiación?
+            <span class="text-secondary font-bold text-lg group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+            Sí. Disponemos de planes de financiación a tu medida hasta en 24 meses sin intereses (0% TAE) y hasta 60 meses en cuotas muy cómodas. Gestionamos la aprobación en la misma cita en menos de 5 minutos.
+          </p>
+        </details>
+
+        <details class="bg-white rounded-xl p-5 border border-slate-200 group cursor-pointer">
+          <summary class="font-heading font-bold text-base text-primary list-none flex justify-between items-center">
+            ¿Aceptáis seguros dentales privados?
+            <span class="text-secondary font-bold text-lg group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+            Trabajamos con las principales aseguradoras con reembolso y condiciones preferentes. Al pedir tu cita, indícanos tu aseguradora y comprobaremos tu cobertura de forma inmediata.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECTION 7: FINAL CONVERSION CTA ================= -->
+  <section id="pedir-cita" class="py-20 bg-primary text-white relative overflow-hidden">
+    <!-- Subtle background effect -->
+    <div class="absolute inset-0 bg-[radial-gradient(#3B82F6_1px,transparent_1px)] [background-size:24px_24px] opacity-10"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center space-y-8">
+      
+      <div class="space-y-4 max-w-2xl mx-auto">
+        <span class="text-xs font-bold uppercase tracking-widest text-blue-400 bg-blue-950/60 border border-blue-800/80 px-4 py-1.5 rounded-full inline-block">
+          Sin compromiso • Diagnóstico 3D incluido
+        </span>
+        <h2 class="font-heading text-3xl sm:text-5xl font-extrabold tracking-tight">
+          No dejes para mañana la sonrisa que mereces hoy
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg">
+          Reserva ahora tu primera visita de valoración. Revisamos tu caso con la última tecnología y te entregamos un plan claro y honesto.
+        </p>
+      </div>
+
+      <!-- Final Quick Form -->
+      <div class="bg-white text-slate-700 rounded-2xl p-8 sm:p-10 card-shadow max-w-xl mx-auto border border-slate-200 text-left">
+        
+        <form id="final-booking-form" class="space-y-4" onsubmit="event.preventDefault(); submitAppointment(this);">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nombre</label>
+              <input type="text" required placeholder="Tu nombre" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Teléfono móvil</label>
+              <input type="tel" required placeholder="612 345 678" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Horario preferido de contacto</label>
+            <div class="grid grid-cols-3 gap-2">
+              <label class="border border-slate-200 rounded-lg p-2.5 text-xs text-center cursor-pointer hover:bg-slate-50 flex items-center justify-center gap-1.5 has-[:checked]:bg-blue-50 has-[:checked]:border-secondary has-[:checked]:text-secondary font-medium">
+                <input type="radio" name="horario" value="manana" class="hidden" checked>
+                Mañanas
+              </label>
+              <label class="border border-slate-200 rounded-lg p-2.5 text-xs text-center cursor-pointer hover:bg-slate-50 flex items-center justify-center gap-1.5 has-[:checked]:bg-blue-50 has-[:checked]:border-secondary has-[:checked]:text-secondary font-medium">
+                <input type="radio" name="horario" value="tardes" class="hidden">
+                Tardes
+              </label>
+              <label class="border border-slate-200 rounded-lg p-2.5 text-xs text-center cursor-pointer hover:bg-slate-50 flex items-center justify-center gap-1.5 has-[:checked]:bg-blue-50 has-[:checked]:border-secondary has-[:checked]:text-secondary font-medium">
+                <input type="radio" name="horario" value="indiferente" class="hidden">
+                Indiferente
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">¿Qué te gustaría tratar?</label>
+            <select class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent bg-white transition">
+              <option>Revisión y diagnóstico general</option>
+              <option>Eliminar dolor o molestia</option>
+              <option>Implantes dentales</option>
+              <option>Ortodoncia invisible</option>
+              <option>Estética dental y blanqueamiento</option>
+            </select>
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-xl bg-secondary hover:bg-accentHover text-white font-bold text-base shadow-lg shadow-blue-500/25 transition flex items-center justify-center gap-2">
+            <span>Confirmar Solicitud de Cita Gratuita</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </button>
+
+          <div class="flex items-center justify-center gap-4 pt-2 text-xs text-slate-600">
+            <span class="flex items-center gap-1"><svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 100% Gratuito</span>
+            <span class="flex items-center gap-1"><svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Sin compromiso</span>
+            <span class="flex items-center gap-1"><svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Cancelación libre</span>
+          </div>
+        </form>
+
+        <div id="booking-success-final" class="hidden text-center py-8 space-y-4">
+          <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+          </div>
+          <h3 class="font-bold text-primary font-heading text-xl">¡Solicitud recibida con éxito!</h3>
+          <p class="text-sm text-slate-600">Nos pondremos en contacto contigo en breve para darte la bienvenida y confirmar el mejor horario para ti.</p>
+        </div>
+
+      </div>
+
+      <!-- Alternative Direct Call Action -->
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-slate-300">
+        <span>¿Prefieres hablar directamente ahora mismo con recepción?</span>
+        <a href="tel:+34912345678" class="text-white font-bold underline hover:text-blue-300 transition flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+          Llamar al 912 345 678
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-slate-950 text-slate-600 py-12 border-t border-slate-900 text-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white font-heading font-extrabold text-sm">
+          DN
+        </div>
+        <div>
+          <span class="font-heading font-bold text-white text-sm">Clínica Dental Nova</span>
+          <p class="text-[11px] text-slate-600">Nº de Registro Sanitario: CS-89421-MD</p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-6 text-slate-600">
+        <a href="#" class="hover:text-slate-300 transition">Aviso Legal</a>
+        <a href="#" class="hover:text-slate-300 transition">Política de Privacidad</a>
+        <a href="#" class="hover:text-slate-300 transition">Política de Cookies</a>
+        <a href="#" class="hover:text-slate-300 transition">Consentimiento Médico</a>
+      </div>
+
+      <div>
+        © 2026 Clínica Dental Nova. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+  <a href="https://wa.me/34912345678?text=Hola,%20me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20para%20una%20primera%20cita" target="_blank" class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-600 text-white p-3.5 rounded-full shadow-xl hover:shadow-2xl transition hover:scale-105 flex items-center gap-2 group" title="Preguntar por WhatsApp">
+    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+    <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 text-xs font-bold pl-0 group-hover:pl-1">¿Dudas? Habla con nosotros</span>
+  </a>
+
+  <!-- Simple script for form feedback -->
+  <script>
+    function submitAppointment(formElement) {
+      const isHero = formElement.id === 'hero-booking-form';
+      const successBox = document.getElementById(isHero ? 'booking-success-hero' : 'booking-success-final');
+      
+      formElement.classList.add('hidden');
+      if (successBox) {
+        successBox.classList.remove('hidden');
+      }
+    }
+  </script>
+
+</body>
+</html>

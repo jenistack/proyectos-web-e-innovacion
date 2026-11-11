@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Interno de Pedidos | Taquería El Trompo Dorado</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌮</text></svg>">
+</head>
+<body>
+
+  <!-- ==================== HEADER PRINCIPAL ==================== -->
+  <header class="top-header">
+    <div class="brand-section">
+      <div class="brand-logo-icon">🌮</div>
+      <div class="brand-info">
+        <h1>
+          El Trompo Dorado
+          <span class="brand-badge">Panel Interno KDS</span>
+        </h1>
+        <p>Control de Pedidos, Cocina y Despacho en Tiempo Real</p>
+      </div>
+    </div>
+
+    <!-- Buscador Global -->
+    <div class="header-center">
+      <div class="search-wrapper">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" class="search-input" placeholder="Buscar por #folio, cliente, mesa o platillo...">
+      </div>
+    </div>
+
+    <!-- Botones de Acción -->
+    <div class="header-actions">
+      <button id="soundToggleBtn" class="btn-icon active" title="Sonido de Alerta de Cocina (Activado)">
+        🔔
+      </button>
+
+      <button id="themeToggleBtn" class="btn-icon" title="Cambiar a Modo Claro / Oscuro">
+        ☀️
+      </button>
+
+      <button id="btnResetDemo" class="btn-secondary" title="Reiniciar pedidos iniciales">
+        🔄 Demo
+      </button>
+
+      <button id="btnSimulateOrder" class="btn-secondary" title="Simula un pedido que entra desde la web de clientes o delivery">
+        ⚡ Simular Pedido
+      </button>
+
+      <button id="btnNewOrder" class="btn-primary">
+        <span>+</span> Tomar Pedido
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== BARRA DE MÉTRICAS RÁPIDAS ==================== -->
+  <section class="metrics-strip">
+    <div class="metric-card pendiente">
+      <div class="metric-icon-box">🟡</div>
+      <div class="metric-info">
+        <span class="metric-label">Por Atender</span>
+        <span class="metric-value" id="metricPendientes">0</span>
+      </div>
+    </div>
+
+    <div class="metric-card preparando">
+      <div class="metric-icon-box">👨‍🍳</div>
+      <div class="metric-info">
+        <span class="metric-label">En Trompo / Plancha</span>
+        <span class="metric-value" id="metricPreparando">0</span>
+      </div>
+    </div>
+
+    <div class="metric-card listo">
+      <div class="metric-icon-box">🔔</div>
+      <div class="metric-info">
+        <span class="metric-label">Listos para Servir</span>
+        <span class="metric-value" id="metricListos">0</span>
+      </div>
+    </div>
+
+    <div class="metric-card entregado">
+      <div class="metric-icon-box">✅</div>
+      <div class="metric-info">
+        <span class="metric-label">Entregados Hoy</span>
+        <span class="metric-value" id="metricEntregados">0</span>
+      </div>
+    </div>
+
+    <div class="metric-card ventas">
+      <div class="metric-icon-box">💵</div>
+      <div class="metric-info">
+        <span class="metric-label">Ventas Registradas</span>
+        <span class="metric-value" id="metricVentas">$0</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTROLES DE FILTRADO Y ESTADO ==================== -->
+  <section class="controls-bar">
+    <div class="filter-pills">
+      <button class="filter-pill active" data-filter="todos">Todos los Canales</button>
+      <button class="filter-pill" data-filter="mesa">🍽️ Salón / Mesas</button>
+      <button class="filter-pill" data-filter="llevar">🥡 Para Llevar</button>
+      <button class="filter-pill" data-filter="delivery">🛵 Delivery / App</button>
+    </div>
+
+    <div class="view-options">
+      <div class="live-indicator">
+        <span class="live-dot"></span>
+        <span>Panel en Vivo Sincronizado</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TABLERO KANBAN DE PEDIDOS ==================== -->
+  <main class="main-content">
+    <div class="kanban-board">
+      
+      <!-- Columna 1: PENDIENTE -->
+      <section class="kanban-column column-pendiente" data-status="pendiente">
+        <header class="column-header">
+          <div class="column-title">
+            <span>🟡 Pendiente</span>
+          </div>
+          <span class="column-badge" id="countPendiente">0</span>
+        </header>
+        <div class="orders-container" id="ordersPendiente"></div>
+      </section>
+
+      <!-- Columna 2: PREPARANDO -->
+      <section class="kanban-column column-preparando" data-status="preparando">
+        <header class="column-header">
+          <div class="column-title">
+            <span>🔵 Preparando</span>
+          </div>
+          <span class="column-badge" id="countPreparando">0</span>
+        </header>
+        <div class="orders-container" id="ordersPreparando"></div>
+      </section>
+
+      <!-- Columna 3: LISTO -->
+      <section class="kanban-column column-listo" data-status="listo">
+        <header class="column-header">
+          <div class="column-title">
+            <span>🟢 Listo para Servir</span>
+          </div>
+          <span class="column-badge" id="countListo">0</span>
+        </header>
+        <div class="orders-container" id="ordersListo"></div>
+      </section>
+
+      <!-- Columna 4: ENTREGADO -->
+      <section class="kanban-column column-entregado" data-status="entregado">
+        <header class="column-header">
+          <div class="column-title">
+            <span>⚪ Entregado</span>
+          </div>
+          <span class="column-badge" id="countEntregado">0</span>
+        </header>
+        <div class="orders-container" id="ordersEntregado"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ==================== MODAL: NUEVO PEDIDO MANUAL ==================== -->
+  <div class="modal-overlay" id="modalNewOrder">
+    <div class="modal-window">
+      <header class="modal-header">
+        <h3>🌮 Levantar Nuevo Pedido (Comanda Manual)</h3>
+        <button type="button" class="modal-close-btn">&times;</button>
+      </header>
+
+      <form id="formNewOrder">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="manualCustomer">Cliente / Identificador *</label>
+              <input type="text" id="manualCustomer" class="form-input" placeholder="Ej: Don Pedro, Juan Pérez" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="manualOrderType">Tipo de Pedido *</label>
+              <select id="manualOrderType" class="form-select">
+                <option value="mesa">🍽️ Salón (Comer aquí)</option>
+                <option value="llevar">🥡 Para Llevar</option>
+                <option value="delivery">🛵 Entrega a Domicilio / Teléfono</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="manualTable">Número de Mesa (Si aplica)</label>
+              <input type="text" id="manualTable" class="form-input" placeholder="Ej: Mesa 3, Barra 2">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="manualPayment">Forma de Pago</label>
+              <select id="manualPayment" class="form-select">
+                <option value="Efectivo">Efectivo (Por cobrar)</option>
+                <option value="Tarjeta">Tarjeta de Crédito / Débito</option>
+                <option value="Transferencia">Transferencia Bancaria</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Selector de platillos -->
+          <div class="menu-selector-box">
+            <label class="form-label">Toca para agregar platillos y tacos al pedido:</label>
+            <div id="menuChipsContainer"></div>
+          </div>
+
+          <!-- Tabla de platillos seleccionados -->
+          <div>
+            <label class="form-label">Resumen de la Orden:</label>
+            <table class="order-builder-table">
+              <thead>
+                <tr>
+                  <th>Platillo y Especificaciones</th>
+                  <th>Cant.</th>
+                  <th>Precio</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="manualItemsBody">
+                <tr><td colspan="4" style="text-align:center; color: var(--text-muted); padding: 16px;">Selecciona platillos del catálogo superior.</td></tr>
+              </tbody>
+            </table>
+
+            <div style="text-align: right; margin-top: 10px; font-weight: 700; font-size: 1.1rem;">
+              Total Estimado: <span id="manualOrderTotal" style="color: var(--brand-orange);">$0</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="manualNotes">Instrucciones de Cocina / Observaciones</label>
+            <textarea id="manualNotes" class="form-textarea" rows="2" placeholder="Ej: Sin cebolla en los de suadero, tortillas bien tostadas, salsa habanera en vasito..."></textarea>
+          </div>
+        </div>
+
+        <footer class="modal-footer">
+          <button type="button" class="btn-secondary modal-cancel-btn">Cancelar</button>
+          <button type="submit" class="btn-primary">✅ Mandar a Cocina</button>
+        </footer>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: COMANDA / TICKET TÉRMICO ==================== -->
+  <div class="modal-overlay" id="modalTicket">
+    <div class="modal-window" style="max-width: 480px;">
+      <header class="modal-header">
+        <h3>🖨️ Comanda de Cocina</h3>
+        <button type="button" class="modal-close-btn">&times;</button>
+      </header>
+      <div class="modal-body">
+        <div class="ticket-preview" id="ticketContent"></div>
+      </div>
+      <footer class="modal-footer">
+        <button type="button" class="btn-secondary modal-cancel-btn">Cerrar</button>
+        <button type="button" id="btnPrintTicket" class="btn-primary">🖨️ Mandar a Imprimir</button>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Contenedor oculto para impresión en impresora de 80mm -->
+  <div id="printableReceipt"></div>
+
+  <!-- Contenedor de Alertas Toast -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="mock-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

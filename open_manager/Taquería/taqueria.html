@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0E1116" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="description" content="Pide tus tacos favoritos en línea para recoger en Taquería El Trompo Loco. Rápido, visual y pensado para móvil." />
+  <title>Taquería El Trompo Loco · Pedidos para Recoger</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Estilos de la Aplicación -->
+  <link rel="stylesheet" href="taqueria-app/styles.css" />
+
+  <!-- Canvas Confetti para animación de pedido -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- CONTENEDOR PRINCIPAL MOBILE-FIRST -->
+  <div class="app-container">
+
+    <!-- HERO & CABECERA DE LA TAQUERÍA -->
+    <header class="hero-header">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <div class="brand-badge">
+          <span>🌮</span>
+          <span>Sabor Tradicional</span>
+        </div>
+        <button type="button" id="openOrdersBtn" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); color: var(--text-sub); border-radius: var(--radius-full); padding: 5px 12px; font-size: 0.76rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 5px;">
+          <span>🧾</span> Mis Pedidos
+        </button>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;">
+        <div>
+          <h1 id="restaurantName" style="font-size: 1.45rem; font-weight: 900; color: #FFFFFF; line-height: 1.15; margin-bottom: 4px;">
+            Taquería El Trompo Loco
+          </h1>
+          <p id="restaurantTagline" style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 8px;">
+            El auténtico sabor de la calle directo a tu mano 🌮🔥
+          </p>
+        </div>
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #FF4A22, #FFB703); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0; box-shadow: 0 4px 15px rgba(255,74,34,0.4);">
+          🌮
+        </div>
+      </div>
+
+      <!-- Badges de estatus y recogida -->
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 4px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06);">
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span>Abierto ahora</span>
+        </div>
+        <div style="display: inline-flex; align-items: center; gap: 5px; font-size: 0.75rem; color: var(--color-secondary); font-weight: 600;">
+          <span>⚡</span> <span id="pickupEstimate">Recogida en ~15-20 min</span>
+        </div>
+        <div style="display: inline-flex; align-items: center; gap: 4px; font-size: 0.75rem; color: var(--text-muted); margin-left: auto;">
+          <span style="color: #FFC038;">★</span> 4.9 (940+ reseñas)
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: var(--text-muted); margin-top: 8px;">
+        <span>📍</span>
+        <span id="restaurantAddress" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+          Av. Insurgentes Sur 452, Col. Roma / Condesa
+        </span>
+      </div>
+    </header>
+
+    <!-- BARRA DE BÚSQUEDA RÁPIDA -->
+    <div class="search-wrapper">
+      <div class="search-input-box">
+        <span class="search-icon-left">🔍</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="Buscar pastor, birria, suadero, gringa..." />
+        <button type="button" id="searchClearBtn" class="search-clear-btn" title="Limpiar búsqueda">✕</button>
+      </div>
+    </div>
+
+    <!-- CHIPS DE CATEGORÍAS (STICKY CON SCROLL HORIZONTAL) -->
+    <nav class="categories-scroll" id="categoriesContainer" aria-label="Categorías del menú">
+      <!-- Generado dinámicamente -->
+    </nav>
+
+    <!-- FEED DE PRODUCTOS -->
+    <main style="padding: 16px 20px 100px; flex: 1;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+        <h2 id="categoryTitleDisplay" style="font-size: 1.1rem; font-weight: 800; color: #FFFFFF;">
+          ✨ Todos los productos
+        </h2>
+        <span style="font-size: 0.75rem; color: var(--text-muted);">Toca para personalizar</span>
+      </div>
+
+      <div id="productsContainer">
+        <!-- Tarjetas generadas dinámicamente -->
+      </div>
+    </main>
+
+    <!-- BARRA FLOTANTE DE CARRITO (INFERIOR) -->
+    <div id="cartFloatingBar" class="cart-floating-bar">
+      <button type="button" id="cartFloatingBtn" class="cart-bar-btn">
+        <div class="cart-counter-bubble">
+          <span>🛍️</span>
+          <span id="cartItemCountBadge">0 productos</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 0.9rem; font-weight: 600;">Ver Pedido</span>
+          <span id="cartTotalPriceBadge" style="font-size: 1.15rem; font-weight: 900;">$0.00</span>
+          <span>👉</span>
+        </div>
+      </button>
+    </div>
+
+  </div> <!-- Fin app-container -->
+
+
+  <!-- ========================================================
+       MODAL: PERSONALIZACIÓN DE PRODUCTO (BOTTOM SHEET)
+       ======================================================== -->
+  <div id="productModalOverlay" class="modal-overlay">
+    <div class="bottom-sheet" id="productModalSheet">
+      <div class="sheet-handle"></div>
+      
+      <div class="sheet-header">
+        <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-secondary); text-transform: uppercase;">
+          Personaliza tu antojo
+        </span>
+        <button type="button" id="closeProductModalBtn" style="background: none; border: none; color: var(--text-muted); font-size: 1.3rem; cursor: pointer; padding: 2px 6px;">✕</button>
+      </div>
+
+      <div class="sheet-body">
+        <div style="display: flex; gap: 14px; margin-bottom: 18px; align-items: center;">
+          <img id="modalProductImg" src="" alt="Producto" style="width: 72px; height: 72px; border-radius: var(--radius-sm); object-fit: cover; flex-shrink: 0;" />
+          <div>
+            <h3 id="modalProductTitle" style="font-size: 1.15rem; font-weight: 800; color: #FFFFFF; line-height: 1.2;"></h3>
+            <p id="modalProductDesc" style="font-size: 0.78rem; color: var(--text-muted); margin-top: 3px; line-height: 1.35;"></p>
+            <span id="modalProductBasePrice" style="display: inline-block; margin-top: 5px; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; color: var(--color-secondary);"></span>
+          </div>
+        </div>
+
+        <div id="modalCustomizationArea"></div>
+      </div>
+
+      <div class="sheet-footer">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px;">
+          <div class="qty-stepper">
+            <button type="button" class="qty-btn" id="modalQtyMinus">-</button>
+            <span class="qty-num" id="modalQtyNumber">1</span>
+            <button type="button" class="qty-btn" id="modalQtyPlus">+</button>
+          </div>
+
+          <button type="button" class="btn-primary" id="modalAddCartBtn" style="flex: 1;">
+            <span id="modalAddCartTotalText">Agregar al pedido · $0.00</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================
+       MODAL: CARRITO Y RESUMEN DEL PEDIDO
+       ======================================================== -->
+  <div id="cartModalOverlay" class="modal-overlay">
+    <div class="bottom-sheet" id="cartModalSheet">
+      <div class="sheet-handle"></div>
+
+      <div class="sheet-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 1.2rem;">🛍️</span>
+          <h3 style="font-size: 1.1rem; font-weight: 800; color: #FFFFFF;">Tu Pedido para Recoger</h3>
+        </div>
+        <button type="button" id="closeCartModalBtn" style="background: none; border: none; color: var(--text-muted); font-size: 1.3rem; cursor: pointer; padding: 2px 6px;">✕</button>
+      </div>
+
+      <div class="sheet-body">
+        <div style="background: rgba(42, 157, 143, 0.12); border: 1px solid rgba(42, 157, 143, 0.3); border-radius: var(--radius-sm); padding: 10px 14px; display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+          <span style="font-size: 1.3rem;">🏪</span>
+          <div style="font-size: 0.78rem; line-height: 1.35; color: #E0F2FE;">
+            <strong>Modo Recogida en Barra:</strong> Pasa directamente a mostrador sin hacer filas. Tiempo estimado: ~15-20 min.
+          </div>
+        </div>
+
+        <div id="cartEmptyState" style="text-align: center; padding: 40px 10px; display: none;">
+          <div style="font-size: 3rem; margin-bottom: 12px;">🌮</div>
+          <h4 style="font-size: 1.1rem; font-weight: 700; color: #FFFFFF;">Tu pedido está vacío</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 6px;">
+            Elige tus tacos al pastor, suadero o gringas favoritas para comenzar.
+          </p>
+        </div>
+
+        <div id="cartFilledState">
+          <div id="cartItemsList"></div>
+
+          <div style="margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border-color);">
+            <div style="display: flex; justify-content: space-between; font-size: 0.88rem; color: var(--text-muted); margin-bottom: 8px;">
+              <span>Subtotal</span>
+              <span id="cartSubtotalText">$0.00</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.88rem; color: #2ECC71; margin-bottom: 10px;">
+              <span>Costo por preparación y empaque</span>
+              <span>¡GRATIS!</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 1.25rem; font-weight: 900; color: #FFFFFF; padding-top: 8px; border-top: 1px dashed var(--border-color);">
+              <span>Total a pagar</span>
+              <span id="cartTotalFinalText" style="color: var(--color-secondary);">$0.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sheet-footer">
+        <button type="button" class="btn-primary" id="btnGoToCheckout">
+          <span>Continuar con la Recogida</span>
+          <span>👉</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================
+       MODAL: CHECKOUT / PREPARAR PEDIDO PARA RECOGER
+       ======================================================== -->
+  <div id="checkoutModalOverlay" class="modal-overlay">
+    <div class="bottom-sheet">
+      <div class="sheet-handle"></div>
+
+      <div class="sheet-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 1.2rem;">📝</span>
+          <h3 style="font-size: 1.1rem; font-weight: 800; color: #FFFFFF;">Datos de Recogida</h3>
+        </div>
+        <button type="button" id="closeCheckoutModalBtn" style="background: none; border: none; color: var(--text-muted); font-size: 1.3rem; cursor: pointer; padding: 2px 6px;">✕</button>
+      </div>
+
+      <div class="sheet-body">
+        <div style="background: var(--bg-surface); padding: 12px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <div>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Resumen del pedido</span>
+            <div id="checkoutSummaryCount" style="font-size: 0.9rem; font-weight: 700; color: #FFFFFF;">0 productos</div>
+          </div>
+          <div style="text-align: right;">
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Total</span>
+            <div id="checkoutSummaryTotal" style="font-size: 1.15rem; font-weight: 900; color: var(--color-secondary);">$0.00</div>
+          </div>
+        </div>
+
+        <form id="checkoutForm" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label" for="checkoutCustomerName">¿A qué nombre preparamos el pedido? *</label>
+            <input type="text" id="checkoutCustomerName" class="form-input" placeholder="Ej: Carlos Méndez" required autocomplete="name" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="checkoutCustomerPhone">Teléfono móvil / WhatsApp (para avisarte) *</label>
+            <input type="tel" id="checkoutCustomerPhone" class="form-input" placeholder="Ej: 55 1234 5678" required autocomplete="tel" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="checkoutPickupTime">¿A qué hora pasarás a recogerlo? *</label>
+            <select id="checkoutPickupTime" class="form-select">
+              <!-- Opciones generadas por JS -->
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="checkoutPaymentMethod">Forma de pago al recoger</label>
+            <select id="checkoutPaymentMethod" class="form-select">
+              <option value="efectivo">💵 Efectivo al recoger en mostrador</option>
+              <option value="tarjeta">💳 Tarjeta / Datáfono al recoger</option>
+            </select>
+          </div>
+
+          <div class="form-group" id="checkoutCashChangeWrapper">
+            <label class="form-label" for="checkoutCashChangeInput">¿Con cuánto vas a pagar? (Opcional, para tener tu cambio listo)</label>
+            <input type="number" id="checkoutCashChangeInput" class="form-input" placeholder="Ej: 200, 500..." min="1" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="checkoutNotes">Notas o peticiones especiales para cocina</label>
+            <textarea id="checkoutNotes" class="form-textarea" placeholder="Ej: Salsas empacadas aparte, servilletas y limones extra..."></textarea>
+          </div>
+        </form>
+      </div>
+
+      <div class="sheet-footer">
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <button type="button" class="btn-primary btn-whatsapp" id="btnConfirmWhatsApp">
+            <span>💬</span>
+            <span>Confirmar y Enviar por WhatsApp</span>
+          </button>
+          
+          <button type="button" class="btn-secondary" id="btnConfirmDigitalTicket">
+            <span>🧾</span>
+            <span>Solo Generar Ticket Digital</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================
+       MODAL: TICKET DIGITAL & SEGUIMIENTO EN VIVO
+       ======================================================== -->
+  <div id="ticketModalOverlay" class="modal-overlay">
+    <div class="bottom-sheet" style="max-height: 92vh;">
+      <div class="sheet-handle"></div>
+
+      <div class="sheet-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 1.2rem;">🌮</span>
+          <h3 style="font-size: 1.05rem; font-weight: 800; color: #FFFFFF;">¡Pedido Confirmado!</h3>
+        </div>
+        <button type="button" id="closeTicketModalBtn" style="background: none; border: none; color: var(--text-muted); font-size: 1.3rem; cursor: pointer; padding: 2px 6px;">✕</button>
+      </div>
+
+      <div class="sheet-body">
+        <div class="pickup-ticket">
+          <div style="text-align: center; margin-bottom: 14px;">
+            <div style="font-size: 1.8rem; margin-bottom: 4px;">🌮🔥</div>
+            <h4 style="font-size: 1.1rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em;">
+              Taquería El Trompo Loco
+            </h4>
+            <p style="font-size: 0.72rem; color: #666; margin-top: 2px;">Comprobante de Pedido para Recoger</p>
+            <div style="display: inline-block; margin-top: 8px; padding: 4px 12px; background: #0E1116; color: #FFB703; border-radius: 6px; font-family: var(--font-heading); font-size: 1.15rem; font-weight: 900;">
+              FOLIO: <span id="ticketFolio">#TCQ-0000</span>
+            </div>
+          </div>
+
+          <div class="ticket-divider-dashed"></div>
+
+          <div style="font-size: 0.8rem; line-height: 1.5; color: #333;">
+            <div><strong>Cliente:</strong> <span id="ticketClientName">-</span></div>
+            <div><strong>Teléfono:</strong> <span id="ticketClientPhone">-</span></div>
+            <div><strong>Hora estimada:</strong> <span id="ticketTime" style="color: #FF4A22; font-weight: 800;">-</span></div>
+            <div><strong>Pago:</strong> <span id="ticketPaymentBadge">-</span></div>
+            <div><strong>Lugar:</strong> Av. Insurgentes Sur 452 (Barra de entrega)</div>
+          </div>
+
+          <div class="ticket-divider-dashed"></div>
+
+          <div style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: #777; margin-bottom: 8px;">
+            Productos ordenados:
+          </div>
+          <div id="ticketItemsContainer" style="color: #222;"></div>
+
+          <div class="ticket-divider-dashed"></div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 1.15rem; font-weight: 900; color: #111;">
+            <span>TOTAL A PAGAR:</span>
+            <span id="ticketTotalAmount">$0.00</span>
+          </div>
+
+          <div style="text-align: center; margin-top: 18px; padding-top: 10px; border-top: 1px solid #EEE;">
+            <div style="font-family: monospace; letter-spacing: 5px; font-size: 1rem; color: #444; font-weight: 700;">
+              ||| | |||| || | |||| ||
+            </div>
+            <p style="font-size: 0.68rem; color: #888; margin-top: 4px;">Presenta este folio en caja al llegar</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px;">
+          <h4 style="font-size: 0.85rem; font-weight: 800; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px;">
+            Estado de tu pedido en cocina:
+          </h4>
+          <div class="order-tracker-container" id="ticketStatusSteps"></div>
+        </div>
+      </div>
+
+      <div class="sheet-footer">
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <button type="button" class="btn-primary btn-whatsapp" id="btnTicketShareWhatsApp">
+            <span>💬</span>
+            <span>Reenviar a WhatsApp</span>
+          </button>
+          <button type="button" class="btn-secondary" id="btnNewOrder">
+            <span>➕</span>
+            <span>Hacer Otro Pedido</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================
+       MODAL: HISTORIAL DE PEDIDOS
+       ======================================================== -->
+  <div id="ordersModalOverlay" class="modal-overlay">
+    <div class="bottom-sheet">
+      <div class="sheet-handle"></div>
+
+      <div class="sheet-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 1.2rem;">🧾</span>
+          <h3 style="font-size: 1.05rem; font-weight: 800; color: #FFFFFF;">Tus Pedidos Anteriores</h3>
+        </div>
+        <button type="button" id="closeOrdersModalBtn" style="background: none; border: none; color: var(--text-muted); font-size: 1.3rem; cursor: pointer; padding: 2px 6px;">✕</button>
+      </div>
+
+      <div class="sheet-body">
+        <div id="ordersListContainer"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================
+       TOAST FLOTANTE DE NOTIFICACIONES
+       ======================================================== -->
+  <div id="appToast" class="toast-msg">
+    <span id="toastIcon">🌮</span>
+    <span id="toastText">Acción realizada</span>
+  </div>
+
+  <!-- Scripts de la aplicación -->
+  <script src="taqueria-app/data.js"></script>
+  <script src="taqueria-app/app.js"></script>
+</body>
+</html>
