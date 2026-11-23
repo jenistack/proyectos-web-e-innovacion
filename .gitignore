@@ -1,0 +1,11 @@
+# Configuraciones internas y herramientas locales
+.agents/
+.vscode/
+mcp_config.json
+cookies.txt
+curl.txt
+test.txt
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

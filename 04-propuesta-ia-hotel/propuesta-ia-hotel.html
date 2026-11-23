@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Propuesta IA para Hoteles · Open Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --color-primario:    #0F172A;
+      --color-acento:      #3B82F6;
+      --color-fondo:       #F8FAFC;
+      --color-texto:       #334155;
+      --color-sutil:       #64748B;
+      --color-borde:       rgba(0,0,0,0.07);
+      --radius:            16px;
+      --radius-sm:         10px;
+      --shadow-card:       0 10px 30px -6px rgba(0,0,0,0.08), 0 4px 10px -4px rgba(0,0,0,0.04);
+      --transition:        0.3s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--color-fondo);
+      color: var(--color-texto);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── TYPOGRAPHY ─── */
+    h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; font-weight: 700; line-height: 1.2; }
+    h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); }
+    h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
+    h3 { font-size: 1.25rem; font-weight: 600; }
+
+    /* ─── LAYOUT ─── */
+    .section { padding: 100px 24px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-acento);
+      background: rgba(59,130,246,0.08);
+      border: 1px solid rgba(59,130,246,0.2);
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .section-title { margin-bottom: 16px; }
+    .section-subtitle { color: var(--color-sutil); font-size: 1.05rem; max-width: 640px; }
+    .text-center { text-align: center; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+
+    /* ─── NAVBAR ─── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 18px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(248,250,252,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--color-borde);
+    }
+    .nav-brand {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--color-primario);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-brand span.dot { color: var(--color-acento); }
+    .nav-cta {
+      background: var(--color-acento);
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all var(--transition);
+      box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+    }
+    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(59,130,246,0.4); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      background: var(--color-primario);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 140px 24px 100px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 60% 40%, rgba(59,130,246,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero h1 { color: #fff; margin-bottom: 24px; }
+    .hero h1 em { font-style: normal; color: var(--color-acento); }
+    .hero .hero-sub {
+      color: rgba(255,255,255,0.65);
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin-bottom: 44px;
+    }
+    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--color-acento);
+      color: #fff; border: none;
+      padding: 16px 32px; border-radius: 10px;
+      font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 600;
+      cursor: pointer; text-decoration: none;
+      transition: all var(--transition);
+      box-shadow: 0 6px 20px rgba(59,130,246,0.35);
+      display: inline-block;
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(59,130,246,0.45); }
+    .btn-ghost {
+      background: transparent;
+      color: rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 16px 32px; border-radius: 10px;
+      font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 500;
+      cursor: pointer; text-decoration: none;
+      transition: all var(--transition);
+      display: inline-block;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.4); }
+
+    /* Hero Stats */
+    .hero-stats {
+      display: flex; gap: 40px; flex-wrap: wrap;
+      margin-top: 64px; padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat-item { }
+    .stat-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem; font-weight: 800; color: #fff;
+    }
+    .stat-value span { color: var(--color-acento); }
+    .stat-label { color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-top: 2px; }
+
+    /* ─── PROBLEMA ─── */
+    .problem-section { background: #fff; }
+    .problem-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px; margin-top: 56px;
+    }
+    .problem-card {
+      background: var(--color-fondo);
+      border: 1px solid var(--color-borde);
+      border-radius: var(--radius);
+      padding: 32px;
+      transition: all var(--transition);
+    }
+    .problem-card:hover { box-shadow: var(--shadow-card); transform: translateY(-4px); }
+    .problem-icon {
+      width: 52px; height: 52px; border-radius: 12px;
+      background: rgba(239,68,68,0.08);
+      border: 1px solid rgba(239,68,68,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 20px;
+    }
+    .problem-card h3 { color: var(--color-primario); margin-bottom: 10px; }
+    .problem-card p { color: var(--color-sutil); font-size: 0.95rem; }
+
+    /* ─── SOLUCIÓN ─── */
+    .solution-section { background: var(--color-fondo); }
+    .solution-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px; margin-top: 56px;
+    }
+    .solution-card {
+      background: #fff;
+      border: 1px solid var(--color-borde);
+      border-radius: var(--radius);
+      padding: 36px;
+      box-shadow: var(--shadow-card);
+      transition: all var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .solution-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--color-acento), #818cf8);
+    }
+    .solution-card:hover { transform: translateY(-5px); }
+    .solution-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3rem; font-weight: 800;
+      color: rgba(59,130,246,0.1); line-height: 1;
+      margin-bottom: 16px;
+    }
+    .solution-card h3 { color: var(--color-primario); margin-bottom: 12px; }
+    .solution-card p { color: var(--color-sutil); font-size: 0.95rem; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .tag {
+      font-size: 0.75rem; font-weight: 500;
+      background: rgba(59,130,246,0.08);
+      color: var(--color-acento);
+      border: 1px solid rgba(59,130,246,0.15);
+      padding: 4px 12px; border-radius: 999px;
+    }
+
+    /* ─── BENEFICIOS ─── */
+    .benefits-section {
+      background: var(--color-primario);
+      position: relative; overflow: hidden;
+    }
+    .benefits-section::after {
+      content: '';
+      position: absolute; bottom: -100px; right: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(59,130,246,0.15), transparent 70%);
+      pointer-events: none;
+    }
+    .benefits-section .section-label { color: #93c5fd; background: rgba(147,197,253,0.1); border-color: rgba(147,197,253,0.2); }
+    .benefits-section .section-title { color: #fff; }
+    .benefits-section .section-subtitle { color: rgba(255,255,255,0.55); }
+    .benefits-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px; margin-top: 56px;
+    }
+    .benefit-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 32px;
+      transition: all var(--transition);
+    }
+    .benefit-card:hover { background: rgba(255,255,255,0.09); transform: translateY(-3px); }
+    .benefit-icon { font-size: 2rem; margin-bottom: 16px; }
+    .benefit-card h3 { color: #fff; margin-bottom: 10px; font-size: 1.1rem; }
+    .benefit-card p { color: rgba(255,255,255,0.55); font-size: 0.9rem; }
+    .benefit-metric {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem; font-weight: 800;
+      color: var(--color-acento);
+      margin-top: 20px;
+    }
+
+    /* ─── METODOLOGÍA ─── */
+    .methodology-section { background: #fff; }
+    .timeline { margin-top: 60px; display: flex; flex-direction: column; gap: 0; position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 32px; top: 0; bottom: 0; width: 2px;
+      background: linear-gradient(to bottom, var(--color-acento), rgba(59,130,246,0.1));
+    }
+    .timeline-item {
+      display: grid; grid-template-columns: 64px 1fr;
+      gap: 32px; align-items: flex-start;
+      padding-bottom: 48px;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-dot {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--color-acento);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800;
+      color: #fff; position: relative; z-index: 1;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 6px rgba(59,130,246,0.1);
+    }
+    .timeline-content {
+      background: var(--color-fondo);
+      border: 1px solid var(--color-borde);
+      border-radius: var(--radius-sm);
+      padding: 28px 32px;
+    }
+    .timeline-phase {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--color-acento); margin-bottom: 8px;
+    }
+    .timeline-content h3 { color: var(--color-primario); margin-bottom: 10px; }
+    .timeline-content p { color: var(--color-sutil); font-size: 0.95rem; }
+    .timeline-duration {
+      display: inline-block; margin-top: 14px;
+      font-size: 0.8rem; font-weight: 600;
+      color: var(--color-sutil);
+      background: rgba(100,116,139,0.08);
+      border: 1px solid rgba(100,116,139,0.15);
+      padding: 3px 12px; border-radius: 999px;
+    }
+
+    /* ─── POR QUÉ NOSOTROS ─── */
+    .why-section { background: var(--color-fondo); }
+    .why-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 48px; align-items: center; margin-top: 60px;
+    }
+    @media(max-width:768px){ .why-grid { grid-template-columns: 1fr; } }
+    .differentiator-list { display: flex; flex-direction: column; gap: 20px; }
+    .differentiator {
+      display: flex; gap: 20px; align-items: flex-start;
+      background: #fff; border: 1px solid var(--color-borde);
+      border-radius: var(--radius-sm); padding: 24px;
+      box-shadow: var(--shadow-card);
+      transition: all var(--transition);
+    }
+    .differentiator:hover { transform: translateX(6px); }
+    .diff-icon {
+      width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
+      background: rgba(59,130,246,0.08);
+      border: 1px solid rgba(59,130,246,0.15);
+      display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+    }
+    .diff-text h4 { color: var(--color-primario); margin-bottom: 4px; font-size: 1rem; }
+    .diff-text p { color: var(--color-sutil); font-size: 0.88rem; }
+    .why-visual {
+      background: var(--color-primario);
+      border-radius: var(--radius);
+      padding: 48px 36px;
+      display: flex; flex-direction: column; gap: 24px;
+    }
+    .metric-row { display: flex; justify-content: space-between; align-items: center; }
+    .metric-label { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+    .metric-bar-wrap { flex: 1; margin: 0 20px; }
+    .metric-bar {
+      height: 6px; border-radius: 999px;
+      background: rgba(255,255,255,0.1);
+      overflow: hidden;
+    }
+    .metric-bar-fill {
+      height: 100%; border-radius: 999px;
+      background: linear-gradient(90deg, var(--color-acento), #818cf8);
+      animation: grow 1.5s ease-out forwards;
+      transform-origin: left;
+    }
+    @keyframes grow { from { width: 0%; } }
+    .metric-pct { color: #fff; font-family: 'Outfit', sans-serif; font-weight: 700; min-width: 36px; text-align: right; }
+
+    /* ─── INVERSIÓN ─── */
+    .pricing-section { background: #fff; }
+    .pricing-table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin-top: 48px; border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow-card); border: 1px solid var(--color-borde);
+    }
+    .pricing-table thead th {
+      background: var(--color-primario); color: #fff;
+      font-family: 'Outfit', sans-serif; font-weight: 600;
+      padding: 20px 28px; text-align: left; font-size: 0.9rem; letter-spacing: 0.04em;
+    }
+    .pricing-table thead th:last-child { text-align: right; }
+    .pricing-table tbody tr { border-bottom: 1px solid var(--color-borde); }
+    .pricing-table tbody tr:last-child { border: none; }
+    .pricing-table tbody td { padding: 20px 28px; font-size: 0.95rem; }
+    .pricing-table tbody td:first-child { font-weight: 600; color: var(--color-primario); }
+    .pricing-table tbody td:last-child { text-align: right; font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--color-acento); font-size: 1.05rem; }
+    .pricing-table tbody tr:nth-child(even) td { background: var(--color-fondo); }
+    .pricing-total {
+      display: flex; justify-content: flex-end; align-items: center; gap: 20px;
+      margin-top: 24px; padding: 24px 28px;
+      background: var(--color-primario); border-radius: var(--radius-sm);
+    }
+    .pricing-total .total-label { color: rgba(255,255,255,0.6); font-size: 0.9rem; font-weight: 500; }
+    .pricing-total .total-amount { font-family: 'Outfit', sans-serif; font-size: 1.8rem; font-weight: 800; color: #fff; }
+    .pricing-total .total-amount span { color: var(--color-acento); }
+    .pricing-note {
+      text-align: center; color: var(--color-sutil); font-size: 0.85rem; margin-top: 16px;
+    }
+
+    /* ─── CTA FINAL ─── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--color-acento) 0%, #6366f1 100%);
+      padding: 100px 24px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(255,255,255,0.08), transparent);
+    }
+    .cta-section h2 { color: #fff; position: relative; z-index: 1; font-size: clamp(2rem, 4vw, 3rem); }
+    .cta-section p { color: rgba(255,255,255,0.75); font-size: 1.1rem; margin: 16px 0 44px; position: relative; z-index: 1; }
+    .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; position: relative; z-index: 1; }
+    .btn-white {
+      background: #fff; color: var(--color-acento);
+      padding: 16px 36px; border-radius: 10px;
+      font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 700;
+      text-decoration: none; cursor: pointer;
+      transition: all var(--transition);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      display: inline-block;
+    }
+    .btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,0.2); }
+    .btn-outline-white {
+      background: transparent; color: #fff;
+      border: 2px solid rgba(255,255,255,0.4);
+      padding: 14px 32px; border-radius: 10px;
+      font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 600;
+      text-decoration: none; cursor: pointer;
+      transition: all var(--transition); display: inline-block;
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.7); }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background: var(--color-primario);
+      padding: 40px 24px; text-align: center;
+    }
+    .footer p { color: rgba(255,255,255,0.4); font-size: 0.85rem; }
+    .footer strong { color: rgba(255,255,255,0.7); }
+
+    /* ─── SCROLL ANIMATIONS ─── */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 600px) {
+      .hero-stats { gap: 28px; }
+      .pricing-table thead th, .pricing-table tbody td { padding: 14px 16px; }
+      .timeline { }
+      .timeline::before { left: 24px; }
+      .timeline-item { grid-template-columns: 48px 1fr; gap: 20px; }
+      .timeline-dot { width: 48px; height: 48px; font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav class="nav">
+    <div class="nav-brand">
+      Open Manager<span class="dot"> ·</span> IA
+    </div>
+    <a href="#cta" class="nav-cta">Hablemos →</a>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════
+       1. HERO
+  ═══════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="container hero-content">
+      <div class="section-label">Propuesta Comercial · 2026</div>
+      <h1>Tu hotel, operando a<br><em>velocidad de IA.</em></h1>
+      <p class="hero-sub">
+        Automatizamos la atención, la operación y la inteligencia de datos de tu propiedad para que tu equipo se enfoque en lo que realmente importa: la experiencia del huésped.
+      </p>
+      <div class="hero-buttons">
+        <a href="#solucion" class="btn-primary">Ver la solución</a>
+        <a href="#inversion" class="btn-ghost">Ver inversión</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-value">40<span>%</span></div>
+          <div class="stat-label">Reducción en tiempos de respuesta</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">3<span>×</span></div>
+          <div class="stat-label">Mayor retención de huéspedes</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">24<span>/7</span></div>
+          <div class="stat-label">Atención automatizada sin fricción</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       2. PROBLEMA
+  ═══════════════════════════════════════ -->
+  <section class="section problem-section" id="problema">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">El desafío</div>
+        <h2 class="section-title">Los hoteles operan hoy<br>con herramientas de ayer.</h2>
+        <p class="section-subtitle">Mientras los huéspedes exigen experiencias personalizadas e inmediatas, la operación hotelera sigue dependiendo de procesos manuales que generan pérdidas silenciosas cada día.</p>
+      </div>
+      <div class="problem-grid reveal">
+        <div class="problem-card">
+          <div class="problem-icon">🕐</div>
+          <h3>Respuestas lentas, huéspedes frustrados</h3>
+          <p>El equipo de recepción no puede atender consultas simultáneas. Las esperas en WhatsApp o email deterioran la experiencia antes del check-in.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">📉</div>
+          <h3>Ingresos perdidos por falta de datos</h3>
+          <p>Sin inteligencia en tiempo real sobre ocupación, preferencias y patrones, se pierden oportunidades de upselling y ajuste de tarifas dinámicas.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">🔁</div>
+          <h3>Operación repetitiva y costosa</h3>
+          <p>Tareas como confirmaciones, recordatorios, encuestas post-estancia y coordinación de servicios consumen horas de trabajo que podrían automatizarse.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">⭐</div>
+          <h3>Reviews negativos que se acumulan</h3>
+          <p>Sin un sistema proactivo de gestión de feedback, los problemas menores escalan a reviews públicos que afectan la reputación y la tasa de conversión.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       3. SOLUCIÓN
+  ═══════════════════════════════════════ -->
+  <section class="section solution-section" id="solucion">
+    <div class="container">
+      <div class="reveal text-center">
+        <div class="section-label mx-auto" style="display:table;">La solución</div>
+        <h2 class="section-title">Una suite de IA diseñada<br>para la operación hotelera.</h2>
+        <p class="section-subtitle mx-auto">Combinamos IA conversacional, automatización de procesos y análisis predictivo en una plataforma integrada con tu PMS actual.</p>
+      </div>
+      <div class="solution-grid reveal">
+
+        <div class="solution-card">
+          <div class="solution-num">01</div>
+          <h3>Concierge IA 24/7</h3>
+          <p>Asistente conversacional entrenado con el perfil de tu hotel. Responde reservas, consultas, servicios y reclamaciones en WhatsApp, web y email de forma instantánea.</p>
+          <div class="tag-list">
+            <span class="tag">WhatsApp</span>
+            <span class="tag">Email</span>
+            <span class="tag">Web Chat</span>
+            <span class="tag">Multiidioma</span>
+          </div>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-num">02</div>
+          <h3>Automatización Operativa</h3>
+          <p>Flujos automáticos para confirmaciones, recordatorios, encuestas, coordinación de housekeeping y alertas internas. Elimina el 70% del trabajo manual repetitivo.</p>
+          <div class="tag-list">
+            <span class="tag">Confirmaciones</span>
+            <span class="tag">Housekeeping</span>
+            <span class="tag">Encuestas</span>
+            <span class="tag">Alertas</span>
+          </div>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-num">03</div>
+          <h3>Inteligencia de Revenue</h3>
+          <p>Dashboard en tiempo real con predicción de ocupación, recomendaciones de tarifas dinámicas y análisis de segmentos de huéspedes para maximizar el RevPAR.</p>
+          <div class="tag-list">
+            <span class="tag">RevPAR</span>
+            <span class="tag">Tarifas dinámicas</span>
+            <span class="tag">Forecasting</span>
+          </div>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-num">04</div>
+          <h3>Gestión de Reputación</h3>
+          <p>Monitorización y respuesta asistida por IA en Google, Booking, TripAdvisor. Alertas tempranas ante feedback negativo para intervenir antes de que se publique.</p>
+          <div class="tag-list">
+            <span class="tag">Google Reviews</span>
+            <span class="tag">Booking</span>
+            <span class="tag">TripAdvisor</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       4. BENEFICIOS
+  ═══════════════════════════════════════ -->
+  <section class="section benefits-section" id="beneficios">
+    <div class="container">
+      <div class="reveal text-center">
+        <div class="section-label">Resultados esperados</div>
+        <h2 class="section-title" style="color:#fff;">Lo que cambia en tu hotel<br>desde el primer mes.</h2>
+        <p class="section-subtitle mx-auto">Resultados medibles. No promesas abstractas.</p>
+      </div>
+      <div class="benefits-grid reveal">
+        <div class="benefit-card">
+          <div class="benefit-icon">⚡</div>
+          <h3>Tiempo de respuesta</h3>
+          <p>De horas a segundos en la atención de consultas entrantes de huéspedes.</p>
+          <div class="benefit-metric">-85%</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💰</div>
+          <h3>Incremento en ingresos</h3>
+          <p>Mayor conversión de upselling y reducción de cancelaciones por seguimiento proactivo.</p>
+          <div class="benefit-metric">+22%</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🌟</div>
+          <h3>Puntuación media de reviews</h3>
+          <p>Mejora directa en plataformas OTA gracias a la gestión proactiva de la experiencia.</p>
+          <div class="benefit-metric">+0.4★</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🎯</div>
+          <h3>Eficiencia del equipo</h3>
+          <p>El personal redirige su tiempo a tareas de alto valor: hospitalidad real, no burocracia.</p>
+          <div class="benefit-metric">+40%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       5. METODOLOGÍA (PLAN DE TRABAJO)
+  ═══════════════════════════════════════ -->
+  <section class="section methodology-section" id="metodologia">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Plan de trabajo</div>
+        <h2 class="section-title">De la firma al primer resultado<br>en 8 semanas.</h2>
+        <p class="section-subtitle">Un proceso estructurado, sin disrupciones operativas y con tu equipo integrado desde el día uno.</p>
+      </div>
+      <div class="timeline reveal">
+
+        <div class="timeline-item">
+          <div class="timeline-dot">1</div>
+          <div class="timeline-content">
+            <div class="timeline-phase">Fase 1 · Diagnóstico</div>
+            <h3>Auditoría y Mapeo Operativo</h3>
+            <p>Analizamos tus flujos actuales, integraciones con PMS, canales de comunicación y puntos de dolor. Definimos el alcance exacto y los KPIs de éxito del proyecto.</p>
+            <span class="timeline-duration">⏱ Semanas 1–2</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-content">
+            <div class="timeline-phase">Fase 2 · Diseño</div>
+            <h3>Arquitectura e Interfaz de la Solución</h3>
+            <p>Diseñamos la experiencia del asistente conversacional, los flujos de automatización y el dashboard de inteligencia. Validamos contigo antes de desarrollar.</p>
+            <span class="timeline-duration">⏱ Semanas 2–3</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot">3</div>
+          <div class="timeline-content">
+            <div class="timeline-phase">Fase 3 · Desarrollo e Integración</div>
+            <h3>Implementación y Conexión con tu Stack</h3>
+            <p>Desarrollamos y conectamos la plataforma a tu PMS, canales de comunicación y OTAs. Entrenamos el modelo de IA con el perfil único de tu hotel.</p>
+            <span class="timeline-duration">⏱ Semanas 3–6</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot">4</div>
+          <div class="timeline-content">
+            <div class="timeline-phase">Fase 4 · Lanzamiento</div>
+            <h3>Pruebas, Capacitación y Go Live</h3>
+            <p>Realizamos pruebas piloto con reservas reales, capacitamos a tu equipo y activamos el sistema con monitoreo cercano. El primer resultado medible llega aquí.</p>
+            <span class="timeline-duration">⏱ Semanas 7–8</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot">∞</div>
+          <div class="timeline-content">
+            <div class="timeline-phase">Soporte Continuo</div>
+            <h3>Optimización y Retainer Mensual</h3>
+            <p>Post lanzamiento, el equipo de Open Manager monitoriza el rendimiento, entrena el modelo con nuevos datos y aplica mejoras continuas cada mes.</p>
+            <span class="timeline-duration">⏱ Mes 3 en adelante</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       5. POR QUÉ NOSOTROS
+  ═══════════════════════════════════════ -->
+  <section class="section why-section" id="por-que">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Por qué Open Manager</div>
+        <h2 class="section-title">No somos una agencia genérica.<br>Somos especialistas en hospitalidad + IA.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="differentiator-list reveal">
+          <div class="differentiator">
+            <div class="diff-icon">🏨</div>
+            <div class="diff-text">
+              <h4>Experiencia sectorial profunda</h4>
+              <p>Nuestro equipo combina trayectoria en tecnología hotelera y operaciones, hablamos tu idioma.</p>
+            </div>
+          </div>
+          <div class="differentiator">
+            <div class="diff-icon">🔗</div>
+            <div class="diff-text">
+              <h4>Integración, no sustitución</h4>
+              <p>Nos conectamos a tu PMS existente. No te pedimos que cambies de sistema, potenciamos el que ya tienes.</p>
+            </div>
+          </div>
+          <div class="differentiator">
+            <div class="diff-icon">📊</div>
+            <div class="diff-text">
+              <h4>Resultados medibles desde el día 30</h4>
+              <p>Definimos KPIs claros desde el diagnóstico. Si no hay datos, no hay excusas.</p>
+            </div>
+          </div>
+          <div class="differentiator">
+            <div class="diff-icon">🛡️</div>
+            <div class="diff-text">
+              <h4>Seguridad y cumplimiento GDPR</h4>
+              <p>Arquitectura diseñada para proteger los datos de tus huéspedes desde el primer día.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-visual reveal">
+          <h3 style="color:#fff;font-family:'Outfit',sans-serif;font-weight:700;margin-bottom:28px;font-size:1.1rem;">Comparativa de impacto</h3>
+          <div class="metric-row">
+            <span class="metric-label">Satisfacción</span>
+            <div class="metric-bar-wrap">
+              <div class="metric-bar"><div class="metric-bar-fill" style="width:92%"></div></div>
+            </div>
+            <span class="metric-pct">+92%</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Eficiencia ops.</span>
+            <div class="metric-bar-wrap">
+              <div class="metric-bar"><div class="metric-bar-fill" style="width:78%"></div></div>
+            </div>
+            <span class="metric-pct">+78%</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">RevPAR</span>
+            <div class="metric-bar-wrap">
+              <div class="metric-bar"><div class="metric-bar-fill" style="width:62%"></div></div>
+            </div>
+            <span class="metric-pct">+62%</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Score reviews</span>
+            <div class="metric-bar-wrap">
+              <div class="metric-bar"><div class="metric-bar-fill" style="width:88%"></div></div>
+            </div>
+            <span class="metric-pct">+88%</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Tiempo respuesta</span>
+            <div class="metric-bar-wrap">
+              <div class="metric-bar"><div class="metric-bar-fill" style="width:95%"></div></div>
+            </div>
+            <span class="metric-pct">-95%</span>
+          </div>
+          <p style="color:rgba(255,255,255,0.3);font-size:0.78rem;margin-top:24px;text-align:center;">
+            * Proyecciones basadas en implementaciones similares en propiedades de 50-200 habitaciones.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       6. INVERSIÓN
+  ═══════════════════════════════════════ -->
+  <section class="section pricing-section" id="inversion">
+    <div class="container">
+      <div class="reveal text-center">
+        <div class="section-label mx-auto" style="display:table;">Inversión</div>
+        <h2 class="section-title">Transparencia total.<br>Sin sorpresas.</h2>
+        <p class="section-subtitle mx-auto">Una inversión única de implementación más un retainer mensual de optimización continua.</p>
+      </div>
+      <div class="reveal">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Servicio</th>
+              <th>Descripción</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Servicio de Diseño UI/UX Custom</td>
+              <td>Diseño del Concierge IA, dashboard de inteligencia y paneles de administración. Hasta 5 pantallas principales en alta fidelidad. Incluye revisiones y archivos Figma.</td>
+              <td>$1,500 USD</td>
+            </tr>
+            <tr>
+              <td>Desarrollo Frontend React/Next.js</td>
+              <td>Maquetación del dashboard de revenue, panel de operaciones y widget de chat. Diseño responsivo optimizado para dispositivos del personal hotelero.</td>
+              <td>$3,500 USD</td>
+            </tr>
+            <tr>
+              <td>Desarrollo Backend y Base de Datos</td>
+              <td>Arquitectura de datos, integración con PMS, motor de IA conversacional, endpoints seguros y panel de administración. Incluye entrenamiento inicial del modelo.</td>
+              <td>$2,800 USD</td>
+            </tr>
+            <tr>
+              <td>Retainer de Soporte y Mantenimiento</td>
+              <td>Soporte técnico mensual, re-entrenamiento del modelo, actualizaciones de seguridad, reportes de rendimiento y mejoras continuas. A partir del mes 3.</td>
+              <td>$300 USD / mes</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="pricing-total">
+          <span class="total-label">Inversión inicial de implementación</span>
+          <span class="total-amount"><span>$</span>7,800 USD</span>
+        </div>
+        <p class="pricing-note">* El retainer mensual de $300 USD comienza a partir del mes 3, una vez superado el período de lanzamiento y estabilización.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       7. CTA FINAL
+  ═══════════════════════════════════════ -->
+  <section class="cta-section" id="cta">
+    <div class="container">
+      <h2>¿Listo para transformar<br>la operación de tu hotel?</h2>
+      <p>Agenda una llamada de 30 minutos. Sin compromiso.<br>Te mostramos cómo funcionaría en tu propiedad, con tus datos.</p>
+      <div class="cta-buttons">
+        <a href="mailto:hola@openmanager.ai?subject=Propuesta IA Hotel – Solicito una llamada" class="btn-white">
+          Agenda tu llamada →
+        </a>
+        <a href="#problema" class="btn-outline-white">Volver a ver la propuesta</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <p><strong>Open Manager · IA para Hospitalidad</strong><br>
+    Propuesta generada en noviembre 2026 · Válida por 30 días · Confidencial</p>
+  </footer>
+
+
+  <!-- ─── SCROLL REVEAL SCRIPT ─── -->
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), i * 100);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    reveals.forEach(el => observer.observe(el));
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+
+</body>
+</html>

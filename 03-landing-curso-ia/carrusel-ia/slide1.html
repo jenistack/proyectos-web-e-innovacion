@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Slide 1 - Portada</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px;
+      height: 1350px;
+      background: radial-gradient(circle at 85% 15%, rgba(59, 130, 246, 0.22) 0%, transparent 45%),
+                  radial-gradient(circle at 15% 85%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+                  #0B1120;
+      color: #F8FAFC;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 90px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      color: #60A5FA;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .badge-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #3B82F6;
+      box-shadow: 0 0 10px #3B82F6;
+    }
+    .counter {
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #64748B;
+      letter-spacing: 2px;
+    }
+    .hero {
+      position: relative;
+      z-index: 2;
+      margin-top: -20px;
+    }
+    .pre-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 52px;
+      font-weight: 700;
+      color: #94A3B8;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .mid-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 64px;
+      font-weight: 800;
+      color: #E2E8F0;
+      line-height: 1.15;
+      margin-bottom: 28px;
+    }
+    .main-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 80px;
+      font-weight: 900;
+      line-height: 1.05;
+      background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 40%, #38BDF8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -1.5px;
+      margin-bottom: 40px;
+    }
+    .card-comparison {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border-radius: 28px;
+      padding: 36px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    .stat-box {
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      padding-right: 20px;
+    }
+    .stat-box:last-child {
+      border-right: none;
+      padding-right: 0;
+      padding-left: 10px;
+    }
+    .stat-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 48px;
+      font-weight: 800;
+      color: #94A3B8;
+      margin-bottom: 6px;
+    }
+    .stat-num.highlight {
+      color: #38BDF8;
+      text-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+    }
+    .stat-desc {
+      font-size: 22px;
+      color: #CBD5E1;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+    .footer-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 30px;
+    }
+    .author {
+      font-size: 22px;
+      font-weight: 600;
+      color: #64748B;
+      letter-spacing: 0.5px;
+    }
+    .swipe-cta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 22px;
+      font-weight: 700;
+      color: #38BDF8;
+      background: rgba(56, 189, 248, 0.1);
+      padding: 12px 24px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Estrategia Digital
+    </div>
+    <div class="counter">01 / 07</div>
+  </div>
+
+  <div class="hero">
+    <div class="pre-title">La mayoría usa la IA</div>
+    <div class="mid-title">para ahorrar tiempo.</div>
+    <div class="main-title">Muy pocos la usan para ganar dinero.</div>
+
+    <div class="card-comparison">
+      <div class="stat-box">
+        <div class="stat-num">95%</div>
+        <div class="stat-desc">Se queda en productividad básica y atajos de oficina.</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num highlight">5% 🚀</div>
+        <div class="stat-desc">La convierte en palanca directa de ingresos y negocio.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div class="author">CURSO IA • GUÍA PRÁCTICA</div>
+    <div class="swipe-cta">Desliza para ver la diferencia 👉</div>
+  </div>
+</body>
+</html>
