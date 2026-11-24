@@ -14,6 +14,7 @@ Cada proyecto está estructurado como un caso práctico real, combinando diseño
 * **03. [Landing Curso IA](./03-landing-curso-ia/)** — Página promocional de conversión, estrategia de email marketing y carrusel visual interactivo.
 * **05. [App Taquería](./05-app-taqueria/)** — Aplicación web interactiva de carta digital, flujo de pedidos y panel de gestión desarrollada con JavaScript modular.
 * **06. [Propuesta Aura Studio](./06-propuesta-aura-studio/)** — Diseño y maquetación web minimalista para estudio creativo.
+* **07. [Mapa de Oportunidades con IA](./07-mapa-oportunidades-ia/)** — Plataforma colaborativa pública y en tiempo real para detectar, publicar y evaluar oportunidades de negocio con IA geolocalizadas con persistencia en Supabase.
 
 ### 🚀 Consultoría de Transformación Digital e IA
 * **04. [Propuesta de IA y Automatización para Hotel](./04-propuesta-ia-hotel/)** — Diagnóstico estratégico, arquitectura tecnológica, automatización de procesos (RPA), atención al huésped y presentación ejecutiva de soluciones de Inteligencia Artificial para el sector turístico.

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Oportunidades con IA | Red Global Pública</title>
+    <meta name="description" content="Plataforma colaborativa pública para descubrir, publicar y validar oportunidades de negocio con Inteligencia Artificial por ciudad y país.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Estilos de la app -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Supabase JS Client CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="brand">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-earth-americas"></i>
+                </div>
+                <div class="brand-text">
+                    <h1>Mapa de Oportunidades <span>con IA</span></h1>
+                    <p class="brand-tag">Base de datos global pública en tiempo real</p>
+                </div>
+            </div>
+
+            <div class="nav-actions">
+                <button id="btn-config-supabase" class="btn btn-secondary btn-sm" title="Ajustes de conexión Supabase">
+                    <i class="fa-solid fa-database"></i>
+                    <span id="supabase-status-badge" class="status-indicator"></span>
+                    <span>Conexión Supabase</span>
+                </button>
+                <button id="btn-open-modal" class="btn btn-primary">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Publicar Oportunidad</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="badge-live">
+                <span class="pulse-dot"></span> Acceso 100% público y abierto en tiempo real
+            </div>
+            <h2>Oportunidades de Negocio con IA <br><span class="gradient-text">Detectadas en Ciudades del Mundo</span></h2>
+            <p>Descubre problemas reales en ciudades específicas, soluciones viables con Inteligencia Artificial y vota las ideas con mayor potencial de impacto.</p>
+            
+            <div class="stats-ribbon">
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-total">0</span>
+                    <span class="stat-label">Oportunidades</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-cities">0</span>
+                    <span class="stat-label">Ciudades</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-countries">0</span>
+                    <span class="stat-label">Países</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-likes">0</span>
+                    <span class="stat-label">Likes Globales</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="main-container">
+        
+        <!-- Supabase Connection Banner (Si falta configuración) -->
+        <div id="connection-alert" class="connection-alert hidden">
+            <div class="alert-icon">
+                <i class="fa-solid fa-circle-exclamation"></i>
+            </div>
+            <div class="alert-body">
+                <strong>Configura tu conexión a Supabase</strong>
+                <p>Para sincronizar las oportunidades públicas en tiempo real entre todos los usuarios, ingresa las credenciales de tu proyecto Supabase.</p>
+            </div>
+            <button id="btn-alert-connect" class="btn btn-outline-light btn-sm">Conectar ahora</button>
+        </div>
+
+        <!-- Barra de Filtros y Búsqueda -->
+        <section class="filters-card">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" placeholder="Buscar por oportunidad, problema o palabra clave...">
+            </div>
+
+            <div class="filters-grid">
+                <!-- Filtro Ciudad -->
+                <div class="filter-group">
+                    <label for="filter-city"><i class="fa-solid fa-city"></i> Ciudad</label>
+                    <select id="filter-city">
+                        <option value="">Todas las ciudades</option>
+                    </select>
+                </div>
+
+                <!-- Filtro País -->
+                <div class="filter-group">
+                    <label for="filter-country"><i class="fa-solid fa-globe"></i> País</label>
+                    <select id="filter-country">
+                        <option value="">Todos los países</option>
+                    </select>
+                </div>
+
+                <!-- Filtro Categoría -->
+                <div class="filter-group">
+                    <label for="filter-category"><i class="fa-solid fa-tags"></i> Categoría</label>
+                    <select id="filter-category">
+                        <option value="">Todas las categorías</option>
+                        <option value="Turismo & Hospitalidad">Turismo & Hospitalidad</option>
+                        <option value="Gastronomía">Gastronomía</option>
+                        <option value="Salud">Salud</option>
+                        <option value="Sostenibilidad">Sostenibilidad</option>
+                        <option value="Comercio & Retail">Comercio & Retail</option>
+                        <option value="Transporte & Movilidad">Transporte & Movilidad</option>
+                        <option value="Educación">Educación</option>
+                        <option value="Inmobiliario & Proptech">Inmobiliario & Proptech</option>
+                        <option value="Otra">Otra</option>
+                    </select>
+                </div>
+
+                <!-- Botón Limpiar Filtros -->
+                <div class="filter-group filter-actions">
+                    <label>&nbsp;</label>
+                    <button id="btn-reset-filters" class="btn btn-ghost btn-sm" title="Limpiar filtros">
+                        <i class="fa-solid fa-rotate-left"></i> Limpiar
+                    </button>
+                </div>
+            </div>
+
+            <div class="results-meta">
+                <span id="results-count">Cargando oportunidades...</span>
+                <div class="sort-wrapper">
+                    <label for="sort-select">Ordenar por:</label>
+                    <select id="sort-select">
+                        <option value="recent">Más recientes</option>
+                        <option value="likes">Más votadas (Likes)</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grid de Oportunidades -->
+        <section class="opportunities-section">
+            <div id="loading-spinner" class="loading-state">
+                <div class="spinner"></div>
+                <p>Cargando oportunidades desde Supabase...</p>
+            </div>
+
+            <div id="empty-state" class="empty-state hidden">
+                <div class="empty-icon">
+                    <i class="fa-regular fa-compass"></i>
+                </div>
+                <h3>No se encontraron oportunidades</h3>
+                <p>No hay coincidencias con los filtros aplicados o aún no se han publicado oportunidades.</p>
+                <button class="btn btn-primary" onclick="openPublishModal()">
+                    <i class="fa-solid fa-plus"></i> Sé el primero en publicar una
+                </button>
+            </div>
+
+            <div id="opportunities-grid" class="opportunities-grid">
+                <!-- Se llena dinámicamente con JavaScript -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal para Publicar Oportunidad -->
+    <div id="publish-modal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <div>
+                        <h3>Publicar Nueva Oportunidad</h3>
+                        <p>Se compartirá públicamente con todos los usuarios en Supabase</p>
+                    </div>
+                </div>
+                <button id="btn-close-modal" class="btn-close" aria-label="Cerrar modal">&times;</button>
+            </div>
+
+            <form id="publish-form" class="modal-body">
+                <div class="form-group">
+                    <label for="name">Nombre de la oportunidad *</label>
+                    <input type="text" id="name" required placeholder="Ej: Optimización de inventario para taquerías nocturnas">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">Ciudad *</label>
+                        <input type="text" id="city" required placeholder="Ej: Madrid, Medellín, Cancún...">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">País *</label>
+                        <input type="text" id="country" required placeholder="Ej: España, Colombia, México...">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="category">Categoría *</label>
+                        <select id="category" required>
+                            <option value="">Selecciona una categoría...</option>
+                            <option value="Turismo & Hospitalidad">Turismo & Hospitalidad</option>
+                            <option value="Gastronomía">Gastronomía</option>
+                            <option value="Salud">Salud</option>
+                            <option value="Sostenibilidad">Sostenibilidad</option>
+                            <option value="Comercio & Retail">Comercio & Retail</option>
+                            <option value="Transporte & Movilidad">Transporte & Movilidad</option>
+                            <option value="Educación">Educación</option>
+                            <option value="Inmobiliario & Proptech">Inmobiliario & Proptech</option>
+                            <option value="Otra">Otra</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="potential">Nivel de Potencial *</label>
+                        <select id="potential" required>
+                            <option value="">Selecciona el potencial...</option>
+                            <option value="Disruptivo">🚀 Disruptivo (Mercado masivo / Alto impacto)</option>
+                            <option value="Alto">🔥 Alto (Fuerte demanda y rentabilidad)</option>
+                            <option value="Medio">⚡ Medio (Nicho específico / Validación inicial)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem">Problema detectado en la ciudad *</label>
+                    <textarea id="problem" rows="3" required placeholder="Describe la fricción, dolor o ineficiencia real que ocurre en esa ciudad..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="ai_solution">Solución con Inteligencia Artificial *</label>
+                    <textarea id="ai_solution" rows="3" required placeholder="¿Cómo la IA (visión, LLMs, modelos predictivos, agentes) resuelve este problema?"></textarea>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" id="btn-cancel-modal" class="btn btn-ghost">Cancelar</button>
+                    <button type="submit" id="btn-submit-opportunity" class="btn btn-primary">
+                        <i class="fa-solid fa-paper-plane"></i> Publicar en Supabase
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Configuración de Supabase -->
+    <div id="config-modal" class="modal-overlay hidden">
+        <div class="modal-card modal-config">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <i class="fa-solid fa-plug-circle-check"></i>
+                    <div>
+                        <h3>Conexión con Supabase</h3>
+                        <p>Conecta la base de datos pública de tu proyecto</p>
+                    </div>
+                </div>
+                <button id="btn-close-config-modal" class="btn-close" aria-label="Cerrar modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="config-instructions">
+                    <p>Encuentra tus credenciales en tu panel de Supabase: <br>
+                    <strong>Project Settings &rarr; API &rarr; Project URL y anon public key</strong></p>
+                </div>
+
+                <form id="config-form">
+                    <div class="form-group">
+                        <label for="cfg-supabase-url">Supabase Project URL</label>
+                        <input type="text" id="cfg-supabase-url" placeholder="https://xyzcompany.supabase.co" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cfg-supabase-key">Supabase Anon Key (Public Key)</label>
+                        <textarea id="cfg-supabase-key" rows="3" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." required></textarea>
+                    </div>
+
+                    <div class="config-status-box" id="config-test-result">
+                        <!-- Mensaje de prueba de conexión -->
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" id="btn-test-connection" class="btn btn-secondary">
+                            <i class="fa-solid fa-vial"></i> Probar Conexión
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa-solid fa-floppy-disk"></i> Guardar y Conectar
+                        </button>
+                    </div>
+                </form>
+
+                <div class="sql-help-box">
+                    <details>
+                        <summary><i class="fa-solid fa-code"></i> Ver script SQL para crear la tabla en Supabase</summary>
+                        <p>Si aún no has creado la tabla <code>opportunities</code> en Supabase, copia y pega esto en el <strong>SQL Editor</strong> de Supabase:</p>
+                        <pre><code>CREATE TABLE IF NOT EXISTS public.opportunities (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name TEXT NOT NULL,
+  city TEXT NOT NULL,
+  country TEXT NOT NULL,
+  problem TEXT NOT NULL,
+  ai_solution TEXT NOT NULL,
+  category TEXT NOT NULL,
+  potential TEXT NOT NULL,
+  likes INTEGER NOT NULL DEFAULT 0,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+ALTER TABLE public.opportunities ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Lectura publica" ON public.opportunities FOR SELECT TO anon, authenticated USING (true);
+CREATE POLICY "Insercion publica" ON public.opportunities FOR INSERT TO anon, authenticated WITH CHECK (true);
+CREATE POLICY "Update likes publico" ON public.opportunities FOR UPDATE TO anon, authenticated USING (true) WITH CHECK (true);</code></pre>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast hidden">
+        <i class="fa-solid fa-check-circle toast-icon"></i>
+        <span class="toast-message" id="toast-message">Operación exitosa</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="supabase-config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
