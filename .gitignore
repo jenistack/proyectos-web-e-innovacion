@@ -8,4 +8,7 @@ test.txt
 
 # Sistema operativo
 .DS_Store
-Thumbs.db
+Thumbs.dbmcp_config.json
+
+.agents/mcp_config.json
+cookies.txt
