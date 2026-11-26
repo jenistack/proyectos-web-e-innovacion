@@ -635,12 +635,28 @@ button, input, textarea, select {
 
 .profile-avatar {
   position: relative;
-  width: 116px;
-  height: 116px;
+  width: 124px;
+  height: 124px;
   margin: 0 auto 1.5rem auto;
 }
 
-/* Avatar con gradiente vibrante morado a ámbar */
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--color-surface);
+  box-shadow: var(--shadow-purple-glow);
+  display: block;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.profile-card:hover .avatar-img {
+  transform: scale(1.03);
+  box-shadow: 0 12px 32px -4px rgba(108, 62, 178, 0.45);
+}
+
+/* Avatar con gradiente vibrante morado a ámbar (fallback) */
 .avatar-gradient {
   width: 100%;
   height: 100%;
