@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeni Alverca Marhenawati | Desarrolladora Full Stack & Transformación Digital</title>
+  <meta name="description" content="Web personal de Jeni Alverca Marhenawati. Desarrolladora Full Stack (Python & SQL), Programa Diginnova FULP, Educación y Transformación Digital en Las Palmas de Gran Canaria.">
+  <meta name="keywords" content="Jeni Alverca, Full Stack Developer, Python, SQL, Diginnova, FULP, EdTech, Las Palmas, Transformación Digital">
+  
+  <!-- Google Fonts: Plus Jakarta Sans, Outfit e Inter para la nueva identidad visual moderna -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Barra de Navegación -->
+  <header class="header" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="logo" aria-label="Inicio">
+        <span class="logo-badge">JA</span>
+        <span class="logo-text">Jeni Alverca</span>
+      </a>
+
+      <!-- Botón Hamburguesa Móvil -->
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- Menú de Navegación -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#hero" class="nav-link active">Inicio</a></li>
+          <li class="nav-item"><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+          <li class="nav-item"><a href="#servicios" class="nav-link">Servicios & Proyectos</a></li>
+          <li class="nav-item"><a href="#trayectoria" class="nav-link">Trayectoria</a></li>
+          <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="#contacto" class="btn btn-primary btn-sm">Hablemos</a>
+          <button id="themeToggle" class="theme-btn" aria-label="Cambiar tema de color" title="Alternar tema">
+            <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECCIÓN HERO / PRINCIPAL -->
+    <section class="hero" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>Programa Diginnova FULP &bull; Transformación Digital &bull; Canarias</span>
+          </div>
+          
+          <h1 class="hero-title">
+            Hola, soy <span class="highlight">Jeni Alverca</span> Marhenawati
+          </h1>
+          
+          <p class="hero-subtitle">
+            Desarrolladora Full Stack (Python &amp; SQL) &bull; Graduada en Educación Infantil &bull; Innovación &amp; Product Management
+          </p>
+
+          <p class="hero-description">
+            Conecto la estrategia de negocio y la visión pedagógica con la ejecución técnica. Especializada en desarrollo web, modelado de bases de datos relacionales y dinamización de procesos de innovación digital.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contacto" class="btn btn-primary">
+              <span>Contactar conmigo</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#servicios" class="btn btn-secondary">
+              <span>Explorar Proyectos</span>
+            </a>
+          </div>
+
+          <!-- Redes Sociales Rápidas -->
+          <div class="hero-social">
+            <span class="social-label">Encuéntrame en:</span>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/jeni-alverca-marhenawati-146357397" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Perfil de LinkedIn de Jeni Alverca" title="LinkedIn">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.53 1.53 0 0 0 1.54-1.53c0-.85-.69-1.54-1.54-1.54a1.54 1.54 0 0 0-1.54 1.54c0 .84.69 1.53 1.54 1.53m1.39 9.97v-8.37H5.07v8.37h2.78z"/>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+
+              <a href="mailto:elisa.alverca@gmail.com" class="social-btn" aria-label="Enviar correo electrónico" title="Correo">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>Email</span>
+              </a>
+
+              <button class="social-btn copy-email-btn" id="copyEmailQuick" data-email="elisa.alverca@gmail.com" aria-label="Copiar correo al portapapeles" title="Copiar email">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span class="copy-text">Copiar</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta Flotante Hero / Perfil Visual -->
+        <div class="hero-visual">
+          <div class="profile-card">
+            <div class="profile-avatar">
+              <div class="avatar-gradient">
+                <span class="avatar-initials">JA</span>
+              </div>
+              <div class="status-indicator" title="Disponible para retos técnicos"></div>
+            </div>
+            <div class="profile-info">
+              <h3>Jeni Alverca Marhenawati</h3>
+              <p class="profile-role">Full Stack &amp; Digital Transformation</p>
+              <div class="location-tag">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Las Palmas de Gran Canaria, España</span>
+              </div>
+            </div>
+
+            <div class="profile-stats">
+              <div class="stat-item">
+                <span class="stat-number">Python</span>
+                <span class="stat-name">&amp; SQL</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-number">Diginnova</span>
+                <span class="stat-name">FULP 2026</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-number">EdTech</span>
+                <span class="stat-name">&amp; Gestión</span>
+              </div>
+            </div>
+
+            <div class="profile-tags">
+              <span class="tag">Estrategia Ágil</span>
+              <span class="tag">Bases de Datos</span>
+              <span class="tag">Sostenibilidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN SOBRE MÍ -->
+    <section class="section about" id="sobre-mi">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Perfil Profesional</span>
+          <h2 class="section-title">Sobre Mí</h2>
+          <p class="section-subtitle">
+            Hibridación de capacidades pedagógicas, empatía analítica y desarrollo de software.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text-content">
+            <div class="about-quote-box">
+              <p class="about-lead">
+                "Me apasiona la intersección entre la <strong>estrategia de negocio</strong> y la <strong>ejecución técnica</strong>."
+              </p>
+            </div>
+            
+            <p class="about-paragraph">
+              Tras graduarme en <strong>Educación Infantil</strong> —donde consolidé habilidades críticas como la comunicación asertiva, la empatía y la gestión de proyectos estructurados—, decidí dar el salto al sector tecnológico mediante el desarrollo de software.
+            </p>
+
+            <p class="about-paragraph">
+              Actualmente formo parte del <strong>programa Diginnova de la Fundación Universitaria de Las Palmas (FULP)</strong>, especializándome en transformación digital, innovación y sostenibilidad corporativa, mientras potencio mi perfil técnico en el <strong>Desarrollo Full Stack</strong> con un enfoque muy fuerte en Python y la gestión de bases de datos relacionales (SQL).
+            </p>
+
+            <div class="location-banner">
+              <div class="location-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path>
+                  <circle cx="12" cy="9" r="2.5"></circle>
+                </svg>
+              </div>
+              <div class="location-details">
+                <strong>Base de operaciones:</strong>
+                <span>Las Palmas de Gran Canaria, Canarias, España (Disponible para proyectos locales y remotos)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aptitudes Principales -->
+          <div class="about-skills-sidebar">
+            <h3 class="skills-heading">Aptitudes Principales</h3>
+            
+            <div class="skill-card">
+              <div class="skill-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <div class="skill-info">
+                <h4>Comunicación Asertiva &amp; Empatía</h4>
+                <p>Facilitación fluida entre equipos multidisciplinares, clientes y perfiles técnicos. Capacidad innata para transmitir ideas complejas con claridad pedagógica.</p>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <div class="skill-info">
+                <h4>Análisis de Datos &amp; SQL</h4>
+                <p>Estructuración de datos relacionales, extracción de métricas clave y razonamiento cuantitativo para sustentar decisiones estratégicas y optimizar flujos.</p>
+              </div>
+            </div>
+
+            <div class="skill-card">
+              <div class="skill-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div class="skill-info">
+                <h4>Planificación Estratégica &amp; Agilidad</h4>
+                <p>Organización de sprints, priorización orientada a producto (Product Management) y aplicación de marcos de innovación sostenible corporativa.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN SERVICIOS O PROYECTOS -->
+    <section class="section services-projects" id="servicios">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Soluciones &amp; Competencias</span>
+          <h2 class="section-title">Servicios y Proyectos</h2>
+          <p class="section-subtitle">
+            Aportando valor en desarrollo web, consultoría de transformación digital y soluciones tecnológicas aplicadas.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Tarjeta 1: Desarrollo Full Stack -->
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-icon-wrap">
+                <svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" stroke-width="2" fill="none">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <span class="service-num">01</span>
+            </div>
+            <h3 class="service-title">Desarrollo Web Full Stack (Python &amp; SQL)</h3>
+            <p class="service-desc">
+              Construcción de aplicaciones web interactivas, interfaces limpias y sistemas backend con Python y bases de datos relacionales SQL normalizadas.
+            </p>
+            <ul class="service-features">
+              <li>Lógica backend con Python y APIs RESTful</li>
+              <li>Diseño de esquemas y consultas optimizadas SQL</li>
+              <li>Frontend responsive con HTML5, CSS3 moderno y JS</li>
+            </ul>
+            <div class="service-tags">
+              <span class="pill">Python</span>
+              <span class="pill">SQL</span>
+              <span class="pill">HTML/CSS/JS</span>
+              <span class="pill">Git</span>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2: Transformación Digital & Innovación -->
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-icon-wrap">
+                <svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" stroke-width="2" fill="none">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M16 12l-4-4-4 4M12 16V8"></path>
+                </svg>
+              </div>
+              <span class="service-num">02</span>
+            </div>
+            <h3 class="service-title">Transformación Digital e Innovación Sostenible</h3>
+            <p class="service-desc">
+              Diagnóstico y modernización de procesos para empresas y pymes. Marco Diginnova FULP enfocado en eficiencia, digitalización y responsabilidad ambiental.
+            </p>
+            <ul class="service-features">
+              <li>Digitalización de flujos operativos</li>
+              <li>Implantación de metodologías ágiles</li>
+              <li>Estrategia de sostenibilidad corporativa</li>
+            </ul>
+            <div class="service-tags">
+              <span class="pill">Diginnova</span>
+              <span class="pill">Innovación Ágil</span>
+              <span class="pill">Sostenibilidad</span>
+            </div>
+          </div>
+
+          <!-- Tarjeta 3: EdTech & Product Management -->
+          <div class="service-card">
+            <div class="service-header">
+              <div class="service-icon-wrap">
+                <svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <span class="service-num">03</span>
+            </div>
+            <h3 class="service-title">EdTech, Didáctica &amp; Product Management</h3>
+            <p class="service-desc">
+              Diseño de herramientas educativas digitales y productos centrados en el usuario, combinando maestría en pedagogía y arquitectura tecnológica.
+            </p>
+            <ul class="service-features">
+              <li>Diseño instruccional para plataformas EdTech</li>
+              <li>Definición de roadmap y especificaciones funcionales</li>
+              <li>Experiencia de usuario con foco pedagógico</li>
+            </ul>
+            <div class="service-tags">
+              <span class="pill">EdTech</span>
+              <span class="pill">UX Educativa</span>
+              <span class="pill">Roadmapping</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Callout Banner Proyectos -->
+        <div class="project-callout">
+          <div class="callout-text">
+            <h4>¿Tienes un proyecto en mente o buscas incorporar talento versátil?</h4>
+            <p>Disponible para colaborar en iniciativas de desarrollo de software, análisis de datos y proyectos de innovación en Canarias o remoto.</p>
+          </div>
+          <div class="callout-action">
+            <a href="#contacto" class="btn btn-primary">Iniciar Conversación</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN TRAYECTORIA (EXPERIENCIA Y FORMACIÓN) -->
+    <section class="section trajectory" id="trayectoria">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Backbone Profesional</span>
+          <h2 class="section-title">Experiencia y Educación</h2>
+          <p class="section-subtitle">
+            Un camino guiado por el aprendizaje continuo, la rigurosidad académica y la pasión por el código.
+          </p>
+        </div>
+
+        <div class="trajectory-wrapper">
+          <!-- Columna Experiencia -->
+          <div class="trajectory-column">
+            <div class="column-header">
+              <div class="col-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
+              <h3>Experiencia</h3>
+            </div>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot current"></div>
+                <div class="timeline-content">
+                  <span class="timeline-period">Septiembre de 2026 - Presente</span>
+                  <h4 class="timeline-role">Alumna en Formación - Programa Diginnova</h4>
+                  <h5 class="timeline-entity">Fundación Universitaria de Las Palmas (FULP)</h5>
+                  <p class="timeline-text">
+                    Cursando la fase teórica obligatoria del programa Diginnova, especializada en competencias de Transformación Digital, Sostenibilidad Corporativa e Innovación Ágil. Preparándome para la posterior incorporación al periodo de prácticas no laborales en empresas del tejido de Canarias.
+                  </p>
+                  <div class="timeline-badge-group">
+                    <span class="mini-badge">Transformación Digital</span>
+                    <span class="mini-badge">Innovación Ágil</span>
+                    <span class="mini-badge">Tejido Empresarial Canario</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna Educación -->
+          <div class="trajectory-column">
+            <div class="column-header">
+              <div class="col-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </div>
+              <h3>Educación &amp; Certificaciones</h3>
+            </div>
+
+            <div class="timeline">
+              <!-- Conquer Blocks -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-period">Febrero de 2026</span>
+                  <h4 class="timeline-role">Máster en Desarrollo Web Full Stack</h4>
+                  <h5 class="timeline-entity">Conquer Blocks</h5>
+                  <p class="timeline-text">
+                    Especialización intensiva en Computer Programming, arquitectura web, bases de datos relacionales (SQL), backend con Python y tecnologías modernas de front-end.
+                  </p>
+                </div>
+              </div>
+
+              <!-- UNIR Programa intensivo -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-period">Octubre de 2025 - Junio de 2026</span>
+                  <h4 class="timeline-role">Título Propio: Programa de Formación Intensivo en Pedagogía Aplicada y Desarrollo Profesional Docente</h4>
+                  <h5 class="timeline-entity">UNIR - Universidad Internacional de La Rioja</h5>
+                  <p class="timeline-text">
+                    Metodologías de enseñanza avanzada, diseño de programas educativos y estructuración de proyectos de aprendizaje.
+                  </p>
+                </div>
+              </div>
+
+              <!-- UNIR Máster Matemáticas -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-period">Octubre de 2024 - Octubre de 2025</span>
+                  <h4 class="timeline-role">Máster Universitario en Didáctica de las Matemáticas en Educación Infantil y Primaria</h4>
+                  <h5 class="timeline-entity">UNIR - Universidad Internacional de La Rioja</h5>
+                  <p class="timeline-text">
+                    Profundización en razonamiento lógico-matemático, análisis cuantitativo y desarrollo del pensamiento abstracto.
+                  </p>
+                </div>
+              </div>
+
+              <!-- ULPGC Grado -->
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-period">Septiembre de 2020 - Octubre de 2024</span>
+                  <h4 class="timeline-role">Grado en Educación Infantil</h4>
+                  <h5 class="timeline-entity">Universidad de Las Palmas de Gran Canaria (ULPGC)</h5>
+                  <p class="timeline-text">
+                    Consolidación de competencias nucleares: comunicación asertiva interpersonal, empatía, organización sistemática de proyectos y dinámicas de grupo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section class="section contact" id="contacto">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Conectemos</span>
+          <h2 class="section-title">Contacto</h2>
+          <p class="section-subtitle">
+            ¿Interesado en colaborar, ofrecer una oportunidad o intercambiar ideas sobre tecnología y educación?
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Información y Canales Directos -->
+          <div class="contact-info-card">
+            <h3>Canales de Comunicación</h3>
+            <p>
+              Estoy abierta a oportunidades laborales, proyectos de desarrollo web, consultoría de transformación digital o intercambios profesionales.
+            </p>
+
+            <div class="contact-methods">
+              <!-- Email -->
+              <div class="method-item">
+                <div class="method-icon">
+                  <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="method-details">
+                  <span class="method-title">Correo Electrónico</span>
+                  <a href="mailto:elisa.alverca@gmail.com" class="method-value">elisa.alverca@gmail.com</a>
+                  <button class="btn-copy-inline" id="copyEmailContact" data-email="elisa.alverca@gmail.com">
+                    Copiar correo
+                  </button>
+                </div>
+              </div>
+
+              <!-- LinkedIn -->
+              <div class="method-item">
+                <div class="method-icon">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.53 1.53 0 0 0 1.54-1.53c0-.85-.69-1.54-1.54-1.54a1.54 1.54 0 0 0-1.54 1.54c0 .84.69 1.53 1.54 1.53m1.39 9.97v-8.37H5.07v8.37h2.78z"/>
+                  </svg>
+                </div>
+                <div class="method-details">
+                  <span class="method-title">LinkedIn</span>
+                  <a href="https://www.linkedin.com/in/jeni-alverca-marhenawati-146357397" target="_blank" rel="noopener noreferrer" class="method-value">
+                    linkedin.com/in/jeni-alverca-marhenawati
+                  </a>
+                </div>
+              </div>
+
+              <!-- Ubicación -->
+              <div class="method-item">
+                <div class="method-icon">
+                  <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="method-details">
+                  <span class="method-title">Ubicación</span>
+                  <span class="method-value text-muted">Las Palmas de Gran Canaria, Canarias, España</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botones a Redes Sociales Destacados -->
+            <div class="social-block">
+              <span class="social-block-title">Redes y Conexiones</span>
+              <div class="social-buttons-grid">
+                <a href="https://www.linkedin.com/in/jeni-alverca-marhenawati-146357397" target="_blank" rel="noopener noreferrer" class="btn-social-full">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.53 1.53 0 0 0 1.54-1.53c0-.85-.69-1.54-1.54-1.54a1.54 1.54 0 0 0-1.54 1.54c0 .84.69 1.53 1.54 1.53m1.39 9.97v-8.37H5.07v8.37h2.78z"/>
+                  </svg>
+                  <span>Conectar en LinkedIn</span>
+                </a>
+
+                <a href="mailto:elisa.alverca@gmail.com" class="btn-social-full">
+                  <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <span>Enviar Correo Directo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulario de Mensaje Rápido -->
+          <div class="contact-form-card">
+            <h3>Enviar un Mensaje</h3>
+            <p class="form-desc">Completa este formulario y se abrirá tu cliente de correo con los datos preconfigurados.</p>
+            
+            <form id="contactForm" class="contact-form">
+              <div class="form-group">
+                <label for="name">Nombre o Empresa</label>
+                <input type="text" id="name" name="name" required placeholder="Tu nombre o el de tu organización">
+              </div>
+
+              <div class="form-group">
+                <label for="email">Tu Correo Electrónico</label>
+                <input type="email" id="email" name="email" required placeholder="ejemplo@empresa.com">
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Asunto o Interés</label>
+                <select id="subject" name="subject">
+                  <option value="Oportunidad Laboral / Prácticas">Oportunidad Laboral / Prácticas Diginnova</option>
+                  <option value="Proyecto Web Full Stack">Proyecto Web Full Stack (Python &amp; SQL)</option>
+                  <option value="Consultoría Transformación Digital">Transformación Digital e Innovación</option>
+                  <option value="Propuesta EdTech">Iniciativa EdTech / Educación</option>
+                  <option value="Otro">Otro Asunto</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" rows="4" required placeholder="Cuéntame brevemente sobre tu proyecto o propuesta..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                <span>Enviar Mensaje</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">Jeni Alverca Marhenawati</span>
+        <p class="footer-tagline">
+          Full Stack Developer (Python &amp; SQL) &bull; Diginnova FULP &bull; Transformación Digital
+        </p>
+        <span class="footer-location">Las Palmas de Gran Canaria, Canarias, España</span>
+      </div>
+
+      <div class="footer-nav">
+        <a href="#hero">Inicio</a>
+        <a href="#sobre-mi">Sobre Mí</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#trayectoria">Trayectoria</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Jeni Alverca Marhenawati. Todos los derechos reservados.</p>
+        <a href="#hero" class="back-to-top" id="backToTop" aria-label="Volver arriba">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast de Notificación -->
+  <div id="toast" class="toast" role="alert" aria-live="assertive">
+    <span id="toastMessage">Correo copiado al portapapeles</span>
+  </div>
+
+  <!-- Script interactivo -->
+  <script src="script.js"></script>
+</body>
+</html>
